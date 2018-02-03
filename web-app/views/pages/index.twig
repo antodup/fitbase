@@ -1,12 +1,15 @@
-{% extends '../base.html.twig' %}
+{% extends "../base.twig" %}
 
 {% block stylesheetCustom %}
-<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}"/>
+<link rel="stylesheet" href="/css/home.css"/>
 {% endblock %}
 
+{% block header %}
+    {% include '../layout/header.twig' %}
+{% endblock %}
 {% block body %}
 <section>
-    <h1><a><img src="../../assets/img/logo.svg" alt="logo"></a></h1>
+    <h1><a><img src="img/logo.svg" alt="logo"></a></h1>
     <p>Votre plus grand centre de remise en forme en ligne !</p>
     <article class="login">
         <h2>CONNEXION</h2>
@@ -28,4 +31,8 @@
         <button>INSCRIPTION E-MAIL</button>
     </article>
 </section>
+{% endblock %}
+
+{% block footer %}
+    {% include '../layout/footer.twig' %}
 {% endblock %}

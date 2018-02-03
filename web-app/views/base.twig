@@ -7,22 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block stylesheet %}
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-reboot.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}"/>
+        <link rel="stylesheet" href="/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/css/bootstrap-reboot.css"/>
+        <link rel="stylesheet" href="/css/main.css"/>
     {% endblock %}
     {% block stylesheetCustom %}
     {% endblock %}
     <title>Fitbase</title>
 </head>
 <body>
-{% block header %}
-    {% include 'layout/header.html.twig' %}
-{% endblock %}
+{% block header %}{% endblock %}
 {% block body %}{% endblock %}
-{% block footer %}
-    {% include 'layout/footer.html.twig' %}
-{% endblock %}
+{% block footer %}{% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
 </html>

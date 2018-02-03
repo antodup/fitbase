@@ -43,7 +43,7 @@ app.use(bodyParser.json());
 
 /* road for start page */
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + 'web-app/views/index.twig');
+    res.sendFile(__dirname + 'web-app/views/pages/index.twig');
 });
 
 server.listen(port);

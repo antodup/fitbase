@@ -1,0 +1,31 @@
+{% extends '../base.html.twig' %}
+
+{% block stylesheetCustom %}
+<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}"/>
+{% endblock %}
+
+{% block body %}
+<section>
+    <h1><a><img src="../../assets/img/logo.svg" alt="logo"></a></h1>
+    <p>Votre plus grand centre de remise en forme en ligne !</p>
+    <article class="login">
+        <h2>CONNEXION</h2>
+        <button>Facebook</button>
+        <button>Google +</button>
+        <form method="get" action=""> <!--définir la route dans l'attribut action-->
+            <input id="mail" type="email" name="login">
+            <input id="password" type="password" name="password">
+            <input id="remember" type="checkbox" value=""> <label for="remember">Mémoriser le mot de passe</label>
+            <a>J'ai oublié mon mot de passe</a>
+            <input type="submit" value="CONNEXION">
+        </form>
+    </article>
+    <hr/>
+    <article class="register">
+        <h2>CONNEXION</h2>
+        <button>INSCRIPTION FACEBOOK</button>
+        <button>INSCRIPTION GOOGLE +</button>
+        <button>INSCRIPTION E-MAIL</button>
+    </article>
+</section>
+{% endblock %}

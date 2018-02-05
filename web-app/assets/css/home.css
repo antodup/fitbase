@@ -127,3 +127,13 @@ button:hover {
 
 }
 
+.btn-connexion {
+    background-color: white;
+    color: #0F131D;
+}
+
+.btn-connexion:hover {
+    background-color: #0F131D;
+    color: white;
+}
+

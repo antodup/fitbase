@@ -6,6 +6,7 @@
 
 body {
     background: url("../img/background.jpg") no-repeat;
+    background-size: cover;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-weight: 300;

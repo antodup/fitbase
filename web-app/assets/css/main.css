@@ -5,6 +5,18 @@
 }
 
 body {
-    background: url("../img/background.jpg") center;
-    background-size: cover;
+    background: url("../img/background.jpg");
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
 }
+
+a, button {
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+

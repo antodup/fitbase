@@ -1,38 +1,44 @@
 {% extends "../base.twig" %}
 
 {% block stylesheetCustom %}
-<link rel="stylesheet" href="/css/home.css"/>
+    <link rel="stylesheet" href="/css/home.css"/>
 {% endblock %}
 
-{% block header %}
-    {% include '../layout/header.twig' %}
-{% endblock %}
 {% block body %}
-<section>
-    <h1><a><img src="img/logo.svg" alt="logo"></a></h1>
-    <p>Votre plus grand centre de remise en forme en ligne !</p>
-    <article class="login">
-        <h2>CONNEXION</h2>
-        <button>Facebook</button>
-        <button>Google +</button>
-        <form method="get" action=""> <!--définir la route dans l'attribut action-->
-            <input id="mail" type="email" name="login">
-            <input id="password" type="password" name="password">
-            <input id="remember" type="checkbox" value=""> <label for="remember">Mémoriser le mot de passe</label>
-            <a>J'ai oublié mon mot de passe</a>
-            <input type="submit" value="CONNEXION">
-        </form>
-    </article>
-    <hr/>
-    <article class="register">
-        <h2>CONNEXION</h2>
-        <button>INSCRIPTION FACEBOOK</button>
-        <button>INSCRIPTION GOOGLE +</button>
-        <button>INSCRIPTION E-MAIL</button>
-    </article>
-</section>
-{% endblock %}
-
-{% block footer %}
-    {% include '../layout/footer.twig' %}
+    <section class="container ctn-home text-center">
+        <h1 class="logo-title"><a><img src="img/logo.svg" alt="logo"></a></h1>
+        <p class="baseline">Votre plus grand centre de remise en forme en ligne !</p>
+        <section class="row">
+            <article class="col-md-6 ctn-form ctn-login d-flex align-items-center flex-column">
+                <h2>CONNEXION</h2>
+                <div class="row w-75 mb-2 justify-content-between">
+                    <button class="btn login-social p-3">Facebook</button>
+                    <button class="btn login-social p-3">Google +</button>
+                </div>
+                <form method="get" action="" class="d-flex flex-column w-75 m-auto">
+                    <!--définir la route dans l'attribut action-->
+                    <div class="field mb-2">
+                        <input class="input-form" id="mail" type="email" name="login" placeholder="e-mail">
+                        <label class="label-input" for="mail">E-mail</label>
+                    </div>
+                    <div class="field mb-2">
+                        <input class="input-form" id="password" type="password" name="password" placeholder="mot de passe">
+                        <label class="label-input" for="password">Mot de passe</label>
+                    </div>
+                    <div class="remember-password d-flex align-items-center justify-content-center">
+                        <input id="remember" type="checkbox" value="">
+                        <label for="remember">Mémoriser le mot de passe</label>
+                    </div>
+                    <a class="mb-2 forget-password">J'ai oublié mon mot de passe</a>
+                    <input class="btn w-75 m-auto p-3" type="submit" value="CONNEXION">
+                </form>
+            </article>
+            <article class="col-md-6 ctn-form d-flex justify-content-center flex-column">
+                <h2>INSCRIPTION</h2>
+                <button class="mb-3 btn-register btn p-3">INSCRIPTION FACEBOOK</button>
+                <button class="mb-3 btn-register btn p-3">INSCRIPTION GOOGLE +</button>
+                <button class="mb-3 btn-register btn p-3">INSCRIPTION E-MAIL</button>
+            </article>
+        </section>
+    </section>
 {% endblock %}

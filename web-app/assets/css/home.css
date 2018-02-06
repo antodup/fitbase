@@ -20,9 +20,11 @@ body {
     font-size: 1.6em;
     margin-top: 20px;
 }
+
 .remember-password {
     margin-bottom: 5px;
 }
+
 .remember-password label {
     margin-bottom: 0;
     font-size: 1.2em;
@@ -40,6 +42,7 @@ body {
 .login-social {
     width: 48%;
 }
+
 .forget-password {
     font-size: 1.1em;
     text-decoration: underline !important;
@@ -55,6 +58,7 @@ button:hover {
     background-color: white;
     color: #0F131D;
 }
+
 /*INPUT*/
 .field {
     display: flex;

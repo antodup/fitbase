@@ -18,17 +18,17 @@ app.use('/img', express.static('web-app/assets/img'));
 app.use('/fonts', express.static('web-app/assets/fonts'));
 
 //connection for windows
-var connection = function () {
+/*var connection = function () {
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: '',
         database: 'fitbase'
     });
-}
+}*/
 
 //connection for mac
-/*var connection = function () {
+var connection = function () {
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -36,7 +36,7 @@ var connection = function () {
         database: 'fitbase',
         socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
     });
-}*/
+}
 
 //config bodyParser
 app.use(bodyParser.urlencoded({
@@ -54,6 +54,55 @@ app.set('views', [__dirname + '/web-app/views/pages', __dirname + '/web-app/view
 app.get('/', function (req, res) {
     res.render('index.twig');
 });
+
+/* road for profil page */
+app.get('/profil', function (req, res) {
+    res.render('profil.twig');
+});
+
+/* road for paremètre page */
+app.get('/parametres', function (req, res) {
+    res.render('parameters.twig');
+});
+
+/* road for santé page */
+app.get('/sante', function (req, res) {
+    res.render('health.twig');
+});
+
+/* road for sport page */
+app.get('/sport', function (req, res) {
+    res.render('sport.twig');
+});
+
+/* road for sport page */
+app.get('/inscription', function (req, res) {
+    res.render('register.twig');
+});
+
+/* road for contact page */
+app.get('/contact', function (req, res) {
+    res.render('contact.twig');
+});
+
+/* road for login page */
+app.get('/connexion', function (req, res) {
+    res.render('login.twig');
+});
+
+/*Page 404*/
+app.use(function(req, res) {
+    res.status(400);
+    res.render('404.twig');
+});
+
+/*Pour V2 erreur 500
+app.use(function(req, res) {
+    res.status(500);
+    res.render('index.twig'); // A CHANGER QUAND LA PAGE 404 OK
+});*/
+
+
 
 server.listen(port);
 console.log("application live on port " + port);

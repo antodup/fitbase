@@ -3,6 +3,7 @@ const express =     require('express')
 const bodyParser =  require('body-parser')
 const mysql =       require('mysql')
 const Twig =        require('twig')
+const bcrypt =        require('bcrypt')
 const app =         express();
 
 /* CREATION DU SERVER */
@@ -18,17 +19,17 @@ app.use('/img', express.static('web-app/assets/img'));
 app.use('/fonts', express.static('web-app/assets/fonts'));
 
 //connection for windows
-/*var connection = function () {
+var connection = function () {
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: '',
         database: 'fitbase'
     });
-}*/
+}
 
 //connection for mac
-var connection = function () {
+/*var connection = function () {
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -36,7 +37,7 @@ var connection = function () {
         database: 'fitbase',
         socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
     });
-}
+}*/
 
 //config bodyParser
 app.use(bodyParser.urlencoded({
@@ -57,7 +58,18 @@ app.get('/', function (req, res) {
 
 /* road for profil page */
 app.get('/profil', function (req, res) {
-    res.render('profil.twig');
+    console.log(req.query.mail)
+    let q = "select * from users where email like '" + req.query.mail + "';",
+        co = connection();
+    co.connect();
+    co.query(q, function (error, results, fields) {
+        if (error) return console.log(error);
+        if (results.length > 0) { //verification si on a trouver un user avec l'email entrée
+            if (bcrypt.compareSync(req.query.password, results[0].password)) // verifier si le mdp est le même
+                res.render('profil.twig');// aller sur la page profil
+        }
+        res.redirect('/');// il y a eu une erreur donc retour a la page de connexion
+    })
 });
 
 /* road for paremètre page */

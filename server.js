@@ -57,18 +57,26 @@ app.get('/', function (req, res) {
 });
 
 /* road for profil page */
-app.get('/profil', function (req, res) {
-    console.log(req.query.mail)
-    let q = "select * from users where email like '" + req.query.mail + "';",
+app.post('/profil', function (req, res) {
+    console.log(req.body.mail)
+    let q = "select * from users where email like '" + req.body.mail + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
-        if (error) return console.log(error);
-        if (results.length > 0) { //verification si on a trouver un user avec l'email entrée
-            if (bcrypt.compareSync(req.query.password, results[0].password)) // verifier si le mdp est le même
-                res.render('profil.twig');// aller sur la page profil
+        if (error){
+            return console.log(error);
         }
-        res.redirect('/');// il y a eu une erreur donc retour a la page de connexion
+
+        if (results.length > 0) { //verification si on a trouver un user avec l'email entrée
+            if (bcrypt.compareSync(req.body.password, results[0].password)) { // verifier si le mdp est le même
+                res.render('profil.twig');// aller sur la page profil
+            } else {
+                res.redirect('/');// il y a eu une erreur donc retour a la page de connexion
+            }
+        } else {
+            res.redirect('/');// il y a eu une erreur donc retour a la page de connexion
+        }
+
     })
 });
 

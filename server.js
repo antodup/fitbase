@@ -73,18 +73,19 @@ app.post('/profil', function (req, res) {
                     res.render('profil.twig');
                 } else {
                     console.log('game over')
-                    res.redirect('/')
+                    res.render('index.twig', {
+                        checkPassword : password
+                    })
                 }
             })
         } else {
             res.redirect('/')
         }
     })
-    /* Tu as trvailler le check du mot de passe en mode sync alors
+    /*Tu as trvailler le check du mot de passe en mode sync alors
     que dans la doc il recomande en mode async je l'ai donc travailler
     comme ca. (en plus au niveau de la syntax cela me parait plus clair)
-    D'ailleurs tu me réexpliquera la différence exact entre le sync et l'async
-     */
+    D'ailleurs tu me réexpliquera la différence exact entre le sync et l'async*/
     console.log("connecté ! ;-)")//test
 });
 

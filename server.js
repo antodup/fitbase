@@ -79,8 +79,14 @@ app.post('/profil', function (req, res) {
                 }
             })
         } else {
-            console.log(req.body.length)
-            res.redirect('/')
+            if (Object.keys(req.body).length > 2) {
+                let q = "insert into users (`lastname`, `firstname`, `birthday`, `email`, `password`, `height`, `poid`, `fréquences`, `objectif`, `photo_profil`, `notification`, `géolocalisation`, `created_at`, `updated_at`) values ('" + /* mettre tout les paramètres */ + "');"
+                co.query(q, function (error, results, fields) {
+                    //faire la suite
+                })
+            } else {
+                res.redirect('/')
+            }
         }
     })
     console.log("connecté ! ;-)")//test

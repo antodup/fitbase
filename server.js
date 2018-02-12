@@ -1,19 +1,10 @@
 /* EXPRESS */
-<<<<<<< HEAD
 const express =     require('express')
 const bodyParser =  require('body-parser')
 const mysql =       require('mysql')
 const Twig =        require('twig')
-const bcrypt =        require('bcrypt')
+const bcrypt =      require('bcrypt')
 const app =         express();
-=======
-const express = require('express')
-const bodyParser = require('body-parser')
-const mysql = require('mysql')
-const Twig = require('twig')
-const bcrypt = require('bcrypt')
-const app = express();
->>>>>>> a7ef3acad42d3e9d915e7e34f4734777ab4153c1
 
 /* CREATION DU SERVER */
 const server = require('http').createServer(app);
@@ -78,6 +69,7 @@ app.post('/profil', function (req, res) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {
                     console.log('win')
+                    req.session = results[0].id;
                     res.render('profil.twig');
                 } else {
                     console.log('game over')
@@ -87,6 +79,7 @@ app.post('/profil', function (req, res) {
                 }
             })
         } else {
+            console.log(req.body.length)
             res.redirect('/')
         }
     })

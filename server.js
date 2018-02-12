@@ -65,8 +65,7 @@ app.post('/profil', function (req, res) {
     co.connect();
     co.query(q, function (error, results, fields) {
         if (error) return console.log(error);
-        //Pour quoi console.log(results) me retourne un tabeleau vide
-        if (results.length > 0) { //Pour quoi on peut pas checker le mail direct comme ca => results[0].email == req.body.login j'ai tester mais ca fonctionne pas et je comprends pas pourquoi ?
+        if (results.length > 0) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {
                     console.log('win')
@@ -82,10 +81,6 @@ app.post('/profil', function (req, res) {
             res.redirect('/')
         }
     })
-    /*Tu as trvailler le check du mot de passe en mode sync alors
-    que dans la doc il recomande en mode async je l'ai donc travailler
-    comme ca. (en plus au niveau de la syntax cela me parait plus clair)
-    D'ailleurs tu me réexpliquera la différence exact entre le sync et l'async*/
     console.log("connecté ! ;-)")//test
 });
 

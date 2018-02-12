@@ -1,10 +1,19 @@
 /* EXPRESS */
+<<<<<<< HEAD
 const express =     require('express')
 const bodyParser =  require('body-parser')
 const mysql =       require('mysql')
 const Twig =        require('twig')
 const bcrypt =        require('bcrypt')
 const app =         express();
+=======
+const express = require('express')
+const bodyParser = require('body-parser')
+const mysql = require('mysql')
+const Twig = require('twig')
+const bcrypt = require('bcrypt')
+const app = express();
+>>>>>>> a7ef3acad42d3e9d915e7e34f4734777ab4153c1
 
 /* CREATION DU SERVER */
 const server = require('http').createServer(app);
@@ -58,26 +67,30 @@ app.get('/', function (req, res) {
 
 /* road for profil page */
 app.post('/profil', function (req, res) {
-    console.log(req.body.mail)
-    let q = "select * from users where email like '" + req.body.mail + "';",
+    //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
+    console.log(req.body.login)
+    let q = "select * from users where email like '" + req.body.login + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
-        if (error){
-            return console.log(error);
-        }
-
-        if (results.length > 0) { //verification si on a trouver un user avec l'email entrée
-            if (bcrypt.compareSync(req.body.password, results[0].password)) { // verifier si le mdp est le même
-                res.render('profil.twig');// aller sur la page profil
-            } else {
-                res.redirect('/');// il y a eu une erreur donc retour a la page de connexion
-            }
+        if (error) return console.log(error);
+        if (results.length > 0) {
+            bcrypt.compare(req.body.password, results[0].password).then(function (password) {
+                if (password === true) {
+                    console.log('win')
+                    res.render('profil.twig');
+                } else {
+                    console.log('game over')
+                    res.render('index.twig', {
+                        checkPassword : password
+                    })
+                }
+            })
         } else {
-            res.redirect('/');// il y a eu une erreur donc retour a la page de connexion
+            res.redirect('/')
         }
-
     })
+    console.log("connecté ! ;-)")//test
 });
 
 /* road for paremètre page */
@@ -111,7 +124,7 @@ app.get('/connexion', function (req, res) {
 });
 
 /*Page 404*/
-app.use(function(req, res) {
+app.use(function (req, res) {
     res.status(400);
     res.render('404.twig');
 });
@@ -121,7 +134,6 @@ app.use(function(req, res) {
     res.status(500);
     res.render('index.twig'); // A CHANGER QUAND LA PAGE 404 OK
 });*/
-
 
 
 server.listen(port);

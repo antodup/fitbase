@@ -59,8 +59,8 @@ app.get('/', function (req, res) {
 /* road for profil page */
 app.post('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
-    console.log(req.body.login)
-    let q = "select * from users where email like '" + req.body.login + "';",
+    console.log(req.body.email)
+    let q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
@@ -68,7 +68,6 @@ app.post('/profil', function (req, res) {
         if (results.length > 0) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {
-                    console.log('win')
                     req.session = results[0].id;
                     res.render('profil.twig');
                 } else {
@@ -80,16 +79,20 @@ app.post('/profil', function (req, res) {
             })
         } else {
             if (Object.keys(req.body).length > 2) {
-                let q = "insert into users (`lastname`, `firstname`, `birthday`, `email`, `password`, `height`, `poid`, `fréquences`, `objectif`, `photo_profil`, `notification`, `géolocalisation`, `created_at`, `updated_at`) values ('" + /* mettre tout les paramètres */ + "');"
+                console.log(req.body)
+                var hash = bcrypt.hashSync(req.body.password1, 10);
+                let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", "+ req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
+
                 co.query(q, function (error, results, fields) {
-                    //faire la suite
+                    if (error) return console.log(error);
+                    console.log(results.insertId)
                 })
+                res.render("profil.twig");
             } else {
                 res.redirect('/')
             }
         }
     })
-    console.log("connecté ! ;-)")//test
 });
 
 /* road for paremètre page */
@@ -109,7 +112,24 @@ app.get('/sport', function (req, res) {
 
 /* road for sport page */
 app.get('/inscription', function (req, res) {
-    res.render('register.twig');
+    var sport,
+        objectif,
+        co = connection();
+    co.connect();
+    co.query("select * from sport;", function (error, results, fields) {
+      sport = results;
+
+        co.query("select * from objectifs;", function (error, results, fields) {
+            objectif = results;
+
+            res.render('register.twig', {
+                sports : sport,
+                objectifs : objectif
+            });
+        })
+    })
+
+
 });
 
 /* road for contact page */

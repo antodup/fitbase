@@ -1,1 +1,47 @@
 {% extends '../base.twig' %}
+{% block body %}
+<form method="post" action="/profile" style="color:white;">
+    <section>
+        <input type="text" placeholder="nom">
+        <input type="text" placeholder="prénom">
+        <input type="text" placeholder="prénom">
+        <input type="date" placeholder="date de naissance">
+        <input type="email" placeholder="email">
+        <input type="password" placeholder="mot de passe">
+        <input type="password" placeholder="confirmation de mot de passe">
+        <button>SUIVANT</button>
+    </section>
+    <section>
+        <label>taille</label>
+        <input type="range" min="120" max="220">
+        <label>poid</label>
+        <input type="range" min="30" max="200">
+        <button>SUIVANT</button>
+    </section>
+    <section>
+        <input type="checkbox" value="marche"><label>Marche</label>
+        <input type="checkbox" value="running"><label>Running</label>
+        <input type="checkbox" value="cyclisme"><label>Cyclisme</label>
+        <input type="checkbox" value="yoga"><label>Yoga</label>
+        <input type="checkbox" value="musculation"><label>Musculation</label>
+        <input type="checkbox" value="natation"><label>Natation</label>
+        <input type="checkbox" value="football"><label>Football</label>
+        <input type="checkbox" value="tennis"><label>Tennis</label>
+        <input type="checkbox" value="boxe"><label>Boxe</label>
+        <button>SUIVANT</button>
+    </section>
+    <section>
+        <input type="number" value="1"><label>Frequence</label>
+        <button>SUIVANT</button>
+    </section>
+    <section>
+        <input type="checkbox" value="perdre du poid"><label>#Perdre du poid</label>
+        <input type="checkbox" value="prise de masse"><label>#Prise de masse</label>
+        <input type="checkbox" value="rester en forme"><label>#Rester en forme</label>
+        <input type="checkbox" value="se dépenser"><label>#Se dépenser</label>
+        <input type="checkbox" value="Remise en forme"><label>#Remise en forme</label>
+        <input type="checkbox" value="Objectif pro"><label>#Objectif pro</label>
+        <button>TERMINER</button>
+    </section>
+</form>
+{% endblock %}

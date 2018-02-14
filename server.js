@@ -15,7 +15,7 @@ var users = null;
 var port = 1337;
 
 /* ROAD TO ASSETS DIRECTORY */
-app.use(session())
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 60000 }}))
 app.use('/css', express.static('web-app/assets/css'));
 app.use('/js', express.static('web-app/assets/js'));
 app.use('/img', express.static('web-app/assets/img'));
@@ -69,8 +69,9 @@ app.post('/', function (req, res) {
         if (results.length > 0) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {
-                    users = results[0].id;
-                    console.log(users)
+                    var sessData = req.session;
+                    sessData.someAttribute = results[0].id;
+                    console.log(req.session.someAttribute)
                     res.redirect('/profil');
                 } else {
                     console.log('game over')
@@ -89,9 +90,9 @@ app.post('/', function (req, res) {
 app.get('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
     //récupérer les infos du user en fonction de l'id contenu dans req.session
-    console.log(users)
+    var user_id = req.session.someAttribute.toString()
     res.render('profil.twig', {
-        id: users
+        id: user_id
     })
 });
 

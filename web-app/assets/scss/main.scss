@@ -1,6 +1,5 @@
-//TODO: add import/compass
-
-
+//Compass
+@import "compass";
 
 //Bootstrap
 @import "vendor/bootstrap/bootstrap-reboot";
@@ -9,6 +8,7 @@
 
 //Utilities
 @import "utilities/variables";
+@import "utilities/base";
 @import "utilities/mixins";
 @import "utilities/gui";
 

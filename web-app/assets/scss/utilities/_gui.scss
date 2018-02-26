@@ -8,7 +8,7 @@
 
 //Custom buttons
 .fbCustom-button{
-  font-weight: bold;
+  font-weight: 300;
   text-transform: uppercase;
   padding: 15px 12px;
   outline: 0;
@@ -46,7 +46,7 @@
   &.fbCustom-button--filled{
     font-size: 13px;
     color: #fff;
-    border: 1px solid;
+    border: none;
     background-color: $fb-darkBlue;
     @include transition(transform .75s $cubic-bezier,opacity .35s ease);
     &:hover{
@@ -245,6 +245,7 @@
     position: absolute;
     width: 100%;
     font-size: 13px;
+    text-align: left;
     line-height: 18px;
     color: $fb-darkBlue;
     top: 0;

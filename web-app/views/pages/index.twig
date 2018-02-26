@@ -1,10 +1,6 @@
 {% extends "../base.twig" %}
-
-{% block stylesheetCustom %}
-<link rel="stylesheet" href="/css/home.css"/>
-{% endblock %}
-
 {% block body %}
+<section class="background">
     <section class="container ctn-home text-center">
         <h1 class="logo-title"><a><img src="img/logo.svg" alt="logo"></a></h1>
         <p class="baseline">Votre plus grand centre de remise en forme en ligne !</p>
@@ -12,36 +8,48 @@
             <article class="col-md-6 ctn-form ctn-login d-flex align-items-center flex-column">
                 <h2>CONNEXION</h2>
                 <div class="row w-75 mb-2 justify-content-between">
-                    <button class="btn login-social p-3">Facebook</button>
-                    <button class="btn login-social p-3">Google +</button>
+                    <button class="btn-co-social fbCustom-button fbCustom-button--filled">Facebook</button>
+                    <button class="btn-co-social fbCustom-button fbCustom-button--filled">Google +</button>
                 </div>
                 {% if checkPassword == false %}
-                    <p>Votre mot de passe est faux ! Veuillez ressayer</p>
+                <p>Votre mot de passe est faux ! Veuillez ressayer</p>
                 {% endif %}
                 <form method="post" action="/profil" class="d-flex flex-column w-75 m-auto">
                     <!--définir la route dans l'attribut action-->
-                    <div class="field mb-2">
-                        <input class="input-form" id="mail" type="email" name="email" placeholder=" ">
-                        <label class="label-input" for="mail">E-mail</label>
+                    <div class="fbCustom-input mb-2">
+                        <input class="input-field" id="mail" type="email" name="email" placeholder="E-mail">
+                        <label class="input-label" for="mail">E-mail</label>
                     </div>
-                    <div class="field mb-2">
-                        <input class="input-form" id="password" type="password" name="password" placeholder=" ">
-                        <label class="label-input" for="password">Mot de passe</label>
+                    <div class="fbCustom-input mb-2">
+                        <input class="input-field" id="password" type="password" name="password" placeholder=" ">
+                        <label class="input-label" for="password">Mot de passe</label>
                     </div>
-                    <div class="remember-password d-flex align-items-center justify-content-center mt-3">
-                        <input id="remember" class="checkbox" type="checkbox" value="">
-                        <label for="remember">Mémoriser le mot de passe</label>
+                    <div class="fbCustom-checkbox mt-3 ctn-keep-co">
+                        <input id="remember" type="checkbox" value="">
+                        <label class="labelCheck-hide" for="remember">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15">
+                                <path fill-rule="nonzero"
+                                      d="M1.707107 7.2928932c-.390525-.3905243-1.023689-.3905243-1.414214 0-.3905241.3905243-.3905241 1.0236893 0 1.4142136l6 6c.390525.3905243 1.023689.3905243 1.414214 0l13-13c.390524-.3905243.390524-1.0236893 0-1.4142136-.390525-.3905243-1.023689-.3905243-1.414214 0L7 12.5857864 1.707107 7.2928932z"></path>
+                            </svg>
+                        </label>
+                        <label class="label-remeber" for="remember">Garder en mémoire ma connexion</label>
+
                     </div>
                     <a class="mb-3 forget-password">J'ai oublié mon mot de passe</a>
-                    <button class="btn w-75 m-auto p-2 btn-connexion" type="submit" value="CONNEXION">CONNEXION</button>
+                    <button class="w-75 m-auto fbCustom-button fbCustom-button--filled" type="submit" value="CONNEXION">
+                        CONNEXION
+                    </button>
                 </form>
             </article>
             <article class="col-md-6 ctn-form d-flex justify-content-center flex-column">
                 <h2>INSCRIPTION</h2>
-                <button class="mb-3 btn-register btn p-3">INSCRIPTION FACEBOOK</button>
-                <button class="mb-3 btn-register btn p-3">INSCRIPTION GOOGLE +</button>
-                <button class="mb-3 btn-register btn p-3">INSCRIPTION E-MAIL</button>
+                <button class="w-75 mb-3 btn-register fbCustom-button fbCustom-button--filled">INSCRIPTION FACEBOOK</button>
+                <button class="w-75 mb-3 btn-register fbCustom-button fbCustom-button--filled">INSCRIPTION GOOGLE +</button>
+                <button onclick="window.location.href='/inscription'"
+                        class="w-75 mb-3 btn-register fbCustom-button fbCustom-button--filled">INSCRIPTION E-MAIL
+                </button>
             </article>
         </section>
     </section>
+</section>
 {% endblock %}

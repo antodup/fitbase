@@ -12526,7 +12526,7 @@ body {
 
 /* line 10, ../scss/utilities/_gui.scss */
 .fbCustom-button {
-  font-weight: bold;
+  font-weight: 300;
   text-transform: uppercase;
   padding: 15px 12px;
   outline: 0;
@@ -12571,7 +12571,7 @@ body {
 .fbCustom-button.fbCustom-button--filled {
   font-size: 13px;
   color: #fff;
-  border: 1px solid;
+  border: none;
   background-color: #2D3544;
   transition: transform 0.75s cubic-bezier(0.045, 0.855, 0.1, 0.955), opacity 0.35s ease;
 }
@@ -12800,6 +12800,7 @@ body {
   position: absolute;
   width: 100%;
   font-size: 13px;
+  text-align: left;
   line-height: 18px;
   color: #2D3544;
   top: 0;
@@ -12813,25 +12814,25 @@ body {
   transition: all 250ms ease;
 }
 
-/* line 262, ../scss/utilities/_gui.scss */
+/* line 263, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul {
   text-align: center;
 }
-/* line 264, ../scss/utilities/_gui.scss */
+/* line 265, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul li {
   display: inline-block;
   margin: 0 5px;
 }
-/* line 268, ../scss/utilities/_gui.scss */
+/* line 269, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul li.pagination-prev a, .fbCustom-pagination ul li.pagination-next a {
   border-color: red;
 }
-/* line 273, ../scss/utilities/_gui.scss */
+/* line 274, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul li.current a {
   color: #fff;
   background-color: red;
 }
-/* line 279, ../scss/utilities/_gui.scss */
+/* line 280, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul a {
   display: block;
   font-size: 11px;
@@ -12842,8 +12843,177 @@ body {
   border: 1px solid transparent;
   transition: all 250ms ease;
 }
-/* line 288, ../scss/utilities/_gui.scss */
+/* line 289, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul a:hover {
   color: #fff;
   background-color: red;
+}
+
+/* line 1, ../scss/partials/_home.scss */
+.background {
+  background-image: url("../../img/background.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* line 9, ../scss/partials/_home.scss */
+.logo-title {
+  text-align: center;
+}
+
+/* line 13, ../scss/partials/_home.scss */
+.ctn-home {
+  color: #ffffff;
+}
+
+/* line 17, ../scss/partials/_home.scss */
+.btn-co-social {
+  width: 45%;
+}
+
+/* line 21, ../scss/partials/_home.scss */
+.baseline {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.3em;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+/* line 29, ../scss/partials/_home.scss */
+.remember-password {
+  margin-bottom: 5px;
+}
+/* line 31, ../scss/partials/_home.scss */
+.remember-password label {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+/* line 37, ../scss/partials/_home.scss */
+.label-remeber {
+  color: #ffffff !important;
+}
+
+/* line 41, ../scss/partials/_home.scss */
+.ctn-keep-co {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+/* line 49, ../scss/partials/_home.scss */
+.ctn-login {
+  border-right: solid 0.5px;
+}
+
+/* line 53, ../scss/partials/_home.scss */
+.btn-register {
+  margin: 0 auto;
+}
+
+/* line 57, ../scss/partials/_home.scss */
+.login-social {
+  width: 48%;
+}
+
+/* line 61, ../scss/partials/_home.scss */
+.forget-password {
+  font-size: 1em;
+  text-decoration: underline !important;
+  font-weight: 300;
+}
+
+/*INPUT*/
+/* line 69, ../scss/partials/_home.scss */
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  background-color: #0F131D;
+  padding: 3px;
+}
+
+/* line 76, ../scss/partials/_home.scss */
+.label-input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+/* line 81, ../scss/partials/_home.scss */
+.input-form {
+  transition: all 0.2s;
+  touch-action: manipulation;
+  font-size: 1.3em;
+  border: 0;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+  color: white;
+  background-color: #0F131D;
+}
+/* line 93, ../scss/partials/_home.scss */
+.input-form:focus {
+  outline: 0;
+}
+
+/* line 98, ../scss/partials/_home.scss */
+.label-input {
+  text-align: left;
+  font-size: 0.9em;
+  margin-left: 0.2em;
+  margin-bottom: 0;
+}
+
+/* line 105, ../scss/partials/_home.scss */
+.input-form:placeholder-shown + .label-input {
+  cursor: text;
+  max-width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 1rem) scale(1.5);
+  font-size: 0.9em;
+  margin-left: 0.2em;
+  margin-bottom: 0;
+}
+
+/* line 119, ../scss/partials/_home.scss */
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+/* line 125, ../scss/partials/_home.scss */
+.input-form:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+/* line 128, ../scss/partials/_home.scss */
+.input-form:not(:placeholder-shown) + .label-input, .input-form:focus + .label-input {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+/* line 134, ../scss/partials/_home.scss */
+.checkbox {
+  margin-right: 6px;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 140, ../scss/partials/_home.scss */
+.btn-connexion {
+  background-color: white;
+  color: #0F131D;
+}
+/* line 143, ../scss/partials/_home.scss */
+.btn-connexion:hover {
+  background-color: #0F131D;
+  color: white;
 }

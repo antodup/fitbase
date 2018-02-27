@@ -21,26 +21,15 @@ app.use('/js', express.static('web-app/assets/js'));
 app.use('/img', express.static('web-app/assets/img'));
 app.use('/fonts', express.static('web-app/assets/fonts'));
 
-//connection for windows
+//connection to bdd
 var connection = function () {
     return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'fitbase'
+        host: 'mysql-fitbase.alwaysdata.net',
+        user: 'fitbase',
+        password: 'totolola42',
+        database: 'fitbase_bdd'
     });
 }
-
-//connection for mac
-/*var connection = function () {
-    return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'root',
-        database: 'fitbase',
-        socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
-    });
-}*/
 
 //config bodyParser
 app.use(bodyParser.urlencoded({

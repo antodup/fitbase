@@ -13047,7 +13047,7 @@ body {
   .nav-container #menu {
     flex-direction: row;
     width: 100%;
-    height: 10vh;
+    height: 5vh;
   }
 }
 /* line 24, ../scss/partials/layout/_nav.scss */

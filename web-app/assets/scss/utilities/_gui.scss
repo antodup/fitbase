@@ -1,0 +1,295 @@
+.fbCustom-radio, .fbCustom-checkbox, .fbCustom-radioTab, .fbCustom-checkboxBadge{
+  padding: 5px 0;
+}
+
+.fbCustom-icon--circled, .fbCustom-helper, .fbCustom-radioTab, .fbCustom-badge{
+  display: inline-block;
+}
+
+//Custom buttons
+.fbCustom-button{
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 15px 12px;
+  outline: 0;
+  cursor: pointer;
+  @include transition(all 250ms ease);
+  +tablet{
+    padding: 15px 25px;
+  }
+  &.disabled, &:disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: .65;
+  }
+  &.fbCustom-button--bordered{
+    font-size: 11px;
+    color: $fb-darkBlue;
+    line-height: 1;
+    padding: 17px 25px;
+    border: 1px solid;
+    background-color: transparent;
+    @include transition(all .25s ease);
+  }
+    svg{
+      fill: $fb-darkBlue;
+    }
+    &:hover{
+      border: 1px solid transparent;
+      background-color: $fb-darkBlue;
+      color: #fff;
+
+      svg{
+        fill: #fff;
+      }
+    }
+  &.fbCustom-button--filled{
+    font-size: 13px;
+    color: #fff;
+    border: none;
+    background-color: $fb-darkBlue;
+    @include transition(transform .75s $cubic-bezier,opacity .35s ease);
+    &:hover{
+      opacity: 0.5;
+    }
+    span, svg{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    svg{
+      height: 10px;
+      fill: #fff;
+      margin-left: 10px;
+    }
+  }
+}
+
+//Custom radios
+.fbCustom-radio{
+  input{
+    display: none;
+    &:checked{
+      + .labelCheck-hide {
+        border-color: $fb-darkBlue;
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .labelCheck-hide{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    border: 1px solid $fb-darkBlue;
+    vertical-align: middle;
+    &:after{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 12px;
+      height: 12px;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      background-color: $fb-darkBlue;
+      @include transition(300ms $cubic-bezier);
+      @include transform(translate(-50%, -50%));
+    }
+    &, + label{
+      display: inline-block;
+      cursor: pointer;
+    }
+    + label{
+      font-size: 13px;
+      line-height: 16px;
+      color: $fb-darkBlue;
+      margin-left: 5px;
+    }
+  }
+}
+
+//Custom checkboxes
+.fbCustom-checkbox{
+  input{
+    display: none;
+    &:checked{
+      + .labelCheck-hide{
+        background-color: $fb-darkBlue;
+        svg{
+          @include transform(translate(-50%, -50%) scale(1));
+        }
+      }
+    }
+  }
+  .labelCheck-hide{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    border: 1px solid $fb-darkBlue;
+    @include transition(all 250ms ease);
+    svg{
+      position: absolute;
+      width: 8px;
+      fill: #fff;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%) scale(0.7));
+      @include transition(all 250ms ease);
+    }
+    &, +label{
+      display: inline-block;
+      cursor: pointer;
+    }
+    + label{
+      font-size: 13px;
+      line-height: 16px;
+      color: $fb-darkBlue;
+      margin-left: 5px;
+      display: inline;
+    }
+  }
+}
+
+
+//Custom badges
+.fbCustom-badge{
+  font-size: 13px;
+  font-weight: 300;
+  color: #fff;
+  padding: 7px 20px;
+  background-color: $fb-darkBlue;
+  @include border-radius(20px);
+  &.yellow{
+    color: $fb-black;
+    background-color: $fb-yellow;
+  }
+  &.green{
+    background-color: $fb-green;
+  }
+  &.blue{
+    background-color: $fb-blueFlash;
+  }
+}
+
+//Custom inputs
+.fbCustom-input{
+  position: relative;
+  .input-field{
+    width: 100%;
+    font-size: 13px;
+    color: #fff;
+    line-height: 16px;
+    padding: 20px 15px 10px 15px;
+    outline: none;
+    border: 1px solid $fb-darkBlue;
+    @include transition(background-color 250ms ease);
+    &:not(:placeholder-shown), &:placeholder-shown:focus{
+      + .input-label{
+        font-weight: bold;
+        color: $fb-darkBlue;
+        @include transform(translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1));
+      }
+    }
+    &:focus, &:placeholder-shown:focus{
+      background-color: $fb-greyBg;
+    }
+    &::-webkit-input-placeholder{
+      color: transparent;
+    }
+    &:-ms-input-placeholder{
+      color: transparent;
+    }
+    &::-moz-placeholder{
+      color: transparent;
+    }
+    &:-moz-placeholder{
+      color: transparent;
+    }
+    &::placeholder{
+      color: transparent;
+    }
+    &.placeholder{
+      color: transparent;
+    }
+    &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus{
+      -webkit-text-fill-color: $fb-darkBlue;
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+      transition: background-color 5000s ease-in-out 0s;
+      + .input-label{
+        font-weight: bold;
+        color: $fb-darkBlue;
+        transform: translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1);
+      }
+    }
+
+    &:-webkit-autofill:focus{
+      -webkit-box-shadow: 0 0 0 1000px $fb-darkBlue inset;
+    }
+
+    /*// when no support placeholder-shown
+    // todo: trouver une solution quand autofill EDGE / IE et retour / avancer
+    &.input-filled{
+      background-color: white;
+      + .input-label{
+        font-weight: bold;
+        color: $fb-da;
+        @include transform(translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1));
+      }
+    }*/
+  }
+  .input-label{
+    position: absolute;
+    width: 100%;
+    font-size: 13px;
+    text-align: left;
+    line-height: 18px;
+    color: $fb-darkBlue;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    pointer-events: none;
+    @include transform-origin(0, 0);
+    @include transition(all 250ms ease);
+  }
+}
+
+
+//Custom pagination
+.fbCustom-pagination{
+  ul{
+    text-align: center;
+    li{
+      display: inline-block;
+      margin: 0 5px;
+      &.pagination-prev, &.pagination-next{
+        a{
+          border-color: red;
+        }
+      }
+      &.current{
+        a{
+          color: #fff;
+          background-color: red;
+        }
+      }
+    }
+    a{
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: red;
+      padding: 10px 15px;
+      border: 1px solid transparent;
+      @include transition(all 250ms ease);
+      &:hover{
+        color: #fff;
+        background-color: red;
+      }
+    }
+  }
+}

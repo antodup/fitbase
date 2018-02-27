@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Fitbase - Gui</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism-okaidia.css">
+</head>
+<body class="container">
+<h1>Fitbase - Gui</h1>
+
+<div class="my-4">
+    <h2>Button and links</h2>
+    <button class="fbCustom-button fbCustom-button--filled">Ouvrir</button>
+    <button class="fbCustom-button fbCustom-button--bordered">Charger plus</button>
+</div>
+<div class="my-4">
+    <h2>Radios & checkboxes</h2>
+    <div class="fbCustom-radio">
+        <input type="radio" id="radio1" name="gender" checked>
+        <label for="radio1" class="labelCheck-hide"></label>
+        <label for="radio1">Homme</label>
+    </div>
+    <div class="fbCustom-radio">
+        <input type="radio" id="radio2" name="gender">
+        <label for="radio2" class="labelCheck-hide"></label>
+        <label for="radio2">Femme</label>
+    </div>
+
+    <div class="fbCustom-checkbox">
+        <input type="checkbox" id="checkbox1">
+        <label for="checkbox1" class="labelCheck-hide">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15">
+                <path fill-rule="nonzero"
+                      d="M1.707107 7.2928932c-.390525-.3905243-1.023689-.3905243-1.414214 0-.3905241.3905243-.3905241 1.0236893 0 1.4142136l6 6c.390525.3905243 1.023689.3905243 1.414214 0l13-13c.390524-.3905243.390524-1.0236893 0-1.4142136-.390525-.3905243-1.023689-.3905243-1.414214 0L7 12.5857864 1.707107 7.2928932z"></path>
+            </svg>
+        </label>
+        <label for="checkbox1">Garder en mémoire ma connexion</label>
+    </div>
+</div>
+
+<div class="my-4">
+    <h2>Badges & notifications</h2>
+    <span class="fbCustom-badge">Dentiste</span>
+    <span class="fbCustom-badge blue">Chirurgien-dentiste</span>
+    <span class="fbCustom-badge yellow">Chirurgie dentaire</span>
+    <span class="fbCustom-badge green">Dentiste</span>
+</div>
+
+<div class="my-4">
+    <h2>Inputs</h2>
+    <div class="fbCustom-input">
+        <input class="input-field" type="text" id="input1" placeholder="Adresse email"/>
+        <label class="input-label" for="input1">Adresse email</label>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEafbOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/prism.js"></script>
+</body>
+</html>

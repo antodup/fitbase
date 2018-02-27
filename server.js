@@ -4,6 +4,7 @@ const bodyParser =  require('body-parser')
 const mysql =       require('mysql')
 const Twig =        require('twig')
 const bcrypt =      require('bcrypt')
+const session =     require('express-session')
 const app =         express();
 
 /* CREATION DU SERVER */
@@ -13,31 +14,21 @@ const server = require('http').createServer(app);
 var port = 1337;
 
 /* ROAD TO ASSETS DIRECTORY */
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 60000 }}))
 app.use('/css', express.static('web-app/assets/css'));
 app.use('/js', express.static('web-app/assets/js'));
 app.use('/img', express.static('web-app/assets/img'));
 app.use('/fonts', express.static('web-app/assets/fonts'));
 
-//connection for windows
+//connection to bdd
 var connection = function () {
     return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'fitbase'
+        host: 'mysql-fitbase.alwaysdata.net',
+        user: 'fitbase',
+        password: 'totolola42',
+        database: 'fitbase_bdd'
     });
 }
-
-//connection for mac
-/*var connection = function () {
-    return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'root',
-        database: 'fitbase',
-        socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
-    });
-}*/
 
 //config bodyParser
 app.use(bodyParser.urlencoded({
@@ -56,9 +47,7 @@ app.get('/', function (req, res) {
     res.render('index.twig');
 });
 
-/* road for profil page */
-app.post('/profil', function (req, res) {
-    //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
+app.post('/', function (req, res) {
     console.log(req.body.email)
     let q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
@@ -68,8 +57,10 @@ app.post('/profil', function (req, res) {
         if (results.length > 0) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {
-                    req.session = results[0].id;
-                    res.render('profil.twig');
+                    var sessData = req.session;
+                    sessData.someAttribute = results[0].id;
+                    console.log(req.session.someAttribute)
+                    res.redirect('/profil');
                 } else {
                     console.log('game over')
                     res.render('index.twig', {
@@ -78,20 +69,18 @@ app.post('/profil', function (req, res) {
                 }
             })
         } else {
-            if (Object.keys(req.body).length > 2) {
-                console.log(req.body)
-                var hash = bcrypt.hashSync(req.body.password1, 10);
-                let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", "+ req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
-
-                co.query(q, function (error, results, fields) {
-                    if (error) return console.log(error);
-                    console.log(results.insertId)
-                })
-                res.render("profil.twig");
-            } else {
-                res.redirect('/')
-            }
+            res.render('index.twig')
         }
+    })
+});
+
+/* road for profil page */
+app.get('/profil', function (req, res) {
+    //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
+    //récupérer les infos du user en fonction de l'id contenu dans req.session
+    var user_id = req.session.someAttribute.toString()
+    res.render('profil.twig', {
+        id: user_id
     })
 });
 
@@ -117,11 +106,11 @@ app.get('/inscription', function (req, res) {
         co = connection();
     co.connect();
     co.query("select * from sport;", function (error, results, fields) {
-      sport = results;
-
+        if (error) return console.log(error);
+        sport = results;
         co.query("select * from objectifs;", function (error, results, fields) {
+            if (error) return console.log(error);
             objectif = results;
-
             res.render('register.twig', {
                 sports : sport,
                 objectifs : objectif
@@ -131,6 +120,25 @@ app.get('/inscription', function (req, res) {
 
 
 });
+
+app.post('/inscription', function (req, res) {
+        console.log(req.body)
+        let q = "select * from users where email like '" + req.body.email + "';",
+            co = connection();
+        co.connect();
+        co.query(q, function (error, results, fields) {
+            if (error) return console.log(error);
+            if (results.length > 0) res.redirect('/'); //cet email est deja existant
+            var hash = bcrypt.hashSync(req.body.password1, 10);
+            let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
+            co.query(q, function (error, results, fields) {
+                if (error) return console.log(error);
+                req.session = results.insertId;
+                res.redirect("/profil");
+            })
+
+        })
+})
 
 /* road for contact page */
 app.get('/contact', function (req, res) {

@@ -75,32 +75,7 @@ app.post('/', function (req, res) {
     })
 });
 
-/* road for profil page */
-app.get('/profil', function (req, res) {
-    //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
-    //récupérer les infos du user en fonction de l'id contenu dans req.session
-    var user_id = req.session.someAttribute.toString()
-    res.render('profil.twig', {
-        id: user_id
-    })
-});
-
-/* road for paremètre page */
-app.get('/parametres', function (req, res) {
-    res.render('parameters.twig');
-});
-
-/* road for santé page */
-app.get('/sante', function (req, res) {
-    res.render('health.twig');
-});
-
-/* road for sport page */
-app.get('/sport', function (req, res) {
-    res.render('sport.twig');
-});
-
-/* road for sport page */
+/* road for inscription page */
 app.get('/inscription', function (req, res) {
     var sport,
         objectif,
@@ -118,28 +93,51 @@ app.get('/inscription', function (req, res) {
             });
         })
     })
+});
 
-
+/* road for profil page */
+app.get('/profil', function (req, res) {
+    //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
+    //récupérer les infos du user en fonction de l'id contenu dans req.session
+    var user_id = req.session.someAttribute.toString()
+    res.render('profil.twig', {
+        id: user_id
+    })
 });
 
 app.post('/inscription', function (req, res) {
-        console.log(req.body)
-        let q = "select * from users where email like '" + req.body.email + "';",
-            co = connection();
-        co.connect();
+    console.log(req.body)
+    let q = "select * from users where email like '" + req.body.email + "';",
+        co = connection();
+    co.connect();
+    co.query(q, function (error, results, fields) {
+        if (error) return console.log(error);
+        if (results.length > 0) res.redirect('/'); //cet email est deja existant
+        var hash = bcrypt.hashSync(req.body.password1, 10);
+        let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
         co.query(q, function (error, results, fields) {
             if (error) return console.log(error);
-            if (results.length > 0) res.redirect('/'); //cet email est deja existant
-            var hash = bcrypt.hashSync(req.body.password1, 10);
-            let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
-            co.query(q, function (error, results, fields) {
-                if (error) return console.log(error);
-                req.session = results.insertId;
-                res.redirect("/profil");
-            })
-
+            req.session = results.insertId;
+            res.redirect("/profil");
         })
-})
+
+    })
+});
+
+/* road for paremètre page */
+app.get('/parametres', function (req, res) {
+    res.render('parameters.twig');
+});
+
+/* road for santé page */
+app.get('/sante', function (req, res) {
+    res.render('health.twig');
+});
+
+/* road for sport page */
+app.get('/sport', function (req, res) {
+    res.render('sport.twig');
+});
 
 /* road for contact page */
 app.get('/contact', function (req, res) {
@@ -162,7 +160,6 @@ app.use(function(req, res) {
     res.status(500);
     res.render('index.twig'); // A CHANGER QUAND LA PAGE 404 OK
 });*/
-
 
 server.listen(port);
 console.log("application live on port " + port);

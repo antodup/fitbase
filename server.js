@@ -24,12 +24,23 @@ app.use('/fonts', express.static('web-app/assets/fonts'));
 //connection for windows
 var connection = function () {
     return mysql.createConnection({
-        host: 'mysql-fitbase.alwaysdata.net',
-        user: 'fitbase',
-        password: 'totolola42',
-        database: 'fitbase_bdd'
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'fitbase'
     });
 }
+
+//connection for mac
+/*var connection = function () {
+    return mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'fitbase',
+        socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    });
+}*/
 
 //config bodyParser
 app.use(bodyParser.urlencoded({

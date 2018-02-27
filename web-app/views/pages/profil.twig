@@ -1,5 +1,13 @@
 {% extends '../base.twig' %}
 
 {% block body %}
-    {{ id }}
+<main class="background nav-container">
+
+    {% block header %}
+        {% include '../layout/header.twig' %}
+    {% endblock %}
+
+    <section>{{ id }}</section>
+
+</main>
 {% endblock %}

@@ -13017,3 +13017,48 @@ body {
   background-color: #0F131D;
   color: white;
 }
+
+/* line 1, ../scss/partials/layout/_nav.scss */
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 768px) {
+  /* line 1, ../scss/partials/layout/_nav.scss */
+  .nav-container {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+/* line 14, ../scss/partials/layout/_nav.scss */
+.nav-container #menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 10vw;
+}
+@media screen and (max-width: 768px) {
+  /* line 14, ../scss/partials/layout/_nav.scss */
+  .nav-container #menu {
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+  }
+}
+/* line 24, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav {
+  height: 100%;
+  width: 100%;
+  background: red;
+}
+@media screen and (max-width: 768px) {
+  /* line 24, ../scss/partials/layout/_nav.scss */
+  .nav-container #menu nav {
+    flex-direction: row;
+  }
+}

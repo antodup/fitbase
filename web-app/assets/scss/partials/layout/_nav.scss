@@ -1,0 +1,33 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+
+  @media screen and (max-width: 768px){
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  #menu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 10vw;
+    @media screen and (max-width: 768px){
+      flex-direction: row;
+      width: 100%;
+      height: 10vh;
+    }
+    nav {
+      height: 100%;
+      width: 100%;
+      background: red;
+      @media screen and (max-width: 768px){
+        flex-direction: row;
+      }
+    }
+  }
+}

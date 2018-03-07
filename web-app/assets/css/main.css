@@ -13039,8 +13039,10 @@ body {
 .nav-container #menu {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 10vw;
+  background: red;
 }
 @media screen and (max-width: 768px) {
   /* line 14, ../scss/partials/layout/_nav.scss */
@@ -13050,15 +13052,61 @@ body {
     height: 5vh;
   }
 }
-/* line 24, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav {
-  height: 100%;
+/* line 26, ../scss/partials/layout/_nav.scss */
+.nav-container #menu .logo {
+  height: 8%;
   width: 100%;
-  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+}
+/* line 34, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav {
+  margin-top: 20px;
+  height: calc(80% - 20px);
+  width: 100%;
+  background-color: #00b3ee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 24, ../scss/partials/layout/_nav.scss */
+  /* line 34, ../scss/partials/layout/_nav.scss */
   .nav-container #menu nav {
     flex-direction: row;
   }
+}
+/* line 46, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav div:first-child {
+  margin-top: 10px;
+}
+/* line 49, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav .topic-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* line 55, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav .icon {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  margin-bottom: 5px;
+}
+/* line 61, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav .topic {
+  color: white;
+  transform: rotate(-90deg);
+  display: block;
+}
+/* line 65, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav .topic:not(:last-child) {
+  margin-top: 15px;
+}
+/* line 68, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav .topic:last-child {
+  margin-top: 40px;
 }

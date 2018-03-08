@@ -13018,6 +13018,15 @@ body {
   color: white;
 }
 
+/* line 1, ../scss/partials/_register.scss */
+.ctn-register {
+  width: calc(100% - 70px);
+}
+/* line 3, ../scss/partials/_register.scss */
+.ctn-register section {
+  width: 40%;
+}
+
 /* line 1, ../scss/partials/layout/_nav.scss */
 .nav-container {
   display: flex;
@@ -13101,12 +13110,12 @@ body {
   color: white;
   transform: rotate(-90deg);
   display: block;
-}
-/* line 65, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav .topic:not(:last-child) {
   margin-top: 15px;
 }
-/* line 68, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav .topic:last-child {
+/* line 67, ../scss/partials/layout/_nav.scss */
+.nav-container #menu nav .topic2 {
+  color: white;
+  transform: rotate(-90deg);
+  display: block;
   margin-top: 40px;
 }

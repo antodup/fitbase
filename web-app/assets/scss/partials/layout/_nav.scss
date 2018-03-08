@@ -1,4 +1,4 @@
-.nav-container {
+.ctn-general {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -62,12 +62,13 @@
         color: white;
         transform: rotate(-90deg);
         display: block;
-        &:not(:last-child) {
-          margin-top: 15px;
-        }
-        &:last-child {
-          margin-top: 40px;
-        }
+        margin-top: 15px;
+      }
+      .topic2 {
+        color: white;
+        transform: rotate(-90deg);
+        display: block;
+        margin-top: 40px;
       }
     }
   }

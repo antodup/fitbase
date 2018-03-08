@@ -13033,97 +13033,96 @@ body {
   margin-bottom: 1em;
 }
 
-/* line 13, ../scss/partials/_register.scss */
+/* line 14, ../scss/partials/_register.scss */
+#part2 .first_div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 19, ../scss/partials/_register.scss */
 .register-contain {
   width: 25%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* line 19, ../scss/partials/_register.scss */
+/* line 25, ../scss/partials/_register.scss */
 .rangeslider,
 input[type='range'] {
   max-width: 400px;
 }
-/* line 22, ../scss/partials/_register.scss */
+/* line 28, ../scss/partials/_register.scss */
 .rangeslider .rangeslider__fill,
 input[type='range'] .rangeslider__fill {
   background-color: #F4E932;
 }
 
-/* line 27, ../scss/partials/_register.scss */
+/* line 33, ../scss/partials/_register.scss */
 .rangeslider__handle {
   border-radius: 22px;
   min-width: 62px;
   line-height: 42px;
   text-align: center;
 }
-/* line 32, ../scss/partials/_register.scss */
+/* line 38, ../scss/partials/_register.scss */
 .rangeslider__handle:after {
   background: 0;
 }
 
-/*#part4 {
-  input[type='number'] {
-    width: 50%;
-    height: 350px;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    font-size: 6em;
-  }
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
-    width: 100%;
-    border-left: 1px solid #BBB;
-    opacity: .5;
-    background-size : 200%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-}*/
-/* line 61, ../scss/partials/_register.scss */
+/* line 43, ../scss/partials/_register.scss */
 input[type="number"] {
   position: relative;
   margin: 0 auto;
-  width: 50%;
+  width: 35%;
   height: 350px;
   display: block;
+  text-align: center;
+  font-size: 6em;
 }
-
-/* Spin Buttons modified */
-/* line 70, ../scss/partials/_register.scss */
-input[type="number"].mod::-webkit-outer-spin-button,
-input[type="number"].mod::-webkit-inner-spin-button {
+/* line 52, ../scss/partials/_register.scss */
+input[type="number"].mod::-webkit-outer-spin-button, input[type="number"].mod::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  background: #FFF url("img/input_number.svg") no-repeat center center;
+  background: url("../img/input_number.svg") no-repeat center center;
   width: 100%;
   border-left: 1px solid #BBB;
   opacity: .5;
   /* shows Spin Buttons per default (Chrome >= 39) */
-  background-size: 200%;
+  background-size: contain;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
 }
-
-/* line 83, ../scss/partials/_register.scss */
-input[type="number"].mod::-webkit-inner-spin-button:hover,
-input[type="number"].mod::-webkit-inner-spin-button:active {
+/* line 65, ../scss/partials/_register.scss */
+input[type="number"].mod::-webkit-outer-spin-button:hover, input[type="number"].mod::-webkit-outer-spin-button:active, input[type="number"].mod::-webkit-inner-spin-button:hover, input[type="number"].mod::-webkit-inner-spin-button:active {
   box-shadow: 0 0 2px #0CF;
   opacity: .8;
 }
 
-/* Override browser form filling */
-/* line 90, ../scss/partials/_register.scss */
+/* line 74, ../scss/partials/_register.scss */
+#part4 label {
+  display: none;
+}
+
+/* line 79, ../scss/partials/_register.scss */
 input:-webkit-autofill {
   background: black;
   color: red;
+}
+
+/* line 85, ../scss/partials/_register.scss */
+#part5 div {
+  position: relative;
+}
+/* line 88, ../scss/partials/_register.scss */
+#part5 div input[name="objectif"] {
+  width: 100%;
+  display: none;
+}
+/* line 92, ../scss/partials/_register.scss */
+#part5 div label {
+  font-size: 1.5em;
+  color: #242428;
 }
 
 /* line 1, ../scss/partials/layout/_nav.scss */

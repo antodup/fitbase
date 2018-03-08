@@ -6,7 +6,7 @@
 
 <main class="background ctn-general">
     {% block header %}
-    {% include '../layout/header.twig' %}
+        {% include '../layout/header.twig' %}
     {% endblock %}
     <form class="ctn-contenu" method="post" action="/profil" style="color:white;">
         <section id="part1" class="d-none">
@@ -47,7 +47,7 @@
         </section>
         <section id="part2" class="d-none">
             <h2 class="text-center">VOS MENSURATIONS</h2>
-            <div class="d-flex">
+            <div class="first_div d-flex">
                 <label class="d-none">taille</label>
                 <input name="height" type="range" min="120" max="220" step="1" data-orientation="vertical" required>
                 <img class="m-auto" src="/img/body.svg" alt="body"/>
@@ -57,21 +57,26 @@
                    required>
             <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
-        <section id="part3" class="d-none"> {# twig #}
+        <section id="part3" class="d-none">
             {% for sport in sports %}
             <input type="checkbox" value="{{ sport.id }}" name="sport"><label>{{ sport.name }}</label>
             {% endfor %}
             <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
-        <section id="part4" class="d-block">
+        <section id="part4" class="d-none">
+            <h2 class="text-center">COMBIEN DE FOIS PAR SEMAINE ?</h2>
             <input name="frequencies" class="mod" type="number" min="0" max="7" value="0"><label>Frequence</label>
-            <button type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
-        <section id="part5" class="d-none"> {# twig #}
+        <section id="part5" class="d-block">
+            <h2 class="text-center">VOS OBJECTIFS</h2>
             {% for objectif in objectifs %}
-            <input type="radio" value="{{ objectif.id }}" name="objectif"><label>#{{ objectif.title }}</label>
+            <div>
+            <input type="radio" value="{{ objectif.id }}" id="{{ objectif.title }}" name="objectif">
+                <label for="{{ objectif.title }}" class="text-uppercase">#{{ objectif.title }}</label>
+            </div>
             {% endfor %}
-            <button type="submit">TERMINER</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>TERMINER</button>
         </section>
     </form>
     <section class="register-contain">

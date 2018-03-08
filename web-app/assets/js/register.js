@@ -20,6 +20,17 @@ for (var i = 0; i < inputPart1.length; i++) {
 
 console.log(document.querySelectorAll("#part1 input"))*/
 
+//OBJECTIFS
+var $oldInput = null
+$('input[name="objectif"]').on("click", function () {
+    if ($oldInput != null) {
+        $oldInput.parent().children("label").css("color", "#242428")
+    }
+    let $label = $(this).parent().children("label");
+    $label.css("color", "white")
+    $oldInput = $(this)
+})
+
 //INPUT RANGE
 var $inputRange = $('input[type="range"]');
 
@@ -30,9 +41,9 @@ $inputRange.rangeslider({
         updateHandle($handle[0], this.value);
     }
 }).on('input', function (e) {
-        var $handle = $('.rangeslider__handle', e.target.nextSibling);
-        updateHandle($handle[0], this.value);
-    });
+    var $handle = $('.rangeslider__handle', e.target.nextSibling);
+    updateHandle($handle[0], this.value);
+});
 
 function updateHandle(el, val) {
     el.textContent = val;

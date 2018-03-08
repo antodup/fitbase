@@ -10,6 +10,12 @@
   }
 }
 
+#part2 {
+  .first_div {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 .register-contain {
   width: 25%;
   height: 100vh;
@@ -34,62 +40,59 @@ input[type='range'] {
   }
 }
 
-/*#part4 {
-  input[type='number'] {
-    width: 50%;
-    height: 350px;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    font-size: 6em;
-  }
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
+input[type="number"] {
+  position: relative;
+  margin: 0 auto;
+  width: 35%;
+  height: 350px;
+  display: block;
+  text-align: center;
+  font-size: 6em;
+
+  &.mod::-webkit-outer-spin-button,
+  &.mod::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+    background: url("../img/input_number.svg") no-repeat center center;
     width: 100%;
     border-left: 1px solid #BBB;
-    opacity: .5;
-    background-size : 200%;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+    background-size: contain;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0 2px #0CF;
+      opacity: .8;
+    }
   }
-}*/
-
-input[type="number"] {
-  position: relative;
-  margin: 0 auto;
-  width: 50%;
-  height: 350px;
-  display: block;
 }
 
-/* Spin Buttons modified */
-input[type="number"].mod::-webkit-outer-spin-button,
-input[type="number"].mod::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  background: #FFF url("img/input_number.svg") no-repeat center center;
-  width: 100%;
-  border-left: 1px solid #BBB;
-  opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
-  background-size : 200%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-input[type="number"].mod::-webkit-inner-spin-button:hover,
-input[type="number"].mod::-webkit-inner-spin-button:active{
-  box-shadow: 0 0 2px #0CF;
-  opacity: .8;
+#part4 {
+  label {
+    display: none;
+  }
 }
 
-/* Override browser form filling */
 input:-webkit-autofill {
   background: black;
   color: red;
 }
 
+#part5 {
+  div {
+    position: relative;
+
+    input[name="objectif"] {
+      width:100%;
+      display: none;
+    }
+    label {
+      font-size: 1.5em;
+      color: $fb-darkBlack;
+    }
+  }
+}
 

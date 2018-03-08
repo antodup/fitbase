@@ -13028,7 +13028,7 @@ body {
 }
 
 /* line 1, ../scss/partials/layout/_nav.scss */
-.nav-container {
+.ctn-general {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -13039,83 +13039,108 @@ body {
 }
 @media screen and (max-width: 768px) {
   /* line 1, ../scss/partials/layout/_nav.scss */
-  .nav-container {
+  .ctn-general {
     flex-direction: column-reverse;
     justify-content: space-between;
   }
 }
 /* line 14, ../scss/partials/layout/_nav.scss */
-.nav-container #menu {
+.ctn-general #menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   width: 10vw;
-  background: red;
 }
 @media screen and (max-width: 768px) {
   /* line 14, ../scss/partials/layout/_nav.scss */
-  .nav-container #menu {
+  .ctn-general #menu {
     flex-direction: row;
     width: 100%;
     height: 5vh;
   }
 }
-/* line 26, ../scss/partials/layout/_nav.scss */
-.nav-container #menu .logo {
+/* line 25, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu .logo {
+  margin-top: 10px;
   height: 8%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
 }
-/* line 34, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav {
+/* line 33, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav {
   margin-top: 20px;
-  height: calc(80% - 20px);
+  height: calc(85% - 20px);
   width: 100%;
-  background-color: #00b3ee;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 34, ../scss/partials/layout/_nav.scss */
-  .nav-container #menu nav {
+  /* line 33, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav {
     flex-direction: row;
   }
 }
-/* line 46, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav div:first-child {
+/* line 44, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav div:first-child {
   margin-top: 10px;
 }
-/* line 49, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav .topic-block {
+/* line 47, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  transition: all ease 2s;
 }
-/* line 55, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav .icon {
-  height: 20px;
-  width: 20px;
-  background-color: black;
-  margin-bottom: 5px;
-}
-/* line 61, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav .topic {
-  color: white;
-  transform: rotate(-90deg);
+/* line 54, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block:not(:last-child):hover p {
   display: block;
-  margin-top: 15px;
+  transition: all ease 2s;
+}
+/* line 60, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block:last-child:hover p {
+  display: block;
+  transition: all ease 2s;
+  margin-top: 40px;
 }
 /* line 67, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav .topic2 {
+.ctn-general #menu nav .topic-block .icon {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* line 76, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic {
   color: white;
   transform: rotate(-90deg);
+  display: none;
+  margin-top: 15px;
+}
+/* line 83, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block #profil {
   display: block;
+  padding-bottom: 10px;
+  margin-left: 14px;
+  color: #F4E932;
+}
+/* line 90, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic2 {
+  color: white;
+  transform: rotate(-90deg);
+  display: none;
   margin-top: 40px;
+}
+/* line 97, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .nav-line {
+  width: 1px;
+  height: 22%;
+  background-color: white;
 }

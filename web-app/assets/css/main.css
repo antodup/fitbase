@@ -13019,10 +13019,66 @@ body {
 }
 
 /* line 1, ../scss/partials/_register.scss */
-.ctn-register {
-  width: calc(100% - 70px);
+.ctn-contenu {
+  width: 90vw;
 }
 /* line 3, ../scss/partials/_register.scss */
-.ctn-register section {
-  width: 40%;
+.ctn-contenu section {
+  width: 55%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 8, ../scss/partials/_register.scss */
+.ctn-contenu h2 {
+  margin-bottom: 1em;
+}
+
+/* line 13, ../scss/partials/_register.scss */
+.register-contain {
+  width: 25%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* line 1, ../scss/partials/layout/_nav.scss */
+.ctn-general {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 768px) {
+  /* line 1, ../scss/partials/layout/_nav.scss */
+  .ctn-general {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+/* line 12, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 10vw;
+}
+@media screen and (max-width: 768px) {
+  /* line 12, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu {
+    flex-direction: row;
+    width: 100%;
+    height: 5vh;
+  }
+}
+/* line 22, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav {
+  height: 100%;
+  width: 100%;
+  background: red;
+}
+@media screen and (max-width: 768px) {
+  /* line 22, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav {
+    flex-direction: row;
+  }
 }

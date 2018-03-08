@@ -1,14 +1,23 @@
 {% extends '../base.twig' %}
+{% block stylesheetCustom %}
+<link rel="stylesheet" href="/css/rangeslider.css"/>
+{% endblock %}
 {% block body %}
-<form class="background justify-content-end" method="post" action="/profil" style="color:white;">
-    <section class="ctn-register d-flex align-items-center justify-content-center">
-        <section id="part1">
+
+<main class="background ctn-general">
+    {% block header %}
+    {% include '../layout/header.twig' %}
+    {% endblock %}
+    <form class="ctn-contenu" method="post" action="/profil" style="color:white;">
+        <section id="part1" class="d-none">
+            <h2 class="text-center">VOTRE PROFIL</h2>
             <div class="fbCustom-input mb-2">
                 <input class="input-field" id="lastname" type="text" name="lastname" placeholder="nom" required>
                 <label class="input-label" for="lastname">Nom</label>
             </div>
             <div class="fbCustom-input mb-2">
-                <input class="input-field" id="firstname" type="text" name="firstname" placeholder="prénom" required>
+                <input class="input-field" id="firstname" type="text" name="firstname" placeholder="prénom"
+                       required>
                 <label class="input-label" for="firstname">Prénom</label>
             </div>
             <div class="fbCustom-input mb-2">
@@ -16,7 +25,8 @@
                 <label class="input-label" for="pseudo">Pseudo</label>
             </div>
             <div class="fbCustom-input mb-2">
-                <input class="input-field" id="birthday" type="date" name="birthday" placeholder="date de naissance" required>
+                <input class="input-field" id="birthday" type="date" name="birthday" placeholder="date de naissance"
+                       required>
                 <label class="input-label" for="birthday">Date de naissance</label>
             </div>
             <div class="fbCustom-input mb-2">
@@ -24,53 +34,52 @@
                 <label class="input-label" for="email">E-mail</label>
             </div>
             <div class="fbCustom-input mb-2">
-                <input class="input-field" id="password1" type="password" name="password1" placeholder="mot de passe" required>
+                <input class="input-field" id="password1" type="password" name="password1"
+                       placeholder="mot de passe" required>
                 <label class="input-label" for="password1">Mot de passe</label>
             </div>
             <div class="fbCustom-input mb-2">
-                <input class="input-field" id="password2" type="password" name="password2" placeholder="confirmation de mot de passe" required>
+                <input class="input-field" id="password2" type="password" name="password2"
+                       placeholder="confirmation de mot de passe" required>
                 <label class="input-label" for="password2">Confirmation de mot de passe</label>
             </div>
-            <button type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled" type="button" disabled>SUIVANT</button>
         </section>
         <section id="part2" class="d-none">
-            <label>taille</label>
-            <input name="height" type="range" min="120" max="220" required>
-            <label>poid</label>
-            <input name="weight" type="range" min="30" max="200" required>
-            <button type="button" disabled>SUIVANT</button>
+            <h2 class="text-center">VOS MENSURATIONS</h2>
+            <div class="d-flex">
+                <label class="d-none">taille</label>
+                <input name="height" type="range" min="120" max="220" step="1" data-orientation="vertical" required>
+                <img class="m-auto" src="/img/body.svg" alt="body"/>
+            </div>
+            <label class="d-none">poid</label>
+            <input name="weight" type="range" min="30" max="200" step="1" value="80" data-orientation="horizontal"
+                   required>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
         <section id="part3" class="d-none"> {# twig #}
             {% for sport in sports %}
             <input type="checkbox" value="{{ sport.id }}" name="sport"><label>{{ sport.name }}</label>
             {% endfor %}
-            {#<input type="checkbox" value="marche"><label>Marche</label>
-            <input type="checkbox" value="running"><label>Running</label>
-            <input type="checkbox" value="cyclisme"><label>Cyclisme</label>
-            <input type="checkbox" value="yoga"><label>Yoga</label>
-            <input type="checkbox" value="musculation"><label>Musculation</label>
-            <input type="checkbox" value="natation"><label>Natation</label>
-            <input type="checkbox" value="football"><label>Football</label>
-            <input type="checkbox" value="tennis"><label>Tennis</label>
-            <input type="checkbox" value="boxe"><label>Boxe</label>#}
-            <button type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
-        <section id="part4" class="d-none">
-            <input name="frequencies" type="number" min="0" max="7" value="0"><label>Frequence</label>
+        <section id="part4" class="d-block">
+            <input name="frequencies" class="mod" type="number" min="0" max="7" value="0"><label>Frequence</label>
             <button type="button" disabled>SUIVANT</button>
         </section>
         <section id="part5" class="d-none"> {# twig #}
             {% for objectif in objectifs %}
             <input type="radio" value="{{ objectif.id }}" name="objectif"><label>#{{ objectif.title }}</label>
             {% endfor %}
-            {#<input type="checkbox" value="perdre du poid"><label>#Perdre du poid</label>
-            <input type="checkbox" value="prise de masse"><label>#Prise de masse</label>
-            <input type="checkbox" value="rester en forme"><label>#Rester en forme</label>
-            <input type="checkbox" value="se dépenser"><label>#Se dépenser</label>
-            <input type="checkbox" value="Remise en forme"><label>#Remise en forme</label>
-            <input type="checkbox" value="Objectif pro"><label>#Objectif pro</label>#}
             <button type="submit">TERMINER</button>
         </section>
+    </form>
+    <section class="register-contain">
+        <article></article>
     </section>
-</form>
+</main>
+{% endblock %}
+{% block javascripts %}
+<script src="/js/vendor/rangeslider.min.js"></script>
+<script src="/js/register.js"></script>
 {% endblock %}

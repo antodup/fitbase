@@ -1,6 +1,95 @@
-.ctn-register {
-  width: calc(100% - 70px);
+.ctn-contenu {
+  width: 90vw;
   section {
-    width: 40%;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h2 {
+    margin-bottom: 1em;
   }
 }
+
+.register-contain {
+  width: 25%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rangeslider,
+input[type='range'] {
+  max-width: 400px;
+  .rangeslider__fill {
+    background-color: #F4E932;
+  }
+}
+
+.rangeslider__handle {
+  border-radius: 22px;
+  min-width: 62px;
+  line-height: 42px;
+  text-align: center;
+  &:after {
+    background: 0;
+  }
+}
+
+/*#part4 {
+  input[type='number'] {
+    width: 50%;
+    height: 350px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 6em;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+    width: 100%;
+    border-left: 1px solid #BBB;
+    opacity: .5;
+    background-size : 200%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}*/
+
+input[type="number"] {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  height: 350px;
+  display: block;
+}
+
+/* Spin Buttons modified */
+input[type="number"].mod::-webkit-outer-spin-button,
+input[type="number"].mod::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background: #FFF url("img/input_number.svg") no-repeat center center;
+  width: 100%;
+  border-left: 1px solid #BBB;
+  opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+  background-size : 200%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+input[type="number"].mod::-webkit-inner-spin-button:hover,
+input[type="number"].mod::-webkit-inner-spin-button:active{
+  box-shadow: 0 0 2px #0CF;
+  opacity: .8;
+}
+
+/* Override browser form filling */
+input:-webkit-autofill {
+  background: black;
+  color: red;
+}
+
+

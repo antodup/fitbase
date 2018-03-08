@@ -12545,7 +12545,7 @@ body {
 }
 /* line 25, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--bordered {
-  font-size: 11px;
+  font-size: 13px;
   color: #2D3544;
   line-height: 1;
   padding: 17px 25px;
@@ -12725,7 +12725,7 @@ body {
 .fbCustom-input .input-field {
   width: 100%;
   font-size: 13px;
-  color: #fff;
+  color: #2D3544;
   line-height: 16px;
   padding: 20px 15px 10px 15px;
   outline: none;

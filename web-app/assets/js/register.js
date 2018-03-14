@@ -7,6 +7,11 @@
 #usage            : JAVASCRIPT
 #notes            : 
 =============================================================*/
+//RESPONSIVE
+if (document.documentElement.clientWidth >= 320 && document.documentElement.clientWidth <= 768) {
+    $("form").prepend("<img class=\"logo-responsive\" src=\"/img/logo.svg\" alt=\"logo\"/>");
+}
+
 //SPORT
 $('input[name="sport"]').on("click", function () {
     if ($(this).prop("checked") == true) {

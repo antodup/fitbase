@@ -40,6 +40,40 @@ input[type='range'] {
   }
 }
 
+#part3 {
+  div {
+    width:33%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      display: flex;
+      width: 110px;
+      height:110px;
+      flex-direction: column;
+      margin: 15px;
+      justify-content: center;
+      align-items: center;
+      font-weight: 300;
+      font-size: 0.8em;
+      background-image: url("/img/inscription/grille.svg");
+      background-size: cover;
+      &:hover {
+        background-color: $fb-darkBlue;
+      }
+      img {
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+}
+
 input[type="number"] {
   position: relative;
   margin: 0 auto;
@@ -52,7 +86,7 @@ input[type="number"] {
   &.mod::-webkit-outer-spin-button,
   &.mod::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    background: url("../img/input_number.svg") no-repeat center center;
+    background: url("../img/inscription/input_number.svg") no-repeat center center;
     width: 100%;
     border-left: 1px solid #BBB;
     opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
@@ -93,6 +127,34 @@ input:-webkit-autofill {
       font-size: 1.5em;
       color: $fb-darkBlack;
     }
+  }
+}
+
+.register-contain {
+  padding: 30px 40px;
+  color: white;
+  
+  article{
+    margin-bottom: 30px;
+  }
+  img {
+    margin-top: 10px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+  }
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+  p{
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 0.9em;
   }
 }
 

@@ -13069,7 +13069,43 @@ input[type='range'] .rangeslider__fill {
   background: 0;
 }
 
-/* line 43, ../scss/partials/_register.scss */
+/* line 44, ../scss/partials/_register.scss */
+#part3 div {
+  width: 33%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* line 50, ../scss/partials/_register.scss */
+#part3 div input {
+  display: none;
+}
+/* line 53, ../scss/partials/_register.scss */
+#part3 div label {
+  cursor: pointer;
+  display: flex;
+  width: 110px;
+  height: 110px;
+  flex-direction: column;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 0.8em;
+  background-image: url("/img/inscription/grille.svg");
+  background-size: cover;
+}
+/* line 66, ../scss/partials/_register.scss */
+#part3 div label:hover {
+  background-color: #2D3544;
+}
+/* line 69, ../scss/partials/_register.scss */
+#part3 div label img {
+  margin-bottom: 10px;
+}
+
+/* line 77, ../scss/partials/_register.scss */
 input[type="number"] {
   position: relative;
   margin: 0 auto;
@@ -13079,10 +13115,10 @@ input[type="number"] {
   text-align: center;
   font-size: 6em;
 }
-/* line 52, ../scss/partials/_register.scss */
+/* line 86, ../scss/partials/_register.scss */
 input[type="number"].mod::-webkit-outer-spin-button, input[type="number"].mod::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  background: url("../img/input_number.svg") no-repeat center center;
+  background: url("../img/inscription/input_number.svg") no-repeat center center;
   width: 100%;
   border-left: 1px solid #BBB;
   opacity: .5;
@@ -13093,36 +13129,69 @@ input[type="number"].mod::-webkit-outer-spin-button, input[type="number"].mod::-
   right: 0;
   bottom: 0;
 }
-/* line 65, ../scss/partials/_register.scss */
+/* line 99, ../scss/partials/_register.scss */
 input[type="number"].mod::-webkit-outer-spin-button:hover, input[type="number"].mod::-webkit-outer-spin-button:active, input[type="number"].mod::-webkit-inner-spin-button:hover, input[type="number"].mod::-webkit-inner-spin-button:active {
   box-shadow: 0 0 2px #0CF;
   opacity: .8;
 }
 
-/* line 74, ../scss/partials/_register.scss */
+/* line 108, ../scss/partials/_register.scss */
 #part4 label {
   display: none;
 }
 
-/* line 79, ../scss/partials/_register.scss */
+/* line 113, ../scss/partials/_register.scss */
 input:-webkit-autofill {
   background: black;
   color: red;
 }
 
-/* line 85, ../scss/partials/_register.scss */
+/* line 119, ../scss/partials/_register.scss */
 #part5 div {
   position: relative;
 }
-/* line 88, ../scss/partials/_register.scss */
+/* line 122, ../scss/partials/_register.scss */
 #part5 div input[name="objectif"] {
   width: 100%;
   display: none;
 }
-/* line 92, ../scss/partials/_register.scss */
+/* line 126, ../scss/partials/_register.scss */
 #part5 div label {
   font-size: 1.5em;
   color: #242428;
+}
+
+/* line 133, ../scss/partials/_register.scss */
+.register-contain {
+  padding: 30px 40px;
+  color: white;
+}
+/* line 136, ../scss/partials/_register.scss */
+.register-contain article {
+  margin-bottom: 30px;
+}
+/* line 139, ../scss/partials/_register.scss */
+.register-contain img {
+  margin-top: 10px;
+}
+/* line 142, ../scss/partials/_register.scss */
+.register-contain div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+/* line 149, ../scss/partials/_register.scss */
+.register-contain h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+/* line 153, ../scss/partials/_register.scss */
+.register-contain p {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 0.9em;
 }
 
 /* line 1, ../scss/partials/layout/_nav.scss */
@@ -13144,8 +13213,10 @@ input:-webkit-autofill {
 .ctn-general #menu {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 10vw;
+  background: red;
 }
 @media screen and (max-width: 768px) {
   /* line 12, ../scss/partials/layout/_nav.scss */
@@ -13155,15 +13226,61 @@ input:-webkit-autofill {
     height: 5vh;
   }
 }
-/* line 22, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav {
-  height: 100%;
+/* line 24, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu .logo {
+  height: 8%;
   width: 100%;
-  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+}
+/* line 32, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav {
+  margin-top: 20px;
+  height: calc(80% - 20px);
+  width: 100%;
+  background-color: #00b3ee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 22, ../scss/partials/layout/_nav.scss */
+  /* line 32, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu nav {
     flex-direction: row;
   }
+}
+/* line 44, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav div:first-child {
+  margin-top: 10px;
+}
+/* line 47, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* line 53, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .icon {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  margin-bottom: 5px;
+}
+/* line 59, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic {
+  color: white;
+  transform: rotate(-90deg);
+  display: block;
+}
+/* line 63, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic:not(:last-child) {
+  margin-top: 15px;
+}
+/* line 66, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic:last-child {
+  margin-top: 40px;
 }

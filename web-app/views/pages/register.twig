@@ -6,7 +6,7 @@
 
 <main class="background ctn-general">
     {% block header %}
-        {% include '../layout/header.twig' %}
+    {% include '../layout/header.twig' %}
     {% endblock %}
     <form class="ctn-contenu" method="post" action="/profil" style="color:white;">
         <section id="part1" class="d-none">
@@ -57,10 +57,15 @@
                    required>
             <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
-        <section id="part3" class="d-none">
-            {% for sport in sports %}
-            <input type="checkbox" value="{{ sport.id }}" name="sport"><label>{{ sport.name }}</label>
-            {% endfor %}
+        <section id="part3" class="d-block">
+            <article class="d-inline-flex flex-wrap">
+                {% for sport in sports %}
+                <div>
+                    <input id="{{ sport.name }}" type="checkbox" value="{{ sport.id }}" name="sport">
+                    <label for="{{ sport.name }}"><img src="{{ sport.picto_path }}">{{ sport.name }}</label>
+                </div>
+                {% endfor %}
+            </article>
             <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
         <section id="part4" class="d-none">
@@ -68,11 +73,11 @@
             <input name="frequencies" class="mod" type="number" min="0" max="7" value="0"><label>Frequence</label>
             <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
         </section>
-        <section id="part5" class="d-block">
+        <section id="part5" class="d-none">
             <h2 class="text-center">VOS OBJECTIFS</h2>
             {% for objectif in objectifs %}
             <div>
-            <input type="radio" value="{{ objectif.id }}" id="{{ objectif.title }}" name="objectif">
+                <input type="radio" value="{{ objectif.id }}" id="{{ objectif.title }}" name="objectif">
                 <label for="{{ objectif.title }}" class="text-uppercase">#{{ objectif.title }}</label>
             </div>
             {% endfor %}
@@ -80,7 +85,38 @@
         </section>
     </form>
     <section class="register-contain">
-        <article></article>
+        <article>
+            <h2>VOTRE PROFILE</h2>
+            <p>NOM</p>
+            <p>Prénom</p>
+            <p>Pseudo</p>
+            <p>Date de naissance</p>
+            <p>e-mail</p>
+        </article>
+
+        <article>
+            <h2>VOS MENSURATIONS</h2>
+            <p>175cm</p>
+            <p>85kg</p>
+        </article>
+
+        <article>
+            <h2>VOTRE SPORT</h2>
+            <div>
+                <img src="/img/inscription/picto inscription/cyclisme.svg" alt="">
+                <p>nom du sport</p>
+            </div>
+        </article>
+
+        <article>
+            <h2>FREQUENCES</h2>
+            <p><span>2</span> fois par semaine</p>
+        </article>
+
+        <article>
+            <h2>OBJECTIFS</h2>
+            <p>#MAINCIR</p>
+        </article>
     </section>
 </main>
 {% endblock %}

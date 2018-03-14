@@ -7,18 +7,14 @@
 #usage            : JAVASCRIPT
 #notes            : 
 =============================================================*/
-/*VERIFICATION FORMULAIRE
-var inputPart1 = document.querySelectorAll("#part1 input");
-
-for (var i = 0; i < inputPart1.length; i++) {
-    console.log(inputPart1[i])
-    if (inputPart1[i].value == "") {
-        console.log("ok")
-        alert("la valeur est vide")
+//SPORT
+$('input[name="sport"]').on("click", function () {
+    if ($(this).prop("checked") == true) {
+        $(this).parent().children("label").css("background-color", "#2D3544")
+    } else {
+        $(this).parent().children("label").css("background-color", "transparent")
     }
-}
-
-console.log(document.querySelectorAll("#part1 input"))*/
+})
 
 //OBJECTIFS
 var $oldInput = null

@@ -49,3 +49,58 @@ $inputRange.rangeslider({
 function updateHandle(el, val) {
     el.textContent = val;
 }
+
+
+// check click on next button
+
+$('#part1 button[type="button"]').on('click', function () {
+    var nxt = 0
+    var info = []
+    let inputs = this.parentNode.querySelectorAll('input')
+    for (let i=0; i < inputs.length; i++) {
+        let input = inputs[i]
+        if (input.value != '') {
+            if (i == 5) {
+                console.log(input.value)
+                console.log(inputs[6].value)
+                if (input.value != inputs[6].value) {
+                    nxt = 1
+                    break
+                }
+            } else {
+                info[i] = input.value
+            }
+        } else {
+            nxt = 1
+            break
+        }
+    }
+    if (nxt != 1) {
+        $('#part1').addClass('d-none')
+        $('#part2').removeClass('d-none')
+        $('.register-contain').append('<article>\n' +
+            '            <h2>VOTRE PROFILE</h2>\n' +
+            '        </article><p>Nom : '+info[0]+'</p><p> Prénom : '+info[1]+'</p><p> Pseudo : '+info[2]+'</p><p> Date de naissance : '+info[3]+'</p><p> e-mail : '+info[4]+'</p></article>')
+    }
+})
+
+$('#part2 button[type="button"]').on('click', function () {
+    $('#part2').addClass('d-none')
+    $('#part3').removeClass('d-none')
+    $('.register-contain').append('<article>\n' +
+        '<h2>VOS MENSURATIONS</h2>' +
+        '<p>'+$('#part2 input[name=height]').attr('value')+'cm</p>' +
+        '<p>'+$('#part2 input[name=weight]').attr('value')+'kg</p>' +
+        '</article>')
+})
+
+$('#part3 button[type="button"]').on('click', function () {
+    //$('#part3 input:checked')
+    $('#part3').addClass('d-none')
+    $('#part4').removeClass('d-none')
+    /*$('.register-contain').append('<article>\n' +
+        '<h2>VOS MENSURATIONS</h2>' +
+        '<p>'+$('#part2 input[name=height]').attr('value')+'cm</p>' +
+        '<p>'+$('#part2 input[name=weight]').attr('value')+'kg</p>' +
+        '</article>')*/
+})

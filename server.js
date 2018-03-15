@@ -99,7 +99,7 @@ app.get('/inscription', function (req, res) {
 app.get('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
     //récupérer les infos du user en fonction de l'id contenu dans req.session
-    var user_id = req.session.someAttribute.toString()
+    var user_id = req.session.someAttribute
     res.render('profil.twig', {
         id: user_id
     })

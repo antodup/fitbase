@@ -12545,7 +12545,7 @@ body {
 }
 /* line 25, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--bordered {
-  font-size: 11px;
+  font-size: 13px;
   color: #2D3544;
   line-height: 1;
   padding: 17px 25px;
@@ -12725,7 +12725,7 @@ body {
 .fbCustom-input .input-field {
   width: 100%;
   font-size: 13px;
-  color: #fff;
+  color: #2D3544;
   line-height: 16px;
   padding: 20px 15px 10px 15px;
   outline: none;
@@ -13018,47 +13018,360 @@ body {
   color: white;
 }
 
+/* line 1, ../scss/partials/_register.scss */
+.ctn-contenu {
+  width: 90vw;
+}
+@media screen and (max-width: 768px) {
+  /* line 1, ../scss/partials/_register.scss */
+  .ctn-contenu {
+    width: 100vw;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* line 12, ../scss/partials/_register.scss */
+.ctn-contenu section {
+  width: 55%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media screen and (max-width: 550px) {
+  /* line 12, ../scss/partials/_register.scss */
+  .ctn-contenu section {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 551px) and (max-width: 768px) {
+  /* line 12, ../scss/partials/_register.scss */
+  .ctn-contenu section {
+    width: 60%;
+  }
+}
+/* line 24, ../scss/partials/_register.scss */
+.ctn-contenu h2 {
+  margin-bottom: 1em;
+}
+/* line 28, ../scss/partials/_register.scss */
+.ctn-contenu .logo-responsive {
+  width: 50%;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 551px) and (max-width: 768px) {
+  /* line 28, ../scss/partials/_register.scss */
+  .ctn-contenu .logo-responsive {
+    width: 30%;
+  }
+}
+
+/* line 38, ../scss/partials/_register.scss */
+#part2 .first_div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 44, ../scss/partials/_register.scss */
+.register-contain {
+  width: 25%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* line 50, ../scss/partials/_register.scss */
+.rangeslider,
+input[type='range'] {
+  max-width: 400px;
+}
+/* line 53, ../scss/partials/_register.scss */
+.rangeslider .rangeslider__fill,
+input[type='range'] .rangeslider__fill {
+  background-color: #F4E932;
+}
+
+/* line 58, ../scss/partials/_register.scss */
+.rangeslider__handle {
+  border-radius: 22px;
+  min-width: 62px;
+  line-height: 42px;
+  text-align: center;
+}
+/* line 63, ../scss/partials/_register.scss */
+.rangeslider__handle:after {
+  background: 0;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 68, ../scss/partials/_register.scss */
+  #part3 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 551px) and (max-width: 768px) {
+  /* line 68, ../scss/partials/_register.scss */
+  #part3 {
+    width: 60%;
+  }
+}
+/* line 76, ../scss/partials/_register.scss */
+#part3 div {
+  width: 33%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* line 82, ../scss/partials/_register.scss */
+#part3 div input {
+  display: none;
+}
+/* line 85, ../scss/partials/_register.scss */
+#part3 div label {
+  cursor: pointer;
+  display: flex;
+  width: 110px;
+  height: 110px;
+  flex-direction: column;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 0.8em;
+  background-image: url("/img/inscription/grille.svg");
+  background-size: cover;
+}
+/* line 98, ../scss/partials/_register.scss */
+#part3 div label:hover {
+  background-color: #2D3544;
+}
+@media screen and (max-width: 768px) {
+  /* line 85, ../scss/partials/_register.scss */
+  #part3 div label {
+    width: 90px;
+    height: 90px;
+  }
+}
+/* line 105, ../scss/partials/_register.scss */
+#part3 div label img {
+  margin-bottom: 10px;
+}
+
+/* line 113, ../scss/partials/_register.scss */
+input[type="number"] {
+  position: relative;
+  margin: 0 auto;
+  width: 35%;
+  height: 350px;
+  display: block;
+  text-align: center;
+  font-size: 6em;
+}
+@media screen and (max-width: 768px) {
+  /* line 113, ../scss/partials/_register.scss */
+  input[type="number"] {
+    width: 52%;
+  }
+}
+/* line 125, ../scss/partials/_register.scss */
+input[type="number"].mod::-webkit-outer-spin-button, input[type="number"].mod::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background: url("../img/inscription/input_number.svg") no-repeat center center;
+  width: 100%;
+  border-left: 1px solid #BBB;
+  opacity: .5;
+  /* shows Spin Buttons per default (Chrome >= 39) */
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 138, ../scss/partials/_register.scss */
+input[type="number"].mod::-webkit-outer-spin-button:hover, input[type="number"].mod::-webkit-outer-spin-button:active, input[type="number"].mod::-webkit-inner-spin-button:hover, input[type="number"].mod::-webkit-inner-spin-button:active {
+  box-shadow: 0 0 2px #0CF;
+  opacity: .8;
+}
+
+/* line 147, ../scss/partials/_register.scss */
+#part4 label {
+  display: none;
+}
+
+/* line 152, ../scss/partials/_register.scss */
+input:-webkit-autofill {
+  background: black;
+  color: red;
+}
+
+/* line 158, ../scss/partials/_register.scss */
+#part5 div {
+  position: relative;
+}
+/* line 161, ../scss/partials/_register.scss */
+#part5 div input[name="objectif"] {
+  width: 100%;
+  display: none;
+}
+/* line 165, ../scss/partials/_register.scss */
+#part5 div label {
+  font-size: 1.5em;
+  color: #242428;
+}
+
+/* line 172, ../scss/partials/_register.scss */
+.register-contain {
+  padding: 30px 40px;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  /* line 172, ../scss/partials/_register.scss */
+  .register-contain {
+    display: none;
+  }
+}
+/* line 178, ../scss/partials/_register.scss */
+.register-contain article {
+  margin-bottom: 30px;
+}
+/* line 181, ../scss/partials/_register.scss */
+.register-contain img {
+  margin-top: 10px;
+}
+/* line 184, ../scss/partials/_register.scss */
+.register-contain div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+/* line 191, ../scss/partials/_register.scss */
+.register-contain h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+/* line 195, ../scss/partials/_register.scss */
+.register-contain p {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
 /* line 1, ../scss/partials/layout/_nav.scss */
-.nav-container {
+.ctn-general {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
 }
 @media screen and (max-width: 768px) {
   /* line 1, ../scss/partials/layout/_nav.scss */
-  .nav-container {
+  .ctn-general {
     flex-direction: column-reverse;
     justify-content: space-between;
   }
 }
-/* line 14, ../scss/partials/layout/_nav.scss */
-.nav-container #menu {
+/* line 12, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 10vw;
 }
 @media screen and (max-width: 768px) {
-  /* line 14, ../scss/partials/layout/_nav.scss */
-  .nav-container #menu {
+  /* line 12, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu {
     flex-direction: row;
     width: 100%;
     height: 5vh;
   }
 }
-/* line 24, ../scss/partials/layout/_nav.scss */
-.nav-container #menu nav {
-  height: 100%;
+/* line 23, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu .logo {
+  margin-top: 10px;
+  height: 8%;
   width: 100%;
-  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 31, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav {
+  margin-top: 20px;
+  height: calc(85% - 20px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 24, ../scss/partials/layout/_nav.scss */
-  .nav-container #menu nav {
+  /* line 31, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav {
     flex-direction: row;
   }
+}
+/* line 42, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav div:first-child {
+  margin-top: 10px;
+}
+/* line 45, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all ease 2s;
+}
+/* line 52, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block:not(:last-child):hover p {
+  display: block;
+  transition: all ease 2s;
+}
+/* line 58, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block:last-child:hover p {
+  display: block;
+  transition: all ease 2s;
+  margin-top: 40px;
+}
+/* line 65, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .icon {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* line 74, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic {
+  color: white;
+  transform: rotate(-90deg);
+  display: none;
+  margin-top: 15px;
+}
+/* line 81, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block #profil {
+  display: block;
+  padding-bottom: 10px;
+  margin-left: 14px;
+  color: #F4E932;
+}
+/* line 88, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic2 {
+  color: white;
+  transform: rotate(-90deg);
+  display: none;
+  margin-top: 40px;
+}
+/* line 95, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .nav-line {
+  width: 1px;
+  height: 22%;
+  background-color: white;
 }

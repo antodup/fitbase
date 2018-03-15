@@ -23,7 +23,7 @@
     opacity: .65;
   }
   &.fbCustom-button--bordered{
-    font-size: 11px;
+    font-size: 13px;
     color: $fb-darkBlue;
     line-height: 1;
     padding: 17px 25px;
@@ -181,7 +181,7 @@
   .input-field{
     width: 100%;
     font-size: 13px;
-    color: #fff;
+    color: $fb-darkBlue;
     line-height: 16px;
     padding: 20px 15px 10px 15px;
     outline: none;

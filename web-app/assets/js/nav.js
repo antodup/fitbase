@@ -132,7 +132,7 @@ $(".topic-block").hover(
         $(this).next().children(".nav-line").animate({
             height: "100%",
         }, function () {
-            $("#third-line").parent().classList.remove('hover-settings')
+            $("#third-line").parent().removeClass('hover-settings')
         })
     }
 )

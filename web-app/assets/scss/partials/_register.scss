@@ -1,6 +1,200 @@
-.ctn-register {
-  width: calc(100% - 70px);
+.ctn-contenu {
+  width: 90vw;
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   section {
-    width: 40%;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+    @media screen and (max-width: 550px) {
+      width: 85%;
+    }
+
+    @media screen and (min-width: 551px) and (max-width: 768px) {
+      width: 60%;
+    }
+  }
+  h2 {
+    margin-bottom: 1em;
+  }
+
+  .logo-responsive {
+    width: 50%;
+    margin-bottom: 10px;
+    @media screen and (min-width: 551px) and (max-width: 768px) {
+      width: 30%;
+    }
+  }
+}
+
+#part2 {
+  .first_div {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.register-contain {
+  width: 25%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rangeslider,
+input[type='range'] {
+  max-width: 400px;
+  .rangeslider__fill {
+    background-color: #F4E932;
+  }
+}
+
+.rangeslider__handle {
+  border-radius: 22px;
+  min-width: 62px;
+  line-height: 42px;
+  text-align: center;
+  &:after {
+    background: 0;
+  }
+}
+
+#part3 {
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 551px) and (max-width: 768px) {
+    width: 60%;
+  }
+  div {
+    width: 33%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      display: flex;
+      width: 110px;
+      height: 110px;
+      flex-direction: column;
+      margin: 15px;
+      justify-content: center;
+      align-items: center;
+      font-weight: 300;
+      font-size: 0.8em;
+      background-image: url("/img/inscription/grille.svg");
+      background-size: cover;
+      &:hover {
+        background-color: $fb-darkBlue;
+      }
+      @media screen and (max-width: 768px) {
+        width: 90px;
+        height: 90px;
+      }
+      img {
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+}
+
+input[type="number"] {
+  position: relative;
+  margin: 0 auto;
+  width: 35%;
+  height: 350px;
+  display: block;
+  text-align: center;
+  font-size: 6em;
+  @media screen and (max-width: 768px) {
+    width: 52%;
+  }
+
+  &.mod::-webkit-outer-spin-button,
+  &.mod::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: url("../img/inscription/input_number.svg") no-repeat center center;
+    width: 100%;
+    border-left: 1px solid #BBB;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0 2px #0CF;
+      opacity: .8;
+    }
+  }
+}
+
+#part4 {
+  label {
+    display: none;
+  }
+}
+
+input:-webkit-autofill {
+  background: black;
+  color: red;
+}
+
+#part5 {
+  div {
+    position: relative;
+
+    input[name="objectif"] {
+      width: 100%;
+      display: none;
+    }
+    label {
+      font-size: 1.5em;
+      color: $fb-darkBlack;
+    }
+  }
+}
+
+.register-contain {
+  padding: 30px 40px;
+  color: white;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  article {
+    margin-bottom: 30px;
+  }
+  img {
+    margin-top: 10px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+  }
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 0.9em;
   }
 }

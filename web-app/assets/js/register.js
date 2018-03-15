@@ -7,18 +7,19 @@
 #usage            : JAVASCRIPT
 #notes            : 
 =============================================================*/
-/*VERIFICATION FORMULAIRE
-var inputPart1 = document.querySelectorAll("#part1 input");
-
-for (var i = 0; i < inputPart1.length; i++) {
-    console.log(inputPart1[i])
-    if (inputPart1[i].value == "") {
-        console.log("ok")
-        alert("la valeur est vide")
-    }
+//RESPONSIVE
+if (document.documentElement.clientWidth >= 320 && document.documentElement.clientWidth <= 768) {
+    $("form").prepend("<img class=\"logo-responsive\" src=\"/img/logo.svg\" alt=\"logo\"/>");
 }
 
-console.log(document.querySelectorAll("#part1 input"))*/
+//SPORT
+$('input[name="sport"]').on("click", function () {
+    if ($(this).prop("checked") == true) {
+        $(this).parent().children("label").css("background-color", "#2D3544")
+    } else {
+        $(this).parent().children("label").css("background-color", "transparent")
+    }
+})
 
 //OBJECTIFS
 var $oldInput = null
@@ -33,7 +34,6 @@ $('input[name="objectif"]').on("click", function () {
 
 //INPUT RANGE
 var $inputRange = $('input[type="range"]');
-
 $inputRange.rangeslider({
     polyfill: false,
     onInit: function () {

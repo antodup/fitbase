@@ -13317,29 +13317,15 @@ input:-webkit-autofill {
   }
 }
 /* line 42, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav div:first-child {
-  margin-top: 10px;
-}
-/* line 45, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   transition: all ease 2s;
+  position: relative;
 }
-/* line 52, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block:not(:last-child):hover p {
-  display: block;
-  transition: all ease 2s;
-}
-/* line 58, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block:last-child:hover p {
-  display: block;
-  transition: all ease 2s;
-  margin-top: 40px;
-}
-/* line 65, ../scss/partials/layout/_nav.scss */
+/* line 50, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .icon {
   height: 20px;
   width: 20px;
@@ -13348,30 +13334,50 @@ input:-webkit-autofill {
   align-items: center;
   margin-bottom: 5px;
 }
-/* line 74, ../scss/partials/layout/_nav.scss */
+/* line 59, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic {
   color: white;
   transform: rotate(-90deg);
   display: none;
   margin-top: 15px;
+  font-size: 0.9em;
+  opacity: 0;
 }
-/* line 81, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block #profil {
-  display: block;
-  padding-bottom: 10px;
-  margin-left: 14px;
-  color: #F4E932;
-}
-/* line 88, ../scss/partials/layout/_nav.scss */
+/* line 67, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic2 {
   color: white;
   transform: rotate(-90deg);
   display: none;
   margin-top: 40px;
 }
-/* line 95, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .nav-line {
+/* line 74, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic-show {
+  position: absolute;
+  top: 27px;
+  display: block;
+  color: #F4E932;
+}
+/* line 80, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic-show-2 {
+  position: absolute;
+  bottom: 55px;
+  display: block;
+  color: #F4E932;
+}
+/* line 88, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .parent-line {
+  width: auto;
+  height: 24%;
+  display: flex;
+  align-items: flex-end;
+}
+/* line 93, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .parent-line div {
   width: 1px;
-  height: 22%;
+  height: 100%;
   background-color: white;
+}
+/* line 99, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .hover-settings {
+  align-items: flex-start;
 }

@@ -34,7 +34,6 @@ $('input[name="objectif"]').on("click", function () {
 
 //INPUT RANGE
 var $inputRange = $('input[type="range"]');
-
 $inputRange.rangeslider({
     polyfill: false,
     onInit: function () {

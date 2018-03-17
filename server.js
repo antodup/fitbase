@@ -49,7 +49,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-    console.log(req.body.email)
+
     let q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
@@ -60,10 +60,8 @@ app.post('/', function (req, res) {
                 if (password === true) {
                     var sessData = req.session;
                     sessData.someAttribute = results[0].id;
-                    console.log(req.session.someAttribute)
                     res.redirect('/profil');
                 } else {
-                    console.log('game over')
                     res.render('index.twig', {
                         checkPassword : password
                     })
@@ -106,18 +104,21 @@ app.get('/profil', function (req, res) {
 });
 
 app.post('/inscription', function (req, res) {
-    console.log(req.body)
     let q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
         if (error) return console.log(error);
-        if (results.length > 0) res.redirect('/'); //cet email est deja existant
+        if (results.length > 0){
+            res.redirect('/');//cet email est deja existant
+        }
         var hash = bcrypt.hashSync(req.body.password1, 10);
         let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
         co.query(q, function (error, results, fields) {
             if (error) return console.log(error);
-            req.session = results.insertId;
+
+            var sessData = req.session;
+            sessData.someAttribute = results.insertId;
             res.redirect("/profil");
         })
 

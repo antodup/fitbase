@@ -8,7 +8,7 @@
     {% block header %}
     {% include '../layout/header.twig' %}
     {% endblock %}
-    <form class="ctn-contenu" method="post" action="/profil" style="color:white;">
+    <form class="ctn-contenu" method="post" action="/inscription" style="color:white;">
         <section id="part1">
             <h2 class="text-center">VOTRE PROFIL</h2>
             <div class="fbCustom-input mb-2">
@@ -81,7 +81,7 @@
                 <label for="{{ objectif.title }}" class="text-uppercase">#{{ objectif.title }}</label>
             </div>
             {% endfor %}
-            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button">TERMINER</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="submit">TERMINER</button>
         </section>
     </form>
     <section class="register-contain">

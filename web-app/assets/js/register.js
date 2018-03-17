@@ -60,6 +60,15 @@ $('#part1 button[type="button"]').on('click', function () {
     for (let i=0; i < inputs.length; i++) {
         let input = inputs[i]
         if (input.value != '') {
+            if (i == 3) {
+                let d = new Date()
+                let dateInput = new Date(input.value)
+
+                if (d < dateInput) {
+                    nxt = 1
+                    break
+                }
+            }
             if (i == 5) {
                 console.log(input.value)
                 console.log(inputs[6].value)
@@ -89,18 +98,43 @@ $('#part2 button[type="button"]').on('click', function () {
     $('#part3').removeClass('d-none')
     $('.register-contain').append('<article>\n' +
         '<h2>VOS MENSURATIONS</h2>' +
-        '<p>'+$('#part2 input[name=height]').attr('value')+'cm</p>' +
-        '<p>'+$('#part2 input[name=weight]').attr('value')+'kg</p>' +
+        '<p>'+$('#part2 input[name=height]').val()+'cm</p>' +
+        '<p>'+$('#part2 input[name=weight]').val()+'kg</p>' +
         '</article>')
 })
 
 $('#part3 button[type="button"]').on('click', function () {
-    //$('#part3 input:checked')
-    $('#part3').addClass('d-none')
-    $('#part4').removeClass('d-none')
-    /*$('.register-contain').append('<article>\n' +
-        '<h2>VOS MENSURATIONS</h2>' +
-        '<p>'+$('#part2 input[name=height]').attr('value')+'cm</p>' +
-        '<p>'+$('#part2 input[name=weight]').attr('value')+'kg</p>' +
-        '</article>')*/
+    let checkeds = $('#part3 input:checked')
+    if (checkeds.length>0) {
+        $('.register-contain').append('<article>\n' +
+            '<h2>VOTRE SPORT</h2>' +
+            '</article>')
+        for (let i=0; i < checkeds.length; i++) {
+            let checked = checkeds[i]
+            let sport_name = checked.getAttribute('id')
+            let src = $('label[for="'+sport_name+'"] img').attr('src')
+            $('.register-contain article:last-child').append('<img src="'+ src +'" alt="'+ sport_name +'">\n' +
+                '<p>'+ sport_name +'</p>')
+        }
+        $('#part3').addClass('d-none')
+        $('#part4').removeClass('d-none')
+    }
+})
+
+$('#part4 button[type="button"]').on('click', function () {
+    let value = $('#part4 input').val()
+    $('.register-contain').append('<article>\n' +
+        '            <h2>FREQUENCES</h2>\n' +
+        '            <p><span>'+ value +'</span> fois par semaine</p>\n' +
+        '        </article>')
+        $('#part4').addClass('d-none')
+        $('#part5').removeClass('d-none')
+})
+
+$('#part5 button[type="submit"]').on('click', function (e) {
+    let input = $('#part5 input:checked')
+    if (input.length < 1) {
+        e.preventDefault()
+        return
+    }
 })

@@ -257,4 +257,3 @@ var myChart = new Chart(weightChart, {
         }
     }
 })
-

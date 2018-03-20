@@ -1,0 +1,129 @@
+.grid-background {
+  background-image: url(../img/grid_health.png);
+  width: 90vw;
+  height: 100vh;
+  background-size: 92%;
+  padding: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  section {
+    height: 100%;
+  }
+}
+
+.ctn-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .body-health {
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.row-module {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: auto;
+  justify-content: space-between;
+}
+
+.module {
+  background-color: $fb-darkBlack;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  color: white;
+  h2 {
+    font-size: 1.1em;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  .add-module {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    padding: 10px 15px;
+    color: white;
+    border-color: white;
+  }
+}
+
+.module-sleep {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 9%;
+}
+
+.module-row {
+  width: 47%;
+  height: 45%;
+  .picto-step {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 93%;
+  }
+  .nb-step {
+    font-weight: 300;
+    font-size: 1.8em;
+    line-height: 1em;
+    margin-bottom: 0;
+
+    span {
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+  }
+}
+
+.module-advice {
+  height: 20%;
+  margin-bottom: 5%;
+  #carouselAdvice {
+      height: 100%;
+    .carousel-indicators li {
+      background-color: #565656;
+    }
+    .carousel-indicators .active {
+      background-color: #219CC5;
+    }
+    .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
+    }
+    .carousel-control-prev-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
+    }
+    .carousel-control-prev, .carousel-control-next {
+      width:8%;
+    }
+    .carousel-indicators {
+      bottom: -12px;
+    }
+    .carousel-item {
+      text-align: left;
+      padding: 10px;
+      h3 {
+        font-size: 1em;
+        margin: 0 30px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 0.8em;
+        margin: 0 30px;
+      }
+    }
+  }
+}
+
+.module-cardiac {
+  height: 42%;
+  margin-bottom: 5%;
+}
+
+.module-weight {
+  height: 32%;
+}
+
+
+

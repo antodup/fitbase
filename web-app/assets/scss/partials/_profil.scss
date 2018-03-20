@@ -1,5 +1,78 @@
+.main-profil{
+    h3{
+        text-transform: uppercase;
+        margin-top: 1rem;
+        color: #fff;
+    }
+}
 .profil{
     background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 400px;
+    color: #fff;
+    padding: 0 10px;
+    span{
+        margin: 5px 0;
+    }
+    .pp{
+       max-width: 100%;
+    }
+    .info{
+        width:100%;
+        text-align: left;
+        .name{
+            text-transform: uppercase;
+        }
+        p{
+            margin: 0;
+        }
+    }
+
 }
+.reward{
+    margin-right: 50px;
+}
+.ami{
+    margin-right: 50px;
+}
+//SVG
+
+.reward svg{
+    height: 80px;
+}
+.reward.on{
+    p{
+        color: #f4e932;
+    }
+    .cls-1, .cls-3 {
+        fill: #f4e932;
+    }
+
+    .cls-2 {
+        fill: #2d3544;
+    }
+
+    .cls-3 {
+        font-size: 5px;
+        font-family: Roboto-Black, Roboto;
+        font-weight: 800;
+    }
+}
+
+.reward.off{
+
+    p{
+        color: rgba(255,255,255,0.74);
+    }
+    .cls-1, .cls-3{
+        fill: rgba(255,255,255,0.74);
+    }
+
+    .cls-2 {
+        fill: #2d3544;
+    }
+    .cls-3 {
+        font-size: 5px;
+        font-family: Roboto-Black, Roboto;
+        font-weight: 800;
+    }
+}
+

@@ -7,11 +7,12 @@
             {% include '../layout/header.twig' %}
         {% endblock %}
 
-        <section class="w-100 row m-0 main-profil">
+        <section class="w-100 row m-0 main-profil d-flex align-items-center">
             <aside class=" col-2 profil d-flex flex-column justify-content-center">
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center title-aside justify-content-between">
                     <h3>Evapmf</h3>
-                    <button>blabla</button>
+                    <button data-toggle="modal" data-target="#modif-profil"><img src="../img/btn-profil.png">
+                    </button>
                 </div>
 
                 <img class="pp" src="/img/profil-picture.jpg">
@@ -29,6 +30,47 @@
                 <span class="fbCustom-badge blue w-100">#objectifs</span>
                 <span class="fbCustom-badge green w-100">#objectifs</span>
             </aside>
+            <div class="modal fade" id="modif-profil" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edition du profil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body modif-profil">
+                            <div class="row ">
+                                <div class="col-4 d-flex flex-column justify-content-between">
+                                    <img src="img/profil-picture.jpg">
+                                    <button class="fbCustom-button fbCustom-button--bordered">Télécharger la photo</button>
+                                </div>
+                                <div class="col-8">
+                                    <div class="fbCustom-input">
+                                        <input class="input-field" type="text" id="input1" placeholder="Nom et prénom">
+                                        <label class="input-label" for="input1">Nom et prénom</label>
+                                    </div>
+                                    <div class="fbCustom-input my-4">
+                                        <input class="input-field" type="text" id="input1" placeholder="Date de naissance">
+                                        <label class="input-label" for="input1">Date de naissance</label>
+                                    </div>
+                                    <div class="fbCustom-input my-4">
+                                        <input class="input-field" type="text" id="input1" placeholder="Poid">
+                                        <label class="input-label" for="input1">Poid</label>
+                                    </div>
+                                    <div class="fbCustom-input">
+                                        <input class="input-field" type="text" id="input1" placeholder="Taille">
+                                        <label class="input-label" for="input1">Taille</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center align-items-center">
+                            <button class="fbCustom-button fbCustom-button--filled">Valider</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="rewards offset-1 col-8 flex-wrap">
                 <h3>Rewards</h3>
                 <div class="row justify-content-flex-start">
@@ -382,7 +424,7 @@
                                             <img src="img/anto.png">
                                             <p>Anthony Dup</p>
                                             <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
-                                       </div>
+                                        </div>
                                         <div class="find-friend d-flex align-items-center justify-content-between">
                                             <img src="img/thib.png">
                                             <p>Thib</p>

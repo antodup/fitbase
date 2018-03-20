@@ -1,8 +1,20 @@
 .main-profil {
+  background-image: url("../img/grid-profil.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 92%;
   h3 {
     text-transform: uppercase;
     margin-top: 1rem;
     color: #fff;
+  }
+  .modal-dialog{
+    max-width: 660px;
+  }
+  .modif-profil{
+    img{
+      max-width: 100%;
+    }
   }
   .profil {
     background-color: rgba(0, 0, 0, 0.5);
@@ -14,6 +26,7 @@
     }
     .pp {
       max-width: 100%;
+      margin-top: 15px;
     }
     .info {
       width: 100%;
@@ -22,8 +35,17 @@
         text-transform: uppercase;
       }
       p {
-        margin: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
       }
+    }
+    button{
+      border: none;
+      background: none;
+      width: auto;
+      height: auto;
+      padding: 0;
+      cursor: pointer;
     }
 
   }

@@ -13029,86 +13029,120 @@ h3 {
   margin-top: 1rem;
   color: #fff;
 }
-
-/* line 8, ../scss/partials/_profil.scss */
-.profil {
+/* line 7, ../scss/partials/_profil.scss */
+.main-profil .profil {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 0 10px;
+  min-height: 100vh;
 }
 /* line 12, ../scss/partials/_profil.scss */
-.profil span {
+.main-profil .profil span {
   margin: 5px 0;
 }
 /* line 15, ../scss/partials/_profil.scss */
-.profil .pp {
+.main-profil .profil .pp {
   max-width: 100%;
 }
 /* line 18, ../scss/partials/_profil.scss */
-.profil .info {
+.main-profil .profil .info {
   width: 100%;
   text-align: left;
 }
 /* line 21, ../scss/partials/_profil.scss */
-.profil .info .name {
+.main-profil .profil .info .name {
   text-transform: uppercase;
 }
 /* line 24, ../scss/partials/_profil.scss */
-.profil .info p {
+.main-profil .profil .info p {
   margin: 0;
 }
-
-/* line 30, ../scss/partials/_profil.scss */
-.reward {
+/* line 31, ../scss/partials/_profil.scss */
+.main-profil .rewards .row {
+  padding-left: 15px;
+  margin-top: 15px;
+}
+/* line 37, ../scss/partials/_profil.scss */
+.main-profil .reward {
   margin-right: 50px;
 }
-
-/* line 33, ../scss/partials/_profil.scss */
-.ami {
+/* line 40, ../scss/partials/_profil.scss */
+.main-profil .ami {
   margin-right: 50px;
 }
-
-/* line 38, ../scss/partials/_profil.scss */
-.reward svg {
-  height: 80px;
-}
-
 /* line 42, ../scss/partials/_profil.scss */
-.reward.on p {
-  color: #f4e932;
-}
-/* line 45, ../scss/partials/_profil.scss */
-.reward.on .cls-1, .reward.on .cls-3 {
-  fill: #f4e932;
+.main-profil .ami p {
+  color: #fff;
+  margin-top: 10px;
 }
 /* line 49, ../scss/partials/_profil.scss */
-.reward.on .cls-2 {
-  fill: #2d3544;
+.main-profil .reward svg {
+  height: 80px;
 }
 /* line 53, ../scss/partials/_profil.scss */
-.reward.on .cls-3 {
-  font-size: 5px;
-  font-family: Roboto-Black, Roboto;
-  font-weight: 800;
+.main-profil .reward.on p {
+  color: #f4e932;
 }
-
-/* line 62, ../scss/partials/_profil.scss */
-.reward.off p {
-  color: rgba(255, 255, 255, 0.74);
+/* line 56, ../scss/partials/_profil.scss */
+.main-profil .reward.on .cls-1, .main-profil .reward.on .cls-3 {
+  fill: #f4e932;
 }
-/* line 65, ../scss/partials/_profil.scss */
-.reward.off .cls-1, .reward.off .cls-3 {
-  fill: rgba(255, 255, 255, 0.74);
-}
-/* line 69, ../scss/partials/_profil.scss */
-.reward.off .cls-2 {
+/* line 60, ../scss/partials/_profil.scss */
+.main-profil .reward.on .cls-2 {
   fill: #2d3544;
 }
-/* line 72, ../scss/partials/_profil.scss */
-.reward.off .cls-3 {
+/* line 64, ../scss/partials/_profil.scss */
+.main-profil .reward.on .cls-3 {
   font-size: 5px;
   font-family: Roboto-Black, Roboto;
   font-weight: 800;
+}
+/* line 73, ../scss/partials/_profil.scss */
+.main-profil .reward.off p {
+  color: rgba(255, 255, 255, 0.74);
+}
+/* line 76, ../scss/partials/_profil.scss */
+.main-profil .reward.off .cls-1, .main-profil .reward.off .cls-3 {
+  fill: rgba(255, 255, 255, 0.74);
+}
+/* line 80, ../scss/partials/_profil.scss */
+.main-profil .reward.off .cls-2 {
+  fill: #2d3544;
+}
+/* line 83, ../scss/partials/_profil.scss */
+.main-profil .reward.off .cls-3 {
+  font-size: 5px;
+  font-family: Roboto-Black, Roboto;
+  font-weight: 800;
+}
+/* line 90, ../scss/partials/_profil.scss */
+.main-profil .modal-body .row {
+  padding-left: 0;
+}
+/* line 93, ../scss/partials/_profil.scss */
+.main-profil .modal-body .find-friend {
+  margin: 10px 0;
+}
+/* line 95, ../scss/partials/_profil.scss */
+.main-profil .modal-body .find-friend img {
+  max-width: 40px;
+}
+/* line 98, ../scss/partials/_profil.scss */
+.main-profil .modal-body .find-friend p {
+  font-size: 0.8em;
+  margin: 0;
+  width: 100%;
+  margin-left: 10px;
+}
+/* line 104, ../scss/partials/_profil.scss */
+.main-profil .modal-body .find-friend button {
+  padding: 10px;
+  border: solid 0.5px #2D3544;
+  font-size: 11px;
+}
+/* line 112, ../scss/partials/_profil.scss */
+.main-profil .modal-footer button {
+  padding: 12px 30px;
 }
 
 /* line 1, ../scss/partials/_register.scss */

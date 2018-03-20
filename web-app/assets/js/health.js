@@ -16,28 +16,32 @@ var gradientSleep = contextSleep.createLinearGradient(0, 0, 200, 0);
 gradientSleep.addColorStop(0, '#F4E932');//JAUNE
 gradientSleep.addColorStop(0.50, '#96C84E');//VERT
 gradientSleep.addColorStop(1, '#219CC5');//BLEU
+
 //CHARTS
 var myChart = new Chart(sleepChart, {
     type: 'bar',
     data: {
-        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         datasets: [{
             label: 'Temps de sommeil ',
             data: [5, 7, 8, 4, 9, 10, 7],
-            fill: false,
             borderColor: gradientSleep,
             backgroundColor: gradientSleep,
             lineTension: 0.2,
-            borderWidth: 3
+            borderWidth: 3,
+            fontColor: "white"
         }]
     },
     options: {
+        labels: {
+            fontColor: "#ffffff",
+        },
         title: {
             display: true,
             text: 'Sommeil',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
-            fontColor: "#242428"
+            fontColor: "#ffffff"
         },
         tooltips: {
             mode: 'index',
@@ -57,12 +61,20 @@ var myChart = new Chart(sleepChart, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontColor: "white"
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "white"
                 }
             }]
-        }
+        },
     }
+
 });
+
 
 /*----------CHART WATER----------*/
 //GRADIENT
@@ -94,7 +106,7 @@ var myDoughnutChart = {
             text: "Eau",
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
-            fontColor: "#242428"
+            fontColor: "#ffffff"
         },
         tooltips: {
             mode: 'index',
@@ -137,7 +149,7 @@ document.querySelector("#save-water").addEventListener("click", function () {
         if (Water[0] <= 0) {
             Water.shift()
             window.myDoughnut.update()
-           // myDoughnutChart.data.datasets[0].backgroundColor[0] = "#0062cc";
+            // myDoughnutChart.data.datasets[0].backgroundColor[0] = "#0062cc";
             $("#result-water").css("color", "#219CC5")
             $("#result-water").css("font-weight", "bold")
         }
@@ -149,7 +161,7 @@ document.querySelector("#save-water").addEventListener("click", function () {
 /*----------CHART CARDIAC----------*/
 var cardiacChart = document.getElementById("chart-cardiac");
 //GRADIENT
-var contextCardiac= cardiacChart.getContext('2d');
+var contextCardiac = cardiacChart.getContext('2d');
 var gradientCardiac = contextCardiac.createLinearGradient(0, 0, 200, 0);
 gradientCardiac.addColorStop(0, '#F4E932');//JAUNE
 gradientCardiac.addColorStop(0.50, '#96C84E');//VERT
@@ -158,7 +170,7 @@ gradientCardiac.addColorStop(1, '#219CC5');//BLEU
 var myChart = new Chart(cardiacChart, {
     type: 'line',
     data: {
-        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         datasets: [{
             label: 'Pulsation Cardiac ',
             data: [80, 60, 64, 95, 74, 68, 70],
@@ -175,7 +187,7 @@ var myChart = new Chart(cardiacChart, {
             text: 'Fréquence Cardiac',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
-            fontColor: "#242428"
+            fontColor: "#ffffff"
         },
         tooltips: {
             mode: 'index',
@@ -195,7 +207,13 @@ var myChart = new Chart(cardiacChart, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontColor: "white"
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "white"
                 }
             }]
         }
@@ -205,7 +223,7 @@ var myChart = new Chart(cardiacChart, {
 /*----------CHART WEIGHT----------*/
 var weightChart = document.getElementById("chart-weight");
 //GRADIENT
-var contextWeight= weightChart.getContext('2d');
+var contextWeight = weightChart.getContext('2d');
 var gradientWeight = contextWeight.createLinearGradient(0, 0, 200, 0);
 gradientWeight.addColorStop(0, '#F4E932');//JAUNE
 gradientWeight.addColorStop(0.50, '#96C84E');//VERT
@@ -214,7 +232,7 @@ gradientWeight.addColorStop(1, '#219CC5');//BLEU
 var myChart = new Chart(weightChart, {
     type: 'line',
     data: {
-        labels: ["Janvier", "Février", "Mars"],
+        labels: ["Jan", "Fév", "Mars"],
         datasets: [{
             label: 'Pulsation Cardiac',
             data: [80, 60, 64],
@@ -231,7 +249,7 @@ var myChart = new Chart(weightChart, {
             text: 'Poid',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
-            fontColor: "#242428"
+            fontColor: "#ffffff"
         },
         tooltips: {
             mode: 'index',
@@ -251,9 +269,31 @@ var myChart = new Chart(weightChart, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontColor: "white"
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "white"
                 }
             }]
         }
     }
 })
+
+//INPUT NUMBER
+function increaseValue() {
+    var value = parseInt(document.getElementById('number-water').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number-water').value = value;
+}
+
+function decreaseValue() {
+    var value = parseInt(document.getElementById('number-water').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    document.getElementById('number-water').value = value;
+}

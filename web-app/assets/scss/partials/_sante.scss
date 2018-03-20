@@ -29,11 +29,11 @@
 }
 
 .module {
-  background-color: white;
-  box-shadow: 0 0 22px #0000006e;
+  background-color: $fb-darkBlack;
   text-align: center;
   padding: 5px;
   position: relative;
+  color: white;
   h2 {
     font-size: 1.1em;
     margin-top: 10px;
@@ -45,6 +45,8 @@
     top: 4%;
     right: 4%;
     padding: 10px 15px;
+    color: white;
+    border-color: white;
   }
 }
 
@@ -87,10 +89,10 @@
       background-color: #219CC5;
     }
     .carousel-control-next-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#2D3544' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
+      background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
     }
     .carousel-control-prev-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#2D3544' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
+      background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
     }
     .carousel-control-prev, .carousel-control-next {
       width:8%;

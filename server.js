@@ -97,10 +97,25 @@ app.get('/inscription', function (req, res) {
 app.get('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
     //récupérer les infos du user en fonction de l'id contenu dans req.session
-    var user_id = req.session.someAttribute
-    res.render('profil.twig', {
-        id: user_id
+    var user_id = req.session.someAttribute,
+        co = connection();
+    co.connect();
+    co.query("SELECT * FROM users WHERE id = "+user_id, function (error, results, fields) {
+        if (error) return console.log(error)
+        user = results[0]
+        co.query("SELECT DATE_FORMAT(birthday, \"%Y %c %d\") AS birthday FROM users WHERE id = "+user_id, function (error, results, fields) {
+            if (error) return console.log(error)
+            user.birthday = results[0].birthday
+            let birthday = new Date(user.birthday)
+            let ageDifMs = Date.now() - birthday.getTime();
+            let ageDate = new Date(ageDifMs);
+            user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
+            res.render('profil.twig', {
+            user: user
+            })
+        })
     })
+
 });
 
 app.post('/inscription', function (req, res) {

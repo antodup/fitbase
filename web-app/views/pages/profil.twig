@@ -9,18 +9,26 @@
 
         <section class="w-100 row m-0 main-profil">
             <aside class=" col-2 offset-1 profil d-flex flex-column justify-content-center">
-                <h3 class="text-center">Evapmf</h3>
+                <h3 class="text-center">{{ user.username }}</h3>
                 <img class="pp" src="/img/profil-picture.jpg">
                 <div class="info">
-                    <p class="name">pamfil</p>
-                    <p class="firstname">Eva</p>
-                    <p class="age">21 ans</p>
-                    <p class="kg">55 kg</p>
-                    <p class="taille">1,65 m</p>
+                    <p class="name">{{ user.lastname }}</p>
+                    <p class="firstname">{{ user.firstname }}</p>
+                    <p class="age">{{ user.birthday }}</p>
+                    <p class="kg">{{ user.weight }}</p>
+                    <p class="taille">{{ user.height }}</p>
                 </div>
                 <h3>Mes sports</h3>
-                <span class="fbCustom-badge w-100">#sports</span>
-                <span class="fbCustom-badge yellow w-100">#sports</span>
+                <span class="fbCustom-badge w-100">#sport</span>
+                <span class="fbCustom-badge yellow w-100">#sport</span>
+                {#{% for sport in sports %}
+                {% if loop.index == 0 || loop.index == 3 || loop.index == 6 %}
+                    <span class="fbCustom-badge w-100">#{{ sport }}</span>
+                {% elseif loop.index == 1 || loop.index == 4 || loop.index == 7 %}
+                    <span class="fbCustom-badge yellow w-100">#{{ sport }}</span>
+                {% else %}
+                    <span class="fbCustom-badge yellow w-100">#{{ sport }}</span>
+                {% endif %}#}
                 <h3>Mes objectifs</h3>
                 <span class="fbCustom-badge blue w-100">#objectifs</span>
                 <span class="fbCustom-badge green w-100">#objectifs</span>

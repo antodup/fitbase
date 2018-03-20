@@ -12849,6 +12849,11 @@ body {
   background-color: red;
 }
 
+/* line 298, ../scss/utilities/_gui.scss */
+h3 {
+  font-size: 1.3rem;
+}
+
 /* line 1, ../scss/partials/_home.scss */
 .background {
   background-image: url("../../img/background.jpg");
@@ -13016,6 +13021,94 @@ body {
 .btn-connexion:hover {
   background-color: #0F131D;
   color: white;
+}
+
+/* line 2, ../scss/partials/_profil.scss */
+.main-profil h3 {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+/* line 8, ../scss/partials/_profil.scss */
+.profil {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0 10px;
+}
+/* line 12, ../scss/partials/_profil.scss */
+.profil span {
+  margin: 5px 0;
+}
+/* line 15, ../scss/partials/_profil.scss */
+.profil .pp {
+  max-width: 100%;
+}
+/* line 18, ../scss/partials/_profil.scss */
+.profil .info {
+  width: 100%;
+  text-align: left;
+}
+/* line 21, ../scss/partials/_profil.scss */
+.profil .info .name {
+  text-transform: uppercase;
+}
+/* line 24, ../scss/partials/_profil.scss */
+.profil .info p {
+  margin: 0;
+}
+
+/* line 30, ../scss/partials/_profil.scss */
+.reward {
+  margin-right: 50px;
+}
+
+/* line 33, ../scss/partials/_profil.scss */
+.ami {
+  margin-right: 50px;
+}
+
+/* line 38, ../scss/partials/_profil.scss */
+.reward svg {
+  height: 80px;
+}
+
+/* line 42, ../scss/partials/_profil.scss */
+.reward.on p {
+  color: #f4e932;
+}
+/* line 45, ../scss/partials/_profil.scss */
+.reward.on .cls-1, .reward.on .cls-3 {
+  fill: #f4e932;
+}
+/* line 49, ../scss/partials/_profil.scss */
+.reward.on .cls-2 {
+  fill: #2d3544;
+}
+/* line 53, ../scss/partials/_profil.scss */
+.reward.on .cls-3 {
+  font-size: 5px;
+  font-family: Roboto-Black, Roboto;
+  font-weight: 800;
+}
+
+/* line 62, ../scss/partials/_profil.scss */
+.reward.off p {
+  color: rgba(255, 255, 255, 0.74);
+}
+/* line 65, ../scss/partials/_profil.scss */
+.reward.off .cls-1, .reward.off .cls-3 {
+  fill: rgba(255, 255, 255, 0.74);
+}
+/* line 69, ../scss/partials/_profil.scss */
+.reward.off .cls-2 {
+  fill: #2d3544;
+}
+/* line 72, ../scss/partials/_profil.scss */
+.reward.off .cls-3 {
+  font-size: 5px;
+  font-family: Roboto-Black, Roboto;
+  font-weight: 800;
 }
 
 /* line 1, ../scss/partials/_register.scss */

@@ -13260,6 +13260,156 @@ input:-webkit-autofill {
   font-size: 0.9em;
 }
 
+/* line 1, ../scss/partials/_sante.scss */
+.grid-background {
+  background-image: url(../img/grid_health.png);
+  width: 90vw;
+  height: 100vh;
+  background-size: 92%;
+  padding: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 9, ../scss/partials/_sante.scss */
+.grid-background section {
+  height: 100%;
+}
+
+/* line 14, ../scss/partials/_sante.scss */
+.ctn-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 18, ../scss/partials/_sante.scss */
+.ctn-body .body-health {
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* line 24, ../scss/partials/_sante.scss */
+.row-module {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: auto;
+  justify-content: space-between;
+}
+
+/* line 31, ../scss/partials/_sante.scss */
+.module {
+  background-color: white;
+  box-shadow: 0 0 22px #0000006e;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+}
+/* line 37, ../scss/partials/_sante.scss */
+.module h2 {
+  font-size: 1.1em;
+  margin-top: 10px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+/* line 43, ../scss/partials/_sante.scss */
+.module .add-module {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  padding: 10px 15px;
+}
+
+/* line 51, ../scss/partials/_sante.scss */
+.module-sleep {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 9%;
+}
+
+/* line 57, ../scss/partials/_sante.scss */
+.module-row {
+  width: 47%;
+  height: 45%;
+}
+/* line 60, ../scss/partials/_sante.scss */
+.module-row .picto-step {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  width: 93%;
+}
+/* line 65, ../scss/partials/_sante.scss */
+.module-row .nb-step {
+  font-weight: 300;
+  font-size: 1.8em;
+  line-height: 1em;
+  margin-bottom: 0;
+}
+/* line 71, ../scss/partials/_sante.scss */
+.module-row .nb-step span {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* line 78, ../scss/partials/_sante.scss */
+.module-advice {
+  height: 20%;
+  margin-bottom: 5%;
+}
+/* line 81, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice {
+  height: 100%;
+}
+/* line 83, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-indicators li {
+  background-color: #565656;
+}
+/* line 86, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-indicators .active {
+  background-color: #219CC5;
+}
+/* line 89, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#2D3544' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
+}
+/* line 92, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#2D3544' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
+}
+/* line 95, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-control-prev, .module-advice #carouselAdvice .carousel-control-next {
+  width: 8%;
+}
+/* line 98, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-indicators {
+  bottom: -12px;
+}
+/* line 101, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-item {
+  text-align: left;
+  padding: 10px;
+}
+/* line 104, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-item h3 {
+  font-size: 1em;
+  margin: 0 30px;
+  font-weight: bold;
+}
+/* line 109, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-item p {
+  font-size: 0.8em;
+  margin: 0 30px;
+}
+
+/* line 117, ../scss/partials/_sante.scss */
+.module-cardiac {
+  height: 42%;
+  margin-bottom: 5%;
+}
+
+/* line 122, ../scss/partials/_sante.scss */
+.module-weight {
+  height: 32%;
+}
+
 /* line 1, ../scss/partials/layout/_nav.scss */
 .ctn-general {
   display: flex;

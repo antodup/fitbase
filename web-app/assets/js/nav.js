@@ -64,65 +64,64 @@ if (window.location.pathname == "/parametres") {
     })
     parametres = 1;
 }
-$(".topic-block").hover(
-    function () {
-        var child = $(this).children("p");
-        if ($(this).attr('href') == "/sante" && sante == 0) {
-            $("#sante-svg").css({fill: "#F4E932"})
-            $("#first-line").animate({
-                height: "62%",
-            }, function () {
-                child.addClass("topic-show");
-                child.animate({
-                    opacity: "1",
-                })
+$(".topic-block").hover(function () {
+    var child = $(this).children("p");
+    if ($(this).attr('href') == "/sante" && sante == 0) {
+        $("#sante-svg").css({fill: "#F4E932"})
+        $("#first-line").animate({
+            height: "62%",
+        }, function () {
+            child.addClass("topic-show");
+            child.animate({
+                opacity: "1",
             })
-        }
-        if ($(this).attr('href') == "/sport" && sport == 0) {
-            $("#sport-svg").css({fill: "#F4E932"})
-            $("#second-line").animate({
-                height: "55%",
-            }, function () {
-                child.addClass("topic-show");
-                child.animate({
-                    opacity: "1",
-                })
+        })
+    }
+    if ($(this).attr('href') == "/sport" && sport == 0) {
+        $("#sport-svg").css({fill: "#F4E932"})
+        $("#second-line").animate({
+            height: "55%",
+        }, function () {
+            child.addClass("topic-show");
+            child.animate({
+                opacity: "1",
             })
-        }
-        if ($(this).attr('href') == "/profil"&& profil == 0) {
-            $("#profil-svg").css({fill: "#F4E932"})
-            $("#third-line").animate({
-                height: "55%",
-            }, function () {
-                child.addClass("topic-show");
-                child.animate({
-                    opacity: "1",
-                })
+        })
+    }
+    if ($(this).attr('href') == "/profil" && profil == 0) {
+        $("#profil-svg").css({fill: "#F4E932"})
+        $("#third-line").animate({
+            height: "55%",
+        }, function () {
+            child.addClass("topic-show");
+            child.animate({
+                opacity: "1",
             })
-        }
+        })
+    }
 
-        if ($(this).attr('href') == "/parametres" && parametres == 0) {
-            $("#parametres-svg").css({fill: "#F4E932"})
-            $("#third-line").parent().addClass('hover-settings')
-            $("#third-line").animate({
-                height: "20%",
-            }, function () {
-                child.addClass("topic-show-2");
-                child.animate({
-                    opacity: "1",
-                })
+    if ($(this).attr('href') == "/parametres" && parametres == 0) {
+        $("#parametres-svg").css({fill: "#F4E932"})
+        $("#third-line").parent().addClass('hover-settings')
+        $("#third-line").animate({
+            height: "20%",
+        }, function () {
+            child.addClass("topic-show-2");
+            child.animate({
+                opacity: "1",
             })
-        }
-    }, function () {
-        var child = $(this).children("p");
+        })
+    }
+}, function () {
+    if ($(this).attr('href') == "/sante" && sante == 0) {
+        var child = $(this).children("p")
         $(".svg-picto").css({fill: "#FFFFFF"})
         child.animate({
             opacity: "0",
         })
         child.removeClass("topic-show");
         child.removeClass("topic-show-2");
-        console.log($(this).attr("href"))
-        if($(this).attr("href") == '/parametres') {
+        if ($(this).attr("href") == '/parametres') {
             $(this).prev().children(".nav-line").animate({
                 height: "100%",
             }, function () {
@@ -132,7 +131,71 @@ $(".topic-block").hover(
         $(this).next().children(".nav-line").animate({
             height: "100%",
         }, function () {
-            $("#third-line").parent().classList.remove('hover-settings')
+            $("#third-line").parent().removeClass('hover-settings')
         })
     }
-)
+    if ($(this).attr('href') == "/profil" && profil == 0) {
+        var child = $(this).children("p")
+        $(".svg-picto").css({fill: "#FFFFFF"})
+        child.animate({
+            opacity: "0",
+        })
+        child.removeClass("topic-show");
+        child.removeClass("topic-show-2");
+        if ($(this).attr("href") == '/parametres') {
+            $(this).prev().children(".nav-line").animate({
+                height: "100%",
+            }, function () {
+                $("#third-line").parent().removeClass('hover-settings')
+            })
+        }
+        $(this).next().children(".nav-line").animate({
+            height: "100%",
+        }, function () {
+            $("#third-line").parent().removeClass('hover-settings')
+        })
+    }
+
+    if ($(this).attr('href') == "/sport" && sport == 0) {
+        var child = $(this).children("p")
+        $(".svg-picto").css({fill: "#FFFFFF"})
+        child.animate({
+            opacity: "0",
+        })
+        child.removeClass("topic-show");
+        child.removeClass("topic-show-2");
+        if ($(this).attr("href") == '/parametres') {
+            $(this).prev().children(".nav-line").animate({
+                height: "100%",
+            }, function () {
+                $("#third-line").parent().removeClass('hover-settings')
+            })
+        }
+        $(this).next().children(".nav-line").animate({
+            height: "100%",
+        }, function () {
+            $("#third-line").parent().removeClass('hover-settings')
+        })
+    }
+    if ($(this).attr('href') == "/parametres" && parametres == 0) {
+        var child = $(this).children("p")
+        $(".svg-picto").css({fill: "#FFFFFF"})
+        child.animate({
+            opacity: "0",
+        })
+        child.removeClass("topic-show");
+        child.removeClass("topic-show-2");
+        if ($(this).attr("href") == '/parametres') {
+            $(this).prev().children(".nav-line").animate({
+                height: "100%",
+            }, function () {
+                $("#third-line").parent().removeClass('hover-settings')
+            })
+        }
+        $(this).next().children(".nav-line").animate({
+            height: "100%",
+        }, function () {
+            $("#third-line").parent().removeClass('hover-settings')
+        })
+    }
+})

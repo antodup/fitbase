@@ -13450,7 +13450,7 @@ input:-webkit-autofill {
 .row-module {
   padding-left: 15px;
   padding-right: 15px;
-  height: auto;
+  height: auto !important;
   justify-content: space-between;
 }
 
@@ -13489,12 +13489,12 @@ input:-webkit-autofill {
 /* line 65, ../scss/partials/_sante.scss */
 .module-row {
   width: 47%;
-  height: 45%;
+  height: 100%;
 }
 /* line 68, ../scss/partials/_sante.scss */
 .module-row .picto-step {
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin-bottom: 28px;
+  margin-top: 28px;
   width: 93%;
 }
 /* line 73, ../scss/partials/_sante.scss */
@@ -13502,86 +13502,85 @@ input:-webkit-autofill {
   font-weight: 300;
   font-size: 1.8em;
   line-height: 1em;
-  margin-bottom: 0;
 }
-/* line 79, ../scss/partials/_sante.scss */
+/* line 78, ../scss/partials/_sante.scss */
 .module-row .nb-step span {
   font-weight: bold;
   font-size: 1.4em;
 }
 
-/* line 86, ../scss/partials/_sante.scss */
+/* line 85, ../scss/partials/_sante.scss */
 .module-advice {
   height: 20%;
   margin-bottom: 5%;
 }
-/* line 89, ../scss/partials/_sante.scss */
+/* line 88, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice {
   height: 100%;
 }
-/* line 91, ../scss/partials/_sante.scss */
+/* line 90, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators li {
   background-color: #565656;
 }
-/* line 94, ../scss/partials/_sante.scss */
+/* line 93, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators .active {
   background-color: #219CC5;
 }
-/* line 97, ../scss/partials/_sante.scss */
+/* line 96, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
 }
-/* line 100, ../scss/partials/_sante.scss */
+/* line 99, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
 }
-/* line 103, ../scss/partials/_sante.scss */
+/* line 102, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-prev, .module-advice #carouselAdvice .carousel-control-next {
   width: 8%;
 }
-/* line 106, ../scss/partials/_sante.scss */
+/* line 105, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators {
   bottom: -12px;
 }
-/* line 109, ../scss/partials/_sante.scss */
+/* line 108, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item {
   text-align: left;
   padding: 10px;
 }
-/* line 112, ../scss/partials/_sante.scss */
+/* line 111, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item h3 {
   font-size: 1em;
   margin: 0 30px;
   font-weight: bold;
 }
-/* line 117, ../scss/partials/_sante.scss */
+/* line 116, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item p {
   font-size: 0.8em;
   margin: 0 30px;
 }
 
-/* line 125, ../scss/partials/_sante.scss */
+/* line 124, ../scss/partials/_sante.scss */
 .module-cardiac {
   height: 42%;
   margin-bottom: 5%;
 }
 
-/* line 130, ../scss/partials/_sante.scss */
+/* line 129, ../scss/partials/_sante.scss */
 .module-weight {
   height: 32%;
 }
 
-/* line 134, ../scss/partials/_sante.scss */
+/* line 133, ../scss/partials/_sante.scss */
 .modal-title {
   color: #2D3544;
 }
 
-/* line 138, ../scss/partials/_sante.scss */
+/* line 137, ../scss/partials/_sante.scss */
 .content-modal {
   border-radius: 0;
 }
 
-/* line 142, ../scss/partials/_sante.scss */
+/* line 141, ../scss/partials/_sante.scss */
 .input-water {
   border: none;
 }

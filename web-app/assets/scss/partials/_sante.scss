@@ -30,7 +30,7 @@
 .row-module {
   padding-left: 15px;
   padding-right: 15px;
-  height: auto;
+  height: auto !important;
   justify-content: space-between;
 }
 
@@ -64,17 +64,16 @@
 
 .module-row {
   width: 47%;
-  height: 45%;
+  height: 100%;
   .picto-step {
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 28px;
+    margin-top: 28px;
     width: 93%;
   }
   .nb-step {
     font-weight: 300;
     font-size: 1.8em;
     line-height: 1em;
-    margin-bottom: 0;
 
     span {
       font-weight: bold;

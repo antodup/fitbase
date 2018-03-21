@@ -13514,7 +13514,7 @@ input:-webkit-autofill {
 
 /* line 87, ../scss/partials/_sante.scss */
 .module-advice {
-  height: 20%;
+  height: 17%;
 }
 /* line 89, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice {
@@ -13580,8 +13580,12 @@ input:-webkit-autofill {
 .content-modal {
   border-radius: 0;
 }
+/* line 139, ../scss/partials/_sante.scss */
+.content-modal .fbCustom-button {
+  padding: 15px 20px;
+}
 
-/* line 141, ../scss/partials/_sante.scss */
+/* line 144, ../scss/partials/_sante.scss */
 .input-water {
   border: none;
 }

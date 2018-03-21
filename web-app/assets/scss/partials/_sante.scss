@@ -85,7 +85,7 @@
 }
 
 .module-advice {
-  height: 15%;
+  height: 17%;
   #carouselAdvice {
     height: 100%;
     .carousel-indicators li {
@@ -136,6 +136,9 @@
 
 .content-modal {
   border-radius: 0;
+  .fbCustom-button {
+    padding: 15px 20px;
+  }
 }
 
 .input-water {

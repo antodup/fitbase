@@ -110,8 +110,12 @@ app.get('/profil', function (req, res) {
             let ageDifMs = Date.now() - birthday.getTime();
             let ageDate = new Date(ageDifMs);
             user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
-            res.render('profil.twig', {
-            user: user
+            co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = "+ user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
+                if (error) return console.log(error)
+                res.render('profil.twig', {
+                    user: user,
+                    sports : results
+                })
             })
         })
     })

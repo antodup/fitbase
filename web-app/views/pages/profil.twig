@@ -14,21 +14,20 @@
                 <div class="info">
                     <p class="name">{{ user.lastname }}</p>
                     <p class="firstname">{{ user.firstname }}</p>
-                    <p class="age">{{ user.birthday }}</p>
-                    <p class="kg">{{ user.weight }}</p>
-                    <p class="taille">{{ user.height }}</p>
+                    <p class="age">{{ user.birthday }} ans</p>
+                    <p class="kg">{{ user.weight }} kg</p>
+                    <p class="taille">{{ user.height }} cm</p>
                 </div>
                 <h3>Mes sports</h3>
-                <span class="fbCustom-badge w-100">#sport</span>
-                <span class="fbCustom-badge yellow w-100">#sport</span>
-                {#{% for sport in sports %}
-                {% if loop.index == 0 || loop.index == 3 || loop.index == 6 %}
-                    <span class="fbCustom-badge w-100">#{{ sport }}</span>
-                {% elseif loop.index == 1 || loop.index == 4 || loop.index == 7 %}
-                    <span class="fbCustom-badge yellow w-100">#{{ sport }}</span>
-                {% else %}
-                    <span class="fbCustom-badge yellow w-100">#{{ sport }}</span>
-                {% endif %}#}
+                {% for sport in sports %}
+                    {% if loop.index == 1 or loop.index == 4 or loop.index == 7 %}
+                        <span class="fbCustom-badge w-100">#{{ sport.name }}</span>
+                    {% elseif loop.index == 2 or loop.index == 5 or loop.index == 8 %}
+                        <span class="fbCustom-badge yellow w-100">#{{ sport.name }}</span>
+                    {% else %}
+                        <span class="fbCustom-badge yellow w-100">#{{ sport.name }}</span>
+                    {% endif %}
+                {% endfor %}
                 <h3>Mes objectifs</h3>
                 <span class="fbCustom-badge blue w-100">#objectifs</span>
                 <span class="fbCustom-badge green w-100">#objectifs</span>

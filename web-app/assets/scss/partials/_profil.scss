@@ -1,78 +1,140 @@
-.main-profil{
-    h3{
-        text-transform: uppercase;
-        margin-top: 1rem;
-        color: #fff;
+.main-profil {
+  background-image: url("../img/grid-profil.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 92%;
+  h3 {
+    text-transform: uppercase;
+    margin-top: 1rem;
+    color: #fff;
+  }
+  .modal-dialog{
+    max-width: 660px;
+  }
+  .modif-profil{
+    img{
+      max-width: 100%;
     }
-}
-.profil{
+  }
+  .profil {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 0 10px;
-    span{
-        margin: 5px 0;
+    min-height: 100vh;
+    span {
+      margin: 5px 0;
     }
-    .pp{
-       max-width: 100%;
+    .pp {
+      max-width: 100%;
+      margin-top: 15px;
     }
-    .info{
-        width:100%;
-        text-align: left;
-        .name{
-            text-transform: uppercase;
-        }
-        p{
-            margin: 0;
-        }
+    .info {
+      width: 100%;
+      text-align: left;
+      .name {
+        text-transform: uppercase;
+      }
+      p {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+    button{
+      border: none;
+      background: none;
+      width: auto;
+      height: auto;
+      padding: 0;
+      cursor: pointer;
     }
 
-}
-.reward{
-    margin-right: 50px;
-}
-.ami{
-    margin-right: 50px;
-}
-//SVG
+  }
+  .rewards {
+    .row {
+      padding-left: 15px;
+      margin-top: 15px;
+    }
+  }
 
-.reward svg{
+  .reward {
+    margin-right: 50px;
+  }
+  .ami {
+    margin-right: 50px;
+    p {
+      color: #fff;
+      margin-top: 10px;
+    }
+  }
+  //SVG
+
+  .reward svg {
     height: 80px;
-}
-.reward.on{
-    p{
-        color: #f4e932;
+  }
+  .reward.on {
+    p {
+      color: #f4e932;
     }
     .cls-1, .cls-3 {
-        fill: #f4e932;
+      fill: #f4e932;
     }
 
     .cls-2 {
-        fill: #2d3544;
+      fill: #2d3544;
     }
 
     .cls-3 {
-        font-size: 5px;
-        font-family: Roboto-Black, Roboto;
-        font-weight: 800;
+      font-size: 5px;
+      font-family: Roboto-Black, Roboto;
+      font-weight: 800;
     }
-}
+  }
 
-.reward.off{
+  .reward.off {
 
-    p{
-        color: rgba(255,255,255,0.74);
+    p {
+      color: rgba(255, 255, 255, 0.74);
     }
-    .cls-1, .cls-3{
-        fill: rgba(255,255,255,0.74);
+    .cls-1, .cls-3 {
+      fill: rgba(255, 255, 255, 0.74);
     }
 
     .cls-2 {
-        fill: #2d3544;
+      fill: #2d3544;
     }
     .cls-3 {
-        font-size: 5px;
-        font-family: Roboto-Black, Roboto;
-        font-weight: 800;
+      font-size: 5px;
+      font-family: Roboto-Black, Roboto;
+      font-weight: 800;
     }
+  }
+  .modal-body {
+    .row {
+      padding-left: 0;
+    }
+    .find-friend {
+      margin: 10px 0;
+      img {
+        max-width: 40px;
+      }
+      p {
+        font-size: 0.8em;
+        margin: 0;
+        width: 100%;
+        margin-left: 10px;
+      }
+      button {
+        padding: 10px;
+        border: solid 0.5px $fb-darkBlue;
+        font-size: 11px;
+      }
+    }
+  }
+  .modal-footer {
+    button {
+      padding: 12px 30px;
+    }
+  }
 }
+
 

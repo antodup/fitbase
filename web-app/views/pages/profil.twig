@@ -1,30 +1,80 @@
 {% extends '../base.twig' %}
 
 {% block body %}
-<main class="background ctn-general">
+    <main class="background ctn-general">
 
         {% block header %}
             {% include '../layout/header.twig' %}
         {% endblock %}
-
         <section class="w-100 row m-0 main-profil">
-            <aside class=" col-2 offset-1 profil d-flex flex-column justify-content-center">
-                <h3 class="text-center">Evapmf</h3>
+            <aside class=" col-2 profil d-flex flex-column justify-content-center">
+                <div class="d-flex align-items-center title-aside justify-content-between">
+                    <h3>{{ user.username }}</h3>
+                    <button data-toggle="modal" data-target="#modif-profil"><img src="../img/btn-profil.png">
+                    </button>
+                </div>
                 <img class="pp" src="/img/profil-picture.jpg">
                 <div class="info">
-                    <p class="name">pamfil</p>
-                    <p class="firstname">Eva</p>
-                    <p class="age">21 ans</p>
-                    <p class="kg">55 kg</p>
-                    <p class="taille">1,65 m</p>
+                    <p class="name">{{ user.lastname }}</p>
+                    <p class="firstname">{{ user.firstname }}</p>
+                    <p class="age">{{ user.birthday }} ans</p>
+                    <p class="kg">{{ user.weight }} kg</p>
+                    <p class="taille">{{ user.height }} cm</p>
                 </div>
                 <h3>Mes sports</h3>
-                <span class="fbCustom-badge w-100">#sports</span>
-                <span class="fbCustom-badge yellow w-100">#sports</span>
+                {% for sport in sports %}
+                    {% if loop.index == 1 or loop.index == 4 or loop.index == 7 %}
+                        <span class="fbCustom-badge w-100">#{{ sport.name }}</span>
+                    {% elseif loop.index == 2 or loop.index == 5 or loop.index == 8 %}
+                        <span class="fbCustom-badge yellow w-100">#{{ sport.name }}</span>
+                    {% else %}
+                        <span class="fbCustom-badge blue w-100">#{{ sport.name }}</span>
+                    {% endif %}
+                {% endfor %}
                 <h3>Mes objectifs</h3>
                 <span class="fbCustom-badge blue w-100">#objectifs</span>
-                <span class="fbCustom-badge green w-100">#objectifs</span>
             </aside>
+            <div class="modal fade" id="modif-profil" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edition du profil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body modif-profil">
+                            <div class="row ">
+                                <div class="col-4 d-flex flex-column justify-content-between">
+                                    <img src="img/profil-picture.jpg">
+                                    <button class="fbCustom-button fbCustom-button--bordered">Télécharger la photo</button>
+                                </div>
+                                <div class="col-8">
+                                    <div class="fbCustom-input">
+                                        <input class="input-field" type="text" id="input1" placeholder="Nom et prénom">
+                                        <label class="input-label" for="input1">Nom et prénom</label>
+                                    </div>
+                                    <div class="fbCustom-input my-4">
+                                        <input class="input-field" type="text" id="input1" placeholder="Date de naissance">
+                                        <label class="input-label" for="input1">Date de naissance</label>
+                                    </div>
+                                    <div class="fbCustom-input my-4">
+                                        <input class="input-field" type="text" id="input1" placeholder="Poid">
+                                        <label class="input-label" for="input1">Poid</label>
+                                    </div>
+                                    <div class="fbCustom-input">
+                                        <input class="input-field" type="text" id="input1" placeholder="Taille">
+                                        <label class="input-label" for="input1">Taille</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center align-items-center">
+                            <button class="fbCustom-button fbCustom-button--filled">Valider</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="rewards offset-1 col-8 flex-wrap">
                 <h3>Rewards</h3>
                 <div class="row justify-content-flex-start">
@@ -351,26 +401,99 @@
                         <p class="mt-3 text-center">Objectif<br> calorique</p>
                     </div>
                 </div>
-            <h3>Amis</h3>
-            <div class="row align-items-center justify-content-flex-start">
-                <div class="ami on d-flex flex-column align-items-center">
-                    <img src="/img/anto.png">
-                    <p>anthodup</p>
+                <h3>Amis</h3>
+                <button class="fbCustom-button fbCustom-button--filled" data-toggle="modal"
+                        data-target="#exampleModalCenter">Ajouter des amis
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Ajout d'amis</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="fbCustom-input">
+                                    <input class="input-field" type="text" id="input1"
+                                           placeholder="Rechercher des amis">
+                                    <label class="input-label" for="input1">Rechercher des amis</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/anto.png">
+                                            <p>Anthony Dup</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/thib.png">
+                                            <p>Thib</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/mayeu.png">
+                                            <p>Mayeunaise</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/jauniss.png">
+                                            <p>Jauniss</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/anto.png">
+                                            <p>Anthony Dup</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/thib.png">
+                                            <p>Thib</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/mayeu.png">
+                                            <p>Mayeunaise</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                        <div class="find-friend d-flex align-items-center justify-content-between">
+                                            <img src="img/jauniss.png">
+                                            <p>Jauniss</p>
+                                            <button class="fbCustom-button fbCustom-button--bordered">Ajouter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center align-items-center">
+                                <button class="fbCustom-button fbCustom-button--filled">Valider</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ami on d-flex flex-column align-items-center">
-                    <img src="/img/thib.png">
-                    <p>thib</p>
+                <div class="row align-items-center justify-content-flex-start">
+                    <div class="ami on d-flex flex-column align-items-center">
+                        <img src="/img/anto.png">
+                        <p>anthodup</p>
+                    </div>
+                    <div class="ami on d-flex flex-column align-items-center">
+                        <img src="/img/thib.png">
+                        <p>thib</p>
+                    </div>
+                    <div class="ami on d-flex flex-column align-items-center">
+                        <img src="/img/mayeu.png">
+                        <p>mayeu</p>
+                    </div>
+                    <div class="ami on d-flex flex-column align-items-center">
+                        <img src="/img/jauniss.png">
+                        <p>jauniss</p>
+                    </div>
                 </div>
-                <div class="ami on d-flex flex-column align-items-center">
-                    <img src="/img/mayeu.png">
-                    <p>mayeu</p>
-                </div>
-                <div class="ami on d-flex flex-column align-items-center">
-                    <img src="/img/jauniss.png">
-                    <p>jauniss</p>
-                </div>
-            </div>
         </section>
 
-</main>
+    </main>
 {% endblock %}

@@ -13419,7 +13419,7 @@ input:-webkit-autofill {
   width: 90vw;
   height: 100vh;
   background-size: 92%;
-  padding: 30px 30px 30px 0px;
+  padding: 10px 10px 10px 0px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -13488,7 +13488,7 @@ input:-webkit-autofill {
 /* line 64, ../scss/partials/_sante.scss */
 .module-row {
   width: 47%;
-  height: 100%;
+  height: auto;
 }
 /* line 67, ../scss/partials/_sante.scss */
 .module-row .picto-step {

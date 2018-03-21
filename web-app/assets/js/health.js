@@ -106,7 +106,8 @@ var myDoughnutChart = {
             text: "Eau",
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
-            fontColor: "#ffffff"
+            fontColor: "#ffffff",
+            padding : 0
         },
         tooltips: {
             mode: 'index',

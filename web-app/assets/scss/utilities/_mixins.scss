@@ -1,0 +1,38 @@
+@mixin mobile-xs{
+  @media screen and (max-width: $mobile-xs) {
+    @content
+  };
+};
+
+@mixin mobile{
+  @media screen and (max-width: $mobile) {
+    @content
+  };
+};
+
+@mixin tablet{
+  @media screen and (max-width: $tablet) {
+    @content
+  };
+};
+
+@mixin desktop{
+  @media screen and (max-width: $desktop) {
+    @content
+  };
+};
+@mixin until-from($min, $max){
+  @media screen and (min-width: $min) and (max-width: $max){
+    @content
+  };
+};
+@mixin until-height($max){
+  @media screen and (max-height: $max){
+    @content
+  };
+};
+@mixin from-height($min){
+  @media screen and (min-height: $min){
+    @content
+  };
+};

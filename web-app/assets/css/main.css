@@ -12514,6 +12514,11 @@ body {
   font-family: Roboto;
 }
 
+/* line 4, ../scss/utilities/_base.scss */
+label {
+  margin: 0;
+}
+
 /* line 1, ../scss/utilities/_gui.scss */
 .fbCustom-radio, .fbCustom-checkbox, .fbCustom-radioTab, .fbCustom-checkboxBadge {
   padding: 5px 0;
@@ -12524,7 +12529,17 @@ body {
   display: inline-block;
 }
 
-/* line 10, ../scss/utilities/_gui.scss */
+/* line 8, ../scss/utilities/_gui.scss */
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/* line 11, ../scss/utilities/_gui.scss */
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+/* line 15, ../scss/utilities/_gui.scss */
 .fbCustom-button {
   font-weight: 300;
   text-transform: uppercase;
@@ -12533,17 +12548,17 @@ body {
   cursor: pointer;
   transition: all 250ms ease;
 }
-/* line 17, ../scss/utilities/_gui.scss */
+/* line 22, ../scss/utilities/_gui.scss */
 .fbCustom-button + tablet {
   padding: 15px 25px;
 }
-/* line 20, ../scss/utilities/_gui.scss */
+/* line 25, ../scss/utilities/_gui.scss */
 .fbCustom-button.disabled, .fbCustom-button:disabled {
   cursor: not-allowed;
   pointer-events: none;
   opacity: .65;
 }
-/* line 25, ../scss/utilities/_gui.scss */
+/* line 30, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--bordered {
   font-size: 13px;
   color: #2D3544;
@@ -12553,21 +12568,21 @@ body {
   background-color: transparent;
   transition: all 0.25s ease;
 }
-/* line 34, ../scss/utilities/_gui.scss */
+/* line 39, ../scss/utilities/_gui.scss */
 .fbCustom-button svg {
   fill: #2D3544;
 }
-/* line 37, ../scss/utilities/_gui.scss */
+/* line 42, ../scss/utilities/_gui.scss */
 .fbCustom-button:hover {
   border: 1px solid transparent;
   background-color: #2D3544;
   color: #fff;
 }
-/* line 42, ../scss/utilities/_gui.scss */
+/* line 47, ../scss/utilities/_gui.scss */
 .fbCustom-button:hover svg {
   fill: #fff;
 }
-/* line 46, ../scss/utilities/_gui.scss */
+/* line 51, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--filled {
   font-size: 13px;
   color: #fff;
@@ -12575,35 +12590,35 @@ body {
   background-color: #2D3544;
   transition: transform 0.75s cubic-bezier(0.045, 0.855, 0.1, 0.955), opacity 0.35s ease;
 }
-/* line 52, ../scss/utilities/_gui.scss */
+/* line 57, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--filled:hover {
   opacity: 0.5;
 }
-/* line 55, ../scss/utilities/_gui.scss */
+/* line 60, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--filled span, .fbCustom-button.fbCustom-button--filled svg {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 59, ../scss/utilities/_gui.scss */
+/* line 64, ../scss/utilities/_gui.scss */
 .fbCustom-button.fbCustom-button--filled svg {
   height: 10px;
   fill: #fff;
   margin-left: 10px;
 }
 
-/* line 69, ../scss/utilities/_gui.scss */
+/* line 74, ../scss/utilities/_gui.scss */
 .fbCustom-radio input {
   display: none;
 }
-/* line 72, ../scss/utilities/_gui.scss */
+/* line 77, ../scss/utilities/_gui.scss */
 .fbCustom-radio input:checked + .labelCheck-hide {
   border-color: #2D3544;
 }
-/* line 74, ../scss/utilities/_gui.scss */
+/* line 79, ../scss/utilities/_gui.scss */
 .fbCustom-radio input:checked + .labelCheck-hide:after {
   opacity: 1;
 }
-/* line 80, ../scss/utilities/_gui.scss */
+/* line 85, ../scss/utilities/_gui.scss */
 .fbCustom-radio .labelCheck-hide {
   position: relative;
   width: 18px;
@@ -12613,7 +12628,7 @@ body {
   border: 1px solid #2D3544;
   vertical-align: middle;
 }
-/* line 88, ../scss/utilities/_gui.scss */
+/* line 93, ../scss/utilities/_gui.scss */
 .fbCustom-radio .labelCheck-hide:after {
   content: '';
   position: absolute;
@@ -12630,12 +12645,12 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 101, ../scss/utilities/_gui.scss */
+/* line 106, ../scss/utilities/_gui.scss */
 .fbCustom-radio .labelCheck-hide, .fbCustom-radio .labelCheck-hide + label {
   display: inline-block;
   cursor: pointer;
 }
-/* line 105, ../scss/utilities/_gui.scss */
+/* line 110, ../scss/utilities/_gui.scss */
 .fbCustom-radio .labelCheck-hide + label {
   font-size: 13px;
   line-height: 16px;
@@ -12643,22 +12658,22 @@ body {
   margin-left: 5px;
 }
 
-/* line 116, ../scss/utilities/_gui.scss */
+/* line 121, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox input {
   display: none;
 }
-/* line 119, ../scss/utilities/_gui.scss */
+/* line 124, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox input:checked + .labelCheck-hide {
   background-color: #2D3544;
 }
-/* line 121, ../scss/utilities/_gui.scss */
+/* line 126, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox input:checked + .labelCheck-hide svg {
   -moz-transform: translate(-50%, -50%) scale(1);
   -ms-transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
   transform: translate(-50%, -50%) scale(1);
 }
-/* line 127, ../scss/utilities/_gui.scss */
+/* line 132, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox .labelCheck-hide {
   position: relative;
   width: 18px;
@@ -12667,7 +12682,7 @@ body {
   border: 1px solid #2D3544;
   transition: all 250ms ease;
 }
-/* line 134, ../scss/utilities/_gui.scss */
+/* line 139, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox .labelCheck-hide svg {
   position: absolute;
   width: 8px;
@@ -12680,12 +12695,12 @@ body {
   transform: translate(-50%, -50%) scale(0.7);
   transition: all 250ms ease;
 }
-/* line 143, ../scss/utilities/_gui.scss */
+/* line 148, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox .labelCheck-hide, .fbCustom-checkbox .labelCheck-hide + label {
   display: inline-block;
   cursor: pointer;
 }
-/* line 147, ../scss/utilities/_gui.scss */
+/* line 152, ../scss/utilities/_gui.scss */
 .fbCustom-checkbox .labelCheck-hide + label {
   font-size: 13px;
   line-height: 16px;
@@ -12694,7 +12709,7 @@ body {
   display: inline;
 }
 
-/* line 159, ../scss/utilities/_gui.scss */
+/* line 164, ../scss/utilities/_gui.scss */
 .fbCustom-badge {
   font-size: 13px;
   font-weight: 300;
@@ -12703,25 +12718,25 @@ body {
   background-color: #2D3544;
   border-radius: 20px;
 }
-/* line 166, ../scss/utilities/_gui.scss */
+/* line 171, ../scss/utilities/_gui.scss */
 .fbCustom-badge.yellow {
   color: #2F2F2F;
   background-color: #F4E932;
 }
-/* line 170, ../scss/utilities/_gui.scss */
+/* line 175, ../scss/utilities/_gui.scss */
 .fbCustom-badge.green {
   background-color: #96C84E;
 }
-/* line 173, ../scss/utilities/_gui.scss */
+/* line 178, ../scss/utilities/_gui.scss */
 .fbCustom-badge.blue {
   background-color: #219CC5;
 }
 
-/* line 179, ../scss/utilities/_gui.scss */
+/* line 184, ../scss/utilities/_gui.scss */
 .fbCustom-input {
   position: relative;
 }
-/* line 181, ../scss/utilities/_gui.scss */
+/* line 186, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field {
   width: 100%;
   font-size: 13px;
@@ -12742,7 +12757,7 @@ body {
     }
   }*/
 }
-/* line 191, ../scss/utilities/_gui.scss */
+/* line 196, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:not(:placeholder-shown) + .input-label, .fbCustom-input .input-field:placeholder-shown:focus + .input-label {
   font-weight: bold;
   color: #2D3544;
@@ -12751,51 +12766,51 @@ body {
   -webkit-transform: translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1);
   transform: translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1);
 }
-/* line 197, ../scss/utilities/_gui.scss */
+/* line 202, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:focus, .fbCustom-input .input-field:placeholder-shown:focus {
   background-color: #C0C3C7;
 }
-/* line 200, ../scss/utilities/_gui.scss */
+/* line 205, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field::-webkit-input-placeholder {
   color: transparent;
 }
-/* line 203, ../scss/utilities/_gui.scss */
+/* line 208, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:-ms-input-placeholder {
   color: transparent;
 }
-/* line 206, ../scss/utilities/_gui.scss */
+/* line 211, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field::-moz-placeholder {
   color: transparent;
 }
-/* line 209, ../scss/utilities/_gui.scss */
+/* line 214, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:-moz-placeholder {
   color: transparent;
 }
-/* line 212, ../scss/utilities/_gui.scss */
+/* line 217, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field::placeholder {
   color: transparent;
 }
-/* line 215, ../scss/utilities/_gui.scss */
+/* line 220, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field.placeholder {
   color: transparent;
 }
-/* line 218, ../scss/utilities/_gui.scss */
+/* line 223, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:-webkit-autofill, .fbCustom-input .input-field:-webkit-autofill:hover, .fbCustom-input .input-field:-webkit-autofill:focus {
   -webkit-text-fill-color: #2D3544;
   -webkit-box-shadow: 0 0 0px 1000px white inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-/* line 222, ../scss/utilities/_gui.scss */
+/* line 227, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:-webkit-autofill + .input-label, .fbCustom-input .input-field:-webkit-autofill:hover + .input-label, .fbCustom-input .input-field:-webkit-autofill:focus + .input-label {
   font-weight: bold;
   color: #2D3544;
   transform: translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1);
 }
-/* line 229, ../scss/utilities/_gui.scss */
+/* line 234, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-field:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #2D3544 inset;
 }
-/* line 244, ../scss/utilities/_gui.scss */
+/* line 249, ../scss/utilities/_gui.scss */
 .fbCustom-input .input-label {
   position: absolute;
   width: 100%;
@@ -12814,25 +12829,25 @@ body {
   transition: all 250ms ease;
 }
 
-/* line 263, ../scss/utilities/_gui.scss */
+/* line 268, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul {
   text-align: center;
 }
-/* line 265, ../scss/utilities/_gui.scss */
+/* line 270, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul li {
   display: inline-block;
   margin: 0 5px;
 }
-/* line 269, ../scss/utilities/_gui.scss */
+/* line 274, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul li.pagination-prev a, .fbCustom-pagination ul li.pagination-next a {
   border-color: red;
 }
-/* line 274, ../scss/utilities/_gui.scss */
+/* line 279, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul li.current a {
   color: #fff;
   background-color: red;
 }
-/* line 280, ../scss/utilities/_gui.scss */
+/* line 285, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul a {
   display: block;
   font-size: 11px;
@@ -12843,15 +12858,149 @@ body {
   border: 1px solid transparent;
   transition: all 250ms ease;
 }
-/* line 289, ../scss/utilities/_gui.scss */
+/* line 294, ../scss/utilities/_gui.scss */
 .fbCustom-pagination ul a:hover {
   color: #fff;
   background-color: red;
 }
 
-/* line 298, ../scss/utilities/_gui.scss */
+/* line 303, ../scss/utilities/_gui.scss */
 h3 {
   font-size: 1.3rem;
+}
+
+/* line 307, ../scss/utilities/_gui.scss */
+.module-container {
+  padding: 15px 0;
+  height: 100%;
+}
+/* line 310, ../scss/utilities/_gui.scss */
+.module-container .module {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 1, ../scss/partials/layout/_nav.scss */
+.ctn-general {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 768px) {
+  /* line 1, ../scss/partials/layout/_nav.scss */
+  .ctn-general {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+/* line 12, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 10vw;
+}
+@media screen and (max-width: 768px) {
+  /* line 12, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu {
+    flex-direction: row;
+    width: 100%;
+    height: 5vh;
+  }
+}
+/* line 23, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu .logo {
+  margin-top: 10px;
+  height: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 31, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav {
+  margin-top: 20px;
+  height: calc(85% - 20px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  /* line 31, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav {
+    flex-direction: row;
+  }
+}
+/* line 42, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all ease 2s;
+  position: relative;
+}
+/* line 50, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .icon {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* line 59, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic {
+  color: white;
+  transform: rotate(-90deg);
+  display: none;
+  margin-top: 15px;
+  font-size: 0.9em;
+  opacity: 0;
+}
+/* line 67, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic2 {
+  color: white;
+  transform: rotate(-90deg);
+  display: none;
+  margin-top: 40px;
+}
+/* line 74, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic-show {
+  position: absolute;
+  top: 27px;
+  display: block;
+  color: #F4E932;
+}
+/* line 80, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .topic-block .topic-show-2 {
+  position: absolute;
+  bottom: 55px;
+  display: block;
+  color: #F4E932;
+}
+/* line 88, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .parent-line {
+  width: auto;
+  height: 24%;
+  display: flex;
+  align-items: flex-end;
+}
+/* line 93, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .parent-line div {
+  width: 1px;
+  height: 100%;
+  background-color: white;
+}
+/* line 99, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .hover-settings {
+  align-items: flex-start;
 }
 
 /* line 1, ../scss/partials/_home.scss */
@@ -13586,124 +13735,29 @@ input:-webkit-autofill {
   border: none;
 }
 
-/* line 1, ../scss/partials/layout/_nav.scss */
-.ctn-general {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  overflow-y: hidden;
+/* line 2, ../scss/partials/_sport.scss */
+.sport-container .module {
+  padding: 0;
 }
-@media screen and (max-width: 768px) {
-  /* line 1, ../scss/partials/layout/_nav.scss */
-  .ctn-general {
-    flex-direction: column-reverse;
-    justify-content: space-between;
-  }
+/* line 6, ../scss/partials/_sport.scss */
+.sport-container .carousel-item h3 {
+  margin-bottom: 10px !important;
 }
-/* line 12, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 10vw;
+/* line 10, ../scss/partials/_sport.scss */
+.sport-container h3 {
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0 30px;
 }
-@media screen and (max-width: 768px) {
-  /* line 12, ../scss/partials/layout/_nav.scss */
-  .ctn-general #menu {
-    flex-direction: row;
-    width: 100%;
-    height: 5vh;
-  }
+/* line 15, ../scss/partials/_sport.scss */
+.sport-container .module-advice {
+  height: 23.7%;
 }
-/* line 23, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu .logo {
-  margin-top: 10px;
-  height: 8%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* line 18, ../scss/partials/_sport.scss */
+.sport-container .module-advice {
+  flex-basis: 25%;
 }
-/* line 31, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav {
-  margin-top: 20px;
-  height: calc(85% - 20px);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-@media screen and (max-width: 768px) {
-  /* line 31, ../scss/partials/layout/_nav.scss */
-  .ctn-general #menu nav {
-    flex-direction: row;
-  }
-}
-/* line 42, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: all ease 2s;
-  position: relative;
-}
-/* line 50, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block .icon {
-  height: 20px;
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-}
-/* line 59, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block .topic {
-  color: white;
-  transform: rotate(-90deg);
-  display: none;
-  margin-top: 15px;
-  font-size: 0.9em;
-  opacity: 0;
-}
-/* line 67, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block .topic2 {
-  color: white;
-  transform: rotate(-90deg);
-  display: none;
-  margin-top: 40px;
-}
-/* line 74, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block .topic-show {
-  position: absolute;
-  top: 27px;
-  display: block;
-  color: #F4E932;
-}
-/* line 80, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .topic-block .topic-show-2 {
-  position: absolute;
-  bottom: 55px;
-  display: block;
-  color: #F4E932;
-}
-/* line 88, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .parent-line {
-  width: auto;
-  height: 24%;
-  display: flex;
-  align-items: flex-end;
-}
-/* line 93, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .parent-line div {
-  width: 1px;
-  height: 100%;
-  background-color: white;
-}
-/* line 99, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .hover-settings {
-  align-items: flex-start;
+/* line 21, ../scss/partials/_sport.scss */
+.sport-container .module-training {
+  flex-grow: 1;
 }

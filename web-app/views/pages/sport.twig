@@ -1,18 +1,135 @@
 {% extends '../base.twig' %}
 {% block body %}
-    <section class="background">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1">
+    <main class="background ctn-general">
+        {% block header %}
+            {% include '../layout/header.twig' %}
+        {% endblock %}
+        <section class="grid-background sport-container">
+            <section class="container">
+                <section class="row">
+                    <div class="col d-flex flex-column">
+                        <div class="row mb-4 h-50">
+                            <section class="col-md-6">
+                                <article class="module module-sleep h-100">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tu2VdQ8XAVw"
+                                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </article>
+                            </section>
+                            <section class="col-md-6">
+                                <article class="module module-sleep h-100">
+                                    <iframe width="100%" height="100%" frameborder="0" zoom="15" style="border:0; -webkit-filter: grayscale(100%);
+                                            filter: grayscale(100%);"
+                                            src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJQ4be0xdu5kcR_0uU3KNuUlU&destination=place_id:ChIJpVOE6Qhu5kcRAx4u4EoRmLk&key=AIzaSyDkjg56T6FTTrnVYqGVhvLKHRf46ovvjfo&zoom=14&mode=walking" allowfullscreen></iframe>
+                                </article>
+                            </section>
+                        </div>
+                        <div class="row h-50">
+                            <section class="col-md-6">
+                                <article class="module module-sleep h-100">
 
-                </div>
-                <div class="col-11">
-                    <div class="row">
-
+                                </article>
+                            </section>
+                            <section class="col-md-6">
+                                <div class="row h-100">
+                                    <div class="col-md-6">
+                                        <div class="module h-100 w-100"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="module h-100 w-100"></div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-        </div>
-    </section>
+                    <section class="col-md-4 d-flex flex-column">
+                        <article class="module module-advice">
+                            <div id="carouselAdvice" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselAdvice" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselAdvice" data-slide-to="1"></li>
+                                    <li data-target="#carouselAdvice" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <h3>Titre du conseil</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+                                            dolorum
+                                            eaque eius lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+                                            dolorum
+                                            eaque eius ... <a href="">Voir Plus</a></p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h3>Titre du conseil</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+                                            dolorum
+                                            eaque eius lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+                                            dolorum
+                                            eaque eius ... <a href="">Voir Plus</a></p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h3>Titre du conseil</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+                                            dolorum
+                                            eaque eius lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+                                            dolorum
+                                            eaque eius ... <a href="">Voir Plus</a></p>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselAdvice" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselAdvice" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="module module-training">
+                            <canvas id="chart-sport" width="100%" height="75"></canvas>
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Dernier entrainement</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-3">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="32px" height="38px" viewBox="0 0 32 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                        <title>noun_1206042_cc</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="SPORT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1012.000000, -617.000000)">
+                                            <g id="noun_1206042_cc" transform="translate(1012.000000, 617.000000)" fill="#FFFFFF">
+                                                <g id="Group">
+                                                    <path d="M15.9210733,0.154617303 C15.0593891,0.154617303 14.2726943,0.285354382 13.6315575,0.528212809 C13.3110101,0.649684719 13.0198522,0.792248764 12.7631785,1.02191393 C12.5065048,1.2515791 12.2631364,1.61936787 12.2631364,2.07596562 C12.2631364,2.53260607 12.5065048,2.91375888 12.7631785,3.14338135 C13.0198522,3.37304652 13.3110101,3.51565326 13.6315575,3.63708247 C13.9587575,3.76098809 14.3181259,3.85598809 14.7105469,3.91725775 L13.9868417,5.43832517 C6.114632,6.44523978 0.0131583158,13.2801162 0.0131583158,21.5296472 C0.0131583158,30.4711326 7.17842147,37.7276809 15.9999785,37.7276809 C24.8176206,37.7276809 31.9868417,30.4711326 31.9868417,21.5296472 C31.9868417,13.2790061 25.883768,6.44378809 18.0131575,5.43832517 L17.2894943,3.91725775 C17.6808627,3.85598809 18.0419575,3.76073191 18.3683996,3.63708247 C18.6889891,3.51565326 18.9801469,3.37304652 19.2368627,3.14338135 C19.4934943,2.91371618 19.7499996,2.53256337 19.7499996,2.07596562 C19.7499996,1.61936787 19.4934943,1.2515791 19.2368627,1.02191393 C18.9801469,0.792248764 18.6889891,0.649684719 18.3683996,0.528212809 C17.7273048,0.285354382 16.9537891,0.154617303 16.0921048,0.154617303 L15.9999785,0.154617303 L15.9210733,0.154617303 Z M15.9999785,9.81472966 C16.4650599,9.81473084 16.8420826,10.1970488 16.8420838,10.6686622 L16.8420838,20.6757146 L26.7105469,20.6757146 C27.1756284,20.6757158 27.552651,21.0580337 27.5526522,21.5296472 C27.5526522,27.9872562 22.3638522,33.2311708 15.9999785,33.2311708 C9.63227326,33.2311708 4.46052674,27.9872562 4.46052674,21.5296472 C4.46052674,15.072051 9.63185221,9.81472966 15.9999785,9.81472966 Z" id="Shape"></path>
+                                                    <path d="M15.1615785,11.5585027 L15.1615785,21.5252494 C15.1615797,21.9968629 15.5386024,22.3791808 16.0036838,22.379182 L25.8281469,22.379182 C25.4023785,27.5118719 21.1739996,31.5242449 16.0036838,31.5242449 C10.5452417,31.5242449 6.13892674,27.0599281 6.13892674,21.5252494 C6.13892674,16.2782735 10.0995575,11.990251 15.1615785,11.5585027 Z" id="Shape"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/vendor/Chart.js"></script>
+    <script src="/js/sport.js"></script>
 {% endblock %}

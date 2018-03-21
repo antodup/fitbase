@@ -45,6 +45,11 @@ app.set('views', [__dirname + '/web-app/views/pages', __dirname + '/web-app/view
 
 /* road for start page */
 app.get('/', function (req, res) {
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute != undefined) {
+        let sessData = req.session
+        sessData.someAttribute = undefined;
+    }
     res.render('index.twig');
 });
 
@@ -97,6 +102,10 @@ app.get('/inscription', function (req, res) {
 app.get('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
     //récupérer les infos du user en fonction de l'id contenu dans req.session
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    }
     var user_id = req.session.someAttribute,
         co = connection();
     co.connect();
@@ -146,17 +155,32 @@ app.post('/inscription', function (req, res) {
 
 /* road for paremètre page */
 app.get('/parametres', function (req, res) {
-    res.render('parameters.twig');
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    } else {
+        res.render('parameters.twig');
+    }
 });
 
 /* road for santé page */
 app.get('/sante', function (req, res) {
-    res.render('health.twig');
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    } else {
+        res.render('health.twig');
+    }
 });
 
 /* road for sport page */
 app.get('/sport', function (req, res) {
-    res.render('sport.twig');
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    } else {
+        res.render('sport.twig');
+    }
 });
 
 /* road for contact page */

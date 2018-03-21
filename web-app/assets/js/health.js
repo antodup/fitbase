@@ -172,7 +172,7 @@ var myChart = new Chart(cardiacChart, {
     data: {
         labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         datasets: [{
-            label: 'Pulsation Cardiac ',
+            label: 'Pulsation Cardiaque',
             data: [80, 60, 64, 95, 74, 68, 70],
             fill: false,
             borderColor: gradientCardiac,
@@ -184,7 +184,7 @@ var myChart = new Chart(cardiacChart, {
     options: {
         title: {
             display: true,
-            text: 'Fréquence Cardiac',
+            text: 'Fréquence Cardiaque',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
             fontColor: "#ffffff"
@@ -234,7 +234,7 @@ var myChart = new Chart(weightChart, {
     data: {
         labels: ["Jan", "Fév", "Mars"],
         datasets: [{
-            label: 'Pulsation Cardiac',
+            label: 'Evolution du poids',
             data: [80, 60, 64],
             borderColor: gradientWeight,
             backgroundColor: '#219cc559',
@@ -246,7 +246,7 @@ var myChart = new Chart(weightChart, {
     options: {
         title: {
             display: true,
-            text: 'Poid',
+            text: 'Poids',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
             fontColor: "#ffffff"

@@ -13339,8 +13339,8 @@ input:-webkit-autofill {
 }
 /* line 67, ../scss/partials/_sante.scss */
 .module-row .picto-step {
-  margin-bottom: 28px;
-  margin-top: 28px;
+  margin-bottom: 25px;
+  margin-top: 25px;
   width: 93%;
 }
 /* line 72, ../scss/partials/_sante.scss */
@@ -13354,77 +13354,81 @@ input:-webkit-autofill {
   font-weight: bold;
   font-size: 1.4em;
 }
+/* line 82, ../scss/partials/_sante.scss */
+.module-row p {
+  margin-bottom: 0.25em;
+}
 
-/* line 84, ../scss/partials/_sante.scss */
+/* line 87, ../scss/partials/_sante.scss */
 .module-advice {
   height: auto;
 }
-/* line 86, ../scss/partials/_sante.scss */
+/* line 89, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice {
   height: 100%;
 }
-/* line 88, ../scss/partials/_sante.scss */
+/* line 91, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators li {
   background-color: #565656;
 }
-/* line 91, ../scss/partials/_sante.scss */
+/* line 94, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators .active {
   background-color: #219CC5;
 }
-/* line 94, ../scss/partials/_sante.scss */
+/* line 97, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
 }
-/* line 97, ../scss/partials/_sante.scss */
+/* line 100, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
 }
-/* line 100, ../scss/partials/_sante.scss */
+/* line 103, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-prev, .module-advice #carouselAdvice .carousel-control-next {
   width: 8%;
 }
-/* line 103, ../scss/partials/_sante.scss */
+/* line 106, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators {
   bottom: -12px;
 }
-/* line 106, ../scss/partials/_sante.scss */
+/* line 109, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item {
   text-align: left;
   padding: 10px;
 }
-/* line 109, ../scss/partials/_sante.scss */
+/* line 112, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item h3 {
   font-size: 1em;
   margin: 0 30px;
   font-weight: bold;
 }
-/* line 114, ../scss/partials/_sante.scss */
+/* line 117, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item p {
   font-size: 0.8em;
   margin: 0 30px;
 }
 
-/* line 122, ../scss/partials/_sante.scss */
+/* line 125, ../scss/partials/_sante.scss */
 .module-cardiac {
   height: auto;
 }
 
-/* line 126, ../scss/partials/_sante.scss */
+/* line 129, ../scss/partials/_sante.scss */
 .module-weight {
   height: auto;
 }
 
-/* line 130, ../scss/partials/_sante.scss */
+/* line 133, ../scss/partials/_sante.scss */
 .modal-title {
   color: #2D3544;
 }
 
-/* line 134, ../scss/partials/_sante.scss */
+/* line 137, ../scss/partials/_sante.scss */
 .content-modal {
   border-radius: 0;
 }
 
-/* line 138, ../scss/partials/_sante.scss */
+/* line 141, ../scss/partials/_sante.scss */
 .input-water {
   border: none;
 }

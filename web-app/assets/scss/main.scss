@@ -12,9 +12,12 @@
 @import "utilities/mixins";
 @import "utilities/gui";
 
+//Layout
+@import "partials/layout/nav";
+
 //Partials
 @import "partials/home";
 @import "partials/profil";
 @import "partials/register";
 @import "partials/sante";
-@import "partials/layout/nav";
+@import "partials/sport";

@@ -67,17 +67,20 @@
                                 <div class="carousel-item active">
                                     <h3>Surveiller son alimentation</h3>
                                     <p>L’alimentation détermine grandement notre état de santé. De manière générale, il
-                                        est recommandé... <a href="#" data-target="#carousel1" data-toggle="modal">Voir Plus</a></p>
+                                        est recommandé... <a href="#" class="see-more" data-target="#carousel1"
+                                                             data-toggle="modal">Voir Plus</a></p>
                                 </div>
                                 <div class="carousel-item">
                                     <h3>Boire suffisamment d'eau</h3>
                                     <p>L’eau est indispensable à l’ensemble des processus vitaux, et il est généralement
-                                        recommandé... <a href="#" data-target="#carousel2" data-toggle="modal">Voir Plus</a></p>
+                                        recommandé... <a href="#" class="see-more" data-target="#carousel2"
+                                                         data-toggle="modal">Voir Plus</a></p>
                                 </div>
                                 <div class="carousel-item">
                                     <h3>Il faut faire du sport !!</h3>
                                     <p>Les activités physiques permettent de garder la ligne, favorisent la longévité et
-                                        aident à prévenir... <a href="#" data-target="#carousel3" data-toggle="modal">Voir Plus</a></p>
+                                        aident à prévenir... <a href="#" class="see-more" data-target="#carousel3"
+                                                                data-toggle="modal">Voir Plus</a></p>
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselAdvice" role="button" data-slide="prev">
@@ -94,15 +97,28 @@
                     <div class="modal fade" id="carousel1" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content content-modal">
+                            <div class="modal-content content-modal ">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="TitleCarousel1">Surveiller son alimentation</h5>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <img src="img/health/photoconseil1.jpg" alt="CONSEIL1" width="100%">
+                                    <p>L’alimentation détermine grandement notre état de santé. De manière générale, il
+                                        est recommandé de réduire sa consommation de sel, sucre raffiné, acides gras
+                                        saturés (viande, produits
+                                        laitiers), acides gras trans (certaines margarines), pour privilégier les acides
+                                        gras insaturés (oléagineux, poissons gras, huiles végétales), les fruits, les
+                                        légumes et les céréales complètes. Pour les mêmes raisons, mieux vaut éviter les
+                                        plats industriels et les repas pris en extérieur.</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="fbCustom-button fbCustom-button--filled">OK</button>
+                                    <button type="button" class="fbCustom-button fbCustom-button--filled"
+                                            data-dismiss="modal">OK
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -113,17 +129,23 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content content-modal">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="TitleCarousel2">Surveiller son alimentation</h5>
+                                    <h5 class="modal-title" id="TitleCarousel2">Boire suffisamment d'eau</h5>
                                     <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <img src="img/health/photoconseil2.jpg" alt="CONSEIL2" width="100%">
+                                    <p>L’eau est indispensable à l’ensemble des processus vitaux, et il est généralement
+                                        recommandé d’en boire 1 à 2 litres par jour. La sensation de soif est déjà le
+                                        signe d’une déshydratation, il est donc important de répartir sa consommation
+                                        d’eau tout au long de la journée.</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="fbCustom-button fbCustom-button--filled">OK</button>
+                                    <button type="button" class="fbCustom-button fbCustom-button--filled"
+                                            data-dismiss="modal">OK
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -134,17 +156,23 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content content-modal">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="TitleCarousel3">Surveiller son alimentation</h5>
+                                    <h5 class="modal-title" id="TitleCarousel3">Il faut faire du sport !!</h5>
                                     <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <img src="img/health/photoconseil3.jpg" alt="CONSEIL3" width="100%">
+                                    <p>LLes activités physiques permettent de garder la ligne, favorisent la longévité
+                                        et aident à prévenir le déclin des fonctions immunitaires. A défaut de pratiquer
+                                        un sport, il est recommandé de marcher 30 minutes par jour à un rythme
+                                        soutenu.</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="fbCustom-button fbCustom-button--filled">OK</button>
+                                    <button type="button" class="fbCustom-button fbCustom-button--filled"
+                                            data-dismiss="modal">OK
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +182,6 @@
                     </article>
                     <article class="module module-weight">
                         <canvas id="chart-weight" width="100%" height="52%"></canvas>
-
                     </article>
                 </section>
             </section>

@@ -8,7 +8,11 @@
         {% endblock %}
         <section class="w-100 row m-0 main-profil">
             <aside class=" col-2 profil d-flex flex-column justify-content-center">
-                <h3 class="text-center">{{ user.username }}</h3>
+                <div class="d-flex align-items-center title-aside justify-content-between">
+                    <h3>{{ user.username }}</h3>
+                    <button data-toggle="modal" data-target="#modif-profil"><img src="../img/btn-profil.png">
+                    </button>
+                </div>
                 <img class="pp" src="/img/profil-picture.jpg">
                 <div class="info">
                     <p class="name">{{ user.lastname }}</p>

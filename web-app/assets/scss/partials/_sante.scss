@@ -65,8 +65,8 @@
   width: 47%;
   height: 100%;
   .picto-step {
-    margin-bottom: 28px;
-    margin-top: 28px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     width: 93%;
   }
   .nb-step {
@@ -78,6 +78,9 @@
       font-weight: bold;
       font-size: 1.4em;
     }
+  }
+  p {
+    margin-bottom: 0.25em;
   }
 }
 

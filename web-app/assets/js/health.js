@@ -21,7 +21,7 @@ gradientSleep.addColorStop(1, '#219CC5');//BLEU
 var myChart = new Chart(sleepChart, {
     type: 'bar',
     data: {
-        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         datasets: [{
             label: 'Temps de sommeil ',
             data: [5, 7, 8, 4, 9, 10, 7],
@@ -170,9 +170,9 @@ gradientCardiac.addColorStop(1, '#219CC5');//BLEU
 var myChart = new Chart(cardiacChart, {
     type: 'line',
     data: {
-        labels: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         datasets: [{
-            label: 'Pulsation Cardiac ',
+            label: 'Pulsation Cardiaque',
             data: [80, 60, 64, 95, 74, 68, 70],
             fill: false,
             borderColor: gradientCardiac,
@@ -184,7 +184,7 @@ var myChart = new Chart(cardiacChart, {
     options: {
         title: {
             display: true,
-            text: 'Fréquence Cardiac',
+            text: 'Fréquence Cardiaque',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
             fontColor: "#ffffff"
@@ -232,9 +232,9 @@ gradientWeight.addColorStop(1, '#219CC5');//BLEU
 var myChart = new Chart(weightChart, {
     type: 'line',
     data: {
-        labels: ["Janvier", "Février", "Mars"],
+        labels: ["Jan", "Fév", "Mars"],
         datasets: [{
-            label: 'Pulsation Cardiac',
+            label: 'Evolution du poids',
             data: [80, 60, 64],
             borderColor: gradientWeight,
             backgroundColor: '#219cc559',
@@ -246,7 +246,7 @@ var myChart = new Chart(weightChart, {
     options: {
         title: {
             display: true,
-            text: 'Poid',
+            text: 'Poids',
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
             fontColor: "#ffffff"
@@ -281,3 +281,19 @@ var myChart = new Chart(weightChart, {
         }
     }
 })
+
+//INPUT NUMBER
+function increaseValue() {
+    var value = parseInt(document.getElementById('number-water').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number-water').value = value;
+}
+
+function decreaseValue() {
+    var value = parseInt(document.getElementById('number-water').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    document.getElementById('number-water').value = value;
+}

@@ -1,14 +1,20 @@
+
 .grid-background {
   background-image: url(../img/grid_health.png);
   width: 90vw;
   height: 100vh;
   background-size: 92%;
-  padding: 30px;
+  padding: 30px 30px 30px 0px;
   background-repeat: no-repeat;
   background-position: center;
   section {
     height: 100%;
   }
+}
+
+.modif-ctn-boostrap {
+  margin: 0;
+  max-width: none;
 }
 
 .ctn-body {
@@ -24,7 +30,7 @@
 .row-module {
   padding-left: 15px;
   padding-right: 15px;
-  height: auto;
+  height: auto !important;
   justify-content: space-between;
 }
 
@@ -52,13 +58,12 @@
 
 .module-sleep {
   width: 100%;
-  height: 50%;
-  margin-bottom: 9%;
+  height: auto;
 }
 
 .module-row {
   width: 47%;
-  height: 45%;
+  height: 100%;
   .picto-step {
     margin-bottom: 25px;
     margin-top: 25px;
@@ -68,20 +73,21 @@
     font-weight: 300;
     font-size: 1.8em;
     line-height: 1em;
-    margin-bottom: 0;
 
     span {
       font-weight: bold;
       font-size: 1.4em;
     }
   }
+  p {
+    margin-bottom: 0.25em;
+  }
 }
 
 .module-advice {
-  height: 20%;
-  margin-bottom: 5%;
+  height: auto;
   #carouselAdvice {
-      height: 100%;
+    height: 100%;
     .carousel-indicators li {
       background-color: #565656;
     }
@@ -95,7 +101,7 @@
       background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
     }
     .carousel-control-prev, .carousel-control-next {
-      width:8%;
+      width: 8%;
     }
     .carousel-indicators {
       bottom: -12px;
@@ -117,13 +123,25 @@
 }
 
 .module-cardiac {
-  height: 42%;
-  margin-bottom: 5%;
+  height: auto;
 }
 
 .module-weight {
-  height: 32%;
+  height: auto;
 }
+
+.modal-title {
+  color: $fb-darkBlue;
+}
+
+.content-modal {
+  border-radius: 0;
+}
+
+.input-water {
+  border: none;
+}
+
 
 
 

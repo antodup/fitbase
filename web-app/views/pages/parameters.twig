@@ -1,1 +1,71 @@
 {% extends '../base.twig' %}
+
+{% block body %}
+    <main class="background ctn-general">
+
+        {% block header %}
+            {% include '../layout/header.twig' %}
+        {% endblock %}
+        <section class=" parameters d-flex flex-column align-items-center justify-content-center w-100">
+            <h2>Paramètres</h2>
+            <div class="d-flex content">
+                <div class="p-4 w-50 d-flex flex-column line">
+                    <button id="info-perso" class="focus my-2 btn-parameter fbCustom-button fbCustom-button--bordered">Information personnelle</button>
+                    <button id="auto-notif" class="my-2 btn-parameter fbCustom-button fbCustom-button--bordered">Autorisation / Notification</button>
+                    <button id ="deco" class="my-2 btn-parameter fbCustom-button fbCustom-button--bordered">Déconnexion </button>
+                </div>
+                <div class="p-4 w-50 info-perso flex-column">
+                    <div class="fbCustom-input my-2">
+                        <input class="input-field" type="text" id="input1" placeholder="Minimum 8 caractères">
+                        <label class="input-label" for="input1">Modifier le mot de passe</label>
+                    </div>
+                    <div class="fbCustom-input my-2">
+                        <input class="input-field" type="text" id="input1" placeholder="exemple@gmail.com">
+                        <label class="input-label" for="input1">Modifier l'adresse mail</label>
+                    </div>
+                    <button class="btn-parameter valider fbCustom-button fbCustom-button--bordered my-2">Valider</button>
+                </div>
+                <div class="p-4 w-50 auto-notif flex-column">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="my-2">Activer les notifications</p>
+                        <div class="btn-check">
+                            <div class="switch switch--horizontal switch--no-label">
+                                <input id="radio-e" type="checkbox" name="third-switch" checked="checked">
+                                <label for="radio-e">Off</label>
+                                <input id="radio-f" type="checkbox" name="third-switch">
+                                <label for="radio-f">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="my-2">Actier la géolocalisation</p>
+                        <div class="btn-check">
+                            <div class="switch switch--horizontal switch--no-label">
+                                <input id="radio-e" type="checkbox" name="third-switch" checked="checked">
+                                <label for="radio-e">Off</label>
+                                <input id="radio-f" type="checkbox" name="third-switch">
+                                <label for="radio-f">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="my-2">Activer la connexion facebook</p>
+                        <div class="btn-check">
+                            <div class="switch switch--horizontal switch--no-label">
+                                <input id="radio-e" type="checkbox" name="third-switch" checked="checked">
+                                <label for="radio-e">Off</label>
+                                <input id="radio-f" type="checkbox" name="third-switch">
+                                <label for="radio-f">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+{% endblock %}
+{% block javascripts %}
+    <script src="/js/parameters.js"></script>
+{% endblock %}

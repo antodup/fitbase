@@ -20,5 +20,58 @@
   }
   .module-training{
     flex-grow:1;
+    .svg-container{
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+  input[type="number"] {
+    position: relative;
+    margin: 0 auto;
+    width: 35%;
+    height: 350px;
+    display: block;
+    text-align: center;
+    font-size: 6em;
+    @media screen and (max-width: 768px) {
+      width: 52%;
+    }
+  }
+  .mod::-webkit-outer-spin-button,
+  .mod::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: url("../img/inscription/input_number.svg") no-repeat center center;
+    width: 100%;
+    border-left: 1px solid #BBB;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0 2px #0CF;
+      opacity: .8;
+    }
+  }
+  .news-ctn{
+    overflow-y: scroll;
+    h3{
+      margin-bottom: 15px !important;
+    }
+  }
+  .news{
+    text-align: justify;
+  }
+  .btn-run{
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    width: 165px;
+    margin-left: auto;
   }
 }

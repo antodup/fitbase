@@ -78,8 +78,6 @@ var myChart = new Chart(sleepChart, {
 
 
 /*----------CHART WATER----------*/
-//GRADIENT
-
 //DATA WATER
 var Water = [1500];
 //CHARTS
@@ -134,7 +132,6 @@ window.onload = function () {
     window.myDoughnut = new Chart(waterChart, myDoughnutChart);
 };
 
-
 document.querySelector("#save-water").addEventListener("click", function () {
     var inputWater = $("#number-water").val(),
         userWater = null;
@@ -155,6 +152,7 @@ document.querySelector("#save-water").addEventListener("click", function () {
         }
         $("#result-water").html(eval(Water.join(" + ")) - newAllwater)
     }
+    inputWater == 0;
 })
 /*----------CHART CARDIAC----------*/
 var cardiacChart = document.getElementById("chart-cardiac");

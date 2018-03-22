@@ -85,14 +85,14 @@
 }
 
 .module-advice {
-  height: 15%;
+  height: 17%;
   #carouselAdvice {
     height: 100%;
     .carousel-indicators li {
       background-color: #565656;
     }
     .carousel-indicators .active {
-      background-color: #219CC5;
+      background-color: #F4E932;
     }
     .carousel-control-next-icon {
       background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
@@ -118,6 +118,10 @@
         font-size: 0.8em;
         margin: 0 30px;
       }
+      a {
+        color: #F4E932;
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -136,6 +140,16 @@
 
 .content-modal {
   border-radius: 0;
+  .fbCustom-button {
+    padding: 15px 20px;
+  }
+  .modal-body{
+    padding: 0;
+    p {
+      padding: 1rem;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .input-water {

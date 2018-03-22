@@ -5,10 +5,8 @@
 {% block body %}
 
 <main class="background ctn-general">
-    {% block header %}
-    {% include '../layout/header.twig' %}
-    {% endblock %}
-    <form class="ctn-contenu" method="post" action="/inscription" style="color:white;">
+    <form class="ctn-contenu d-flex flex-column align-items-center" method="post" action="/inscription" style="color:white;">
+        <img src="img/logo.svg" alt="Logo Fitbase" width="30%" class="mb-3">
         <section id="part1">
             <h2 class="text-center">VOTRE PROFIL</h2>
             <div class="fbCustom-input mb-2">
@@ -58,6 +56,7 @@
             <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button">SUIVANT</button>
         </section>
         <section id="part3" class="d-none">
+            <h2 class="text-center">TON SPORT</h2>
             <article class="d-inline-flex flex-wrap">
                 {% for sport in sports %}
                 <div>

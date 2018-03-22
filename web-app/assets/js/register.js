@@ -88,7 +88,7 @@ $('#part1 button[type="button"]').on('click', function () {
         $('#part2').removeClass('d-none')
         $('.register-contain').append('<article>\n' +
             '            <h2>VOTRE PROFILE</h2>\n' +
-            '        </article><p>Nom : '+info[0]+'</p><p> Prénom : '+info[1]+'</p><p> Pseudo : '+info[2]+'</p><p> Date de naissance : '+info[3]+'</p><p> e-mail : '+info[4]+'</p></article>')
+            '        </article><p>Nom : '+info[0]+'</p><p> Prénom : '+info[1]+'</p><p> Pseudo : '+info[2]+'</p><p> Date de naissance : '+info[3]+'</p><p style="margin-bottom: 30px"> e-mail : '+info[4]+'</p></article>')
     }
 })
 
@@ -107,13 +107,12 @@ $('#part3 button[type="button"]').on('click', function () {
     if (checkeds.length>0) {
         $('.register-contain').append('<article>\n' +
             '<h2>VOTRE SPORT</h2>' +
-            '</article>')
+            '<div class="ctn-sports-register"></div></article>')
         for (let i=0; i < checkeds.length; i++) {
             let checked = checkeds[i]
             let sport_name = checked.getAttribute('id')
             let src = $('label[for="'+sport_name+'"] img').attr('src')
-            $('.register-contain article:last-child').append('<img src="'+ src +'" alt="'+ sport_name +'">\n' +
-                '<p>'+ sport_name +'</p>')
+            $('.ctn-sports-register').append('<div class="ctn-sport-register"><img src="'+ src +'" alt="'+ sport_name +'"></div>')
         }
         $('#part3').addClass('d-none')
         $('#part4').removeClass('d-none')

@@ -13321,11 +13321,17 @@ h3 {
 }
 
 /* line 1, ../scss/partials/_register.scss */
+hr {
+  width: 45%;
+  border-top: 0.5px solid #565656;
+}
+
+/* line 5, ../scss/partials/_register.scss */
 .ctn-contenu {
   width: 90vw;
 }
 @media screen and (max-width: 768px) {
-  /* line 1, ../scss/partials/_register.scss */
+  /* line 5, ../scss/partials/_register.scss */
   .ctn-contenu {
     width: 100vw;
     position: relative;
@@ -13336,89 +13342,89 @@ h3 {
     align-items: center;
   }
 }
-/* line 12, ../scss/partials/_register.scss */
+/* line 16, ../scss/partials/_register.scss */
 .ctn-contenu section {
   width: 55%;
   margin: 0 auto;
   text-align: center;
 }
 @media screen and (max-width: 550px) {
-  /* line 12, ../scss/partials/_register.scss */
+  /* line 16, ../scss/partials/_register.scss */
   .ctn-contenu section {
     width: 85%;
   }
 }
 @media screen and (min-width: 551px) and (max-width: 768px) {
-  /* line 12, ../scss/partials/_register.scss */
+  /* line 16, ../scss/partials/_register.scss */
   .ctn-contenu section {
     width: 60%;
   }
 }
-/* line 24, ../scss/partials/_register.scss */
+/* line 28, ../scss/partials/_register.scss */
 .ctn-contenu h2 {
   margin-bottom: 1em;
 }
-/* line 28, ../scss/partials/_register.scss */
+/* line 32, ../scss/partials/_register.scss */
 .ctn-contenu .logo-responsive {
   width: 50%;
   margin-bottom: 10px;
 }
 @media screen and (min-width: 551px) and (max-width: 768px) {
-  /* line 28, ../scss/partials/_register.scss */
+  /* line 32, ../scss/partials/_register.scss */
   .ctn-contenu .logo-responsive {
     width: 30%;
   }
 }
 
-/* line 38, ../scss/partials/_register.scss */
+/* line 42, ../scss/partials/_register.scss */
 #part2 .first_div {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 44, ../scss/partials/_register.scss */
+/* line 48, ../scss/partials/_register.scss */
 .register-contain {
   width: 25%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* line 50, ../scss/partials/_register.scss */
+/* line 54, ../scss/partials/_register.scss */
 .rangeslider,
 input[type='range'] {
   max-width: 400px;
 }
-/* line 53, ../scss/partials/_register.scss */
+/* line 57, ../scss/partials/_register.scss */
 .rangeslider .rangeslider__fill,
 input[type='range'] .rangeslider__fill {
   background-color: #F4E932;
 }
 
-/* line 58, ../scss/partials/_register.scss */
+/* line 62, ../scss/partials/_register.scss */
 .rangeslider__handle {
   border-radius: 22px;
   min-width: 62px;
   line-height: 42px;
   text-align: center;
 }
-/* line 63, ../scss/partials/_register.scss */
+/* line 67, ../scss/partials/_register.scss */
 .rangeslider__handle:after {
   background: 0;
 }
 
 @media screen and (max-width: 550px) {
-  /* line 68, ../scss/partials/_register.scss */
+  /* line 72, ../scss/partials/_register.scss */
   #part3 {
     width: 100%;
   }
 }
 @media screen and (min-width: 551px) and (max-width: 768px) {
-  /* line 68, ../scss/partials/_register.scss */
+  /* line 72, ../scss/partials/_register.scss */
   #part3 {
     width: 60%;
   }
 }
-/* line 76, ../scss/partials/_register.scss */
+/* line 80, ../scss/partials/_register.scss */
 #part3 div {
   width: 33%;
   display: inline-flex;
@@ -13426,11 +13432,11 @@ input[type='range'] .rangeslider__fill {
   justify-content: center;
   cursor: pointer;
 }
-/* line 82, ../scss/partials/_register.scss */
+/* line 86, ../scss/partials/_register.scss */
 #part3 div input {
   display: none;
 }
-/* line 85, ../scss/partials/_register.scss */
+/* line 89, ../scss/partials/_register.scss */
 #part3 div label {
   cursor: pointer;
   display: flex;
@@ -13445,23 +13451,23 @@ input[type='range'] .rangeslider__fill {
   background-image: url("/img/inscription/grille.svg");
   background-size: cover;
 }
-/* line 98, ../scss/partials/_register.scss */
+/* line 102, ../scss/partials/_register.scss */
 #part3 div label:hover {
   background-color: #2D3544;
 }
 @media screen and (max-width: 768px) {
-  /* line 85, ../scss/partials/_register.scss */
+  /* line 89, ../scss/partials/_register.scss */
   #part3 div label {
     width: 90px;
     height: 90px;
   }
 }
-/* line 105, ../scss/partials/_register.scss */
+/* line 109, ../scss/partials/_register.scss */
 #part3 div label img {
   margin-bottom: 10px;
 }
 
-/* line 113, ../scss/partials/_register.scss */
+/* line 117, ../scss/partials/_register.scss */
 input[type="number"] {
   position: relative;
   margin: 0 auto;
@@ -13472,12 +13478,12 @@ input[type="number"] {
   font-size: 6em;
 }
 @media screen and (max-width: 768px) {
-  /* line 113, ../scss/partials/_register.scss */
+  /* line 117, ../scss/partials/_register.scss */
   input[type="number"] {
     width: 52%;
   }
 }
-/* line 125, ../scss/partials/_register.scss */
+/* line 129, ../scss/partials/_register.scss */
 input[type="number"].mod::-webkit-outer-spin-button, input[type="number"].mod::-webkit-inner-spin-button {
   -webkit-appearance: none;
   background: url("../img/inscription/input_number.svg") no-repeat center center;
@@ -13491,58 +13497,59 @@ input[type="number"].mod::-webkit-outer-spin-button, input[type="number"].mod::-
   right: 0;
   bottom: 0;
 }
-/* line 138, ../scss/partials/_register.scss */
+/* line 142, ../scss/partials/_register.scss */
 input[type="number"].mod::-webkit-outer-spin-button:hover, input[type="number"].mod::-webkit-outer-spin-button:active, input[type="number"].mod::-webkit-inner-spin-button:hover, input[type="number"].mod::-webkit-inner-spin-button:active {
   box-shadow: 0 0 2px #0CF;
   opacity: .8;
 }
 
-/* line 147, ../scss/partials/_register.scss */
+/* line 151, ../scss/partials/_register.scss */
 #part4 label {
   display: none;
 }
 
-/* line 152, ../scss/partials/_register.scss */
+/* line 156, ../scss/partials/_register.scss */
 input:-webkit-autofill {
   background: black;
   color: red;
 }
 
-/* line 158, ../scss/partials/_register.scss */
+/* line 162, ../scss/partials/_register.scss */
 #part5 div {
   position: relative;
 }
-/* line 161, ../scss/partials/_register.scss */
+/* line 165, ../scss/partials/_register.scss */
 #part5 div input[name="objectif"] {
   width: 100%;
   display: none;
 }
-/* line 165, ../scss/partials/_register.scss */
+/* line 169, ../scss/partials/_register.scss */
 #part5 div label {
   font-size: 1.5em;
   color: #242428;
 }
 
-/* line 172, ../scss/partials/_register.scss */
+/* line 176, ../scss/partials/_register.scss */
 .register-contain {
   padding: 30px 40px;
   color: white;
 }
 @media screen and (max-width: 768px) {
-  /* line 172, ../scss/partials/_register.scss */
+  /* line 176, ../scss/partials/_register.scss */
   .register-contain {
     display: none;
   }
 }
-/* line 178, ../scss/partials/_register.scss */
+/* line 182, ../scss/partials/_register.scss */
 .register-contain article {
   margin-bottom: 30px;
 }
-/* line 181, ../scss/partials/_register.scss */
+/* line 185, ../scss/partials/_register.scss */
 .register-contain img {
   margin-top: 10px;
+  width: 100%;
 }
-/* line 184, ../scss/partials/_register.scss */
+/* line 189, ../scss/partials/_register.scss */
 .register-contain div {
   display: flex;
   align-items: center;
@@ -13550,16 +13557,30 @@ input:-webkit-autofill {
   flex-direction: column;
   width: 50%;
 }
-/* line 191, ../scss/partials/_register.scss */
+/* line 196, ../scss/partials/_register.scss */
 .register-contain h2 {
   font-size: 1.2em;
   margin-bottom: 0;
 }
-/* line 195, ../scss/partials/_register.scss */
+/* line 200, ../scss/partials/_register.scss */
 .register-contain p {
   margin-bottom: 0;
   font-weight: 300;
   font-size: 0.9em;
+}
+/* line 205, ../scss/partials/_register.scss */
+.register-contain .ctn-sports-register {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* line 213, ../scss/partials/_register.scss */
+.register-contain .ctn-sport-register {
+  width: 20%;
+  margin-right: 20px;
 }
 
 /* line 2, ../scss/partials/_sante.scss */
@@ -13568,7 +13589,7 @@ input:-webkit-autofill {
   width: 90vw;
   height: 100vh;
   background-size: 92%;
-  padding: 10px 10px 10px 0px;
+  padding: 30px 30px 30px 0px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -13663,7 +13684,7 @@ input:-webkit-autofill {
 
 /* line 87, ../scss/partials/_sante.scss */
 .module-advice {
-  height: auto;
+  height: 17%;
 }
 /* line 89, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice {
@@ -13675,7 +13696,7 @@ input:-webkit-autofill {
 }
 /* line 94, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators .active {
-  background-color: #219CC5;
+  background-color: #F4E932;
 }
 /* line 97, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-next-icon {
@@ -13709,28 +13730,46 @@ input:-webkit-autofill {
   font-size: 0.8em;
   margin: 0 30px;
 }
+/* line 121, ../scss/partials/_sante.scss */
+.module-advice #carouselAdvice .carousel-item a {
+  color: #F4E932;
+  text-decoration: underline;
+}
 
-/* line 125, ../scss/partials/_sante.scss */
+/* line 129, ../scss/partials/_sante.scss */
 .module-cardiac {
   height: auto;
 }
 
-/* line 129, ../scss/partials/_sante.scss */
+/* line 133, ../scss/partials/_sante.scss */
 .module-weight {
   height: auto;
 }
 
-/* line 133, ../scss/partials/_sante.scss */
+/* line 137, ../scss/partials/_sante.scss */
 .modal-title {
   color: #2D3544;
 }
 
-/* line 137, ../scss/partials/_sante.scss */
+/* line 141, ../scss/partials/_sante.scss */
 .content-modal {
   border-radius: 0;
 }
+/* line 143, ../scss/partials/_sante.scss */
+.content-modal .fbCustom-button {
+  padding: 15px 20px;
+}
+/* line 146, ../scss/partials/_sante.scss */
+.content-modal .modal-body {
+  padding: 0;
+}
+/* line 148, ../scss/partials/_sante.scss */
+.content-modal .modal-body p {
+  padding: 1rem;
+  margin-bottom: 0;
+}
 
-/* line 141, ../scss/partials/_sante.scss */
+/* line 155, ../scss/partials/_sante.scss */
 .input-water {
   border: none;
 }

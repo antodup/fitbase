@@ -5,8 +5,11 @@
 {% block body %}
 
 <main class="background ctn-general">
-    <form class="ctn-contenu" method="post" action="/profil" style="color:white;">
-        <section id="part1" class="d-none">
+    {% block header %}
+    {% include '../layout/header.twig' %}
+    {% endblock %}
+    <form class="ctn-contenu" method="post" action="/inscription" style="color:white;">
+        <section id="part1">
             <h2 class="text-center">VOTRE PROFIL</h2>
             <div class="fbCustom-input mb-2">
                 <input class="input-field" id="lastname" type="text" name="lastname" placeholder="nom" required>
@@ -40,21 +43,21 @@
                        placeholder="confirmation de mot de passe" required>
                 <label class="input-label" for="password2">Confirmation de mot de passe</label>
             </div>
-            <button class="w-25 fbCustom-button fbCustom-button--filled" type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled" type="button">SUIVANT</button>
         </section>
         <section id="part2" class="d-none">
             <h2 class="text-center">VOS MENSURATIONS</h2>
             <div class="first_div d-flex">
                 <label class="d-none">taille</label>
-                <input name="height" type="range" min="120" max="220" step="1" data-orientation="vertical" required>
+                <input name="height" type="range" min="120" max="220" step="1" value="170" data-orientation="vertical" required>
                 <img class="m-auto" src="/img/body.svg" alt="body"/>
             </div>
             <label class="d-none">poid</label>
             <input name="weight" type="range" min="30" max="200" step="1" value="80" data-orientation="horizontal"
                    required>
-            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button">SUIVANT</button>
         </section>
-        <section id="part3" class="d-block">
+        <section id="part3" class="d-none">
             <article class="d-inline-flex flex-wrap">
                 {% for sport in sports %}
                 <div>
@@ -63,12 +66,12 @@
                 </div>
                 {% endfor %}
             </article>
-            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button">SUIVANT</button>
         </section>
         <section id="part4" class="d-none">
             <h2 class="text-center">COMBIEN DE FOIS PAR SEMAINE ?</h2>
             <input name="frequencies" class="mod" type="number" min="0" max="7" value="0"><label>Frequence</label>
-            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>SUIVANT</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button">SUIVANT</button>
         </section>
         <section id="part5" class="d-none">
             <h2 class="text-center">VOS OBJECTIFS</h2>
@@ -78,42 +81,10 @@
                 <label for="{{ objectif.title }}" class="text-uppercase">#{{ objectif.title }}</label>
             </div>
             {% endfor %}
-            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="button" disabled>TERMINER</button>
+            <button class="w-25 fbCustom-button fbCustom-button--filled mt-4" type="submit">TERMINER</button>
         </section>
     </form>
     <section class="register-contain">
-        <article>
-            <h2>VOTRE PROFILE</h2>
-            <p>NOM</p>
-            <p>Prénom</p>
-            <p>Pseudo</p>
-            <p>Date de naissance</p>
-            <p>e-mail</p>
-        </article>
-
-        <article>
-            <h2>VOS MENSURATIONS</h2>
-            <p>175cm</p>
-            <p>85kg</p>
-        </article>
-
-        <article>
-            <h2>VOTRE SPORT</h2>
-            <div>
-                <img src="/img/inscription/picto inscription/cyclisme.svg" alt="">
-                <p>nom du sport</p>
-            </div>
-        </article>
-
-        <article>
-            <h2>FREQUENCES</h2>
-            <p><span>2</span> fois par semaine</p>
-        </article>
-
-        <article>
-            <h2>OBJECTIFS</h2>
-            <p>#MAINCIR</p>
-        </article>
     </section>
 </main>
 {% endblock %}

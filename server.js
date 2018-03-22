@@ -45,11 +45,16 @@ app.set('views', [__dirname + '/web-app/views/pages', __dirname + '/web-app/view
 
 /* road for start page */
 app.get('/', function (req, res) {
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute != undefined) {
+        let sessData = req.session
+        sessData.someAttribute = undefined;
+    }
     res.render('index.twig');
 });
 
 app.post('/', function (req, res) {
-    console.log(req.body.email)
+
     let q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
@@ -60,10 +65,8 @@ app.post('/', function (req, res) {
                 if (password === true) {
                     var sessData = req.session;
                     sessData.someAttribute = results[0].id;
-                    console.log(req.session.someAttribute)
                     res.redirect('/profil');
                 } else {
-                    console.log('game over')
                     res.render('index.twig', {
                         checkPassword : password
                     })
@@ -99,25 +102,51 @@ app.get('/inscription', function (req, res) {
 app.get('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
     //récupérer les infos du user en fonction de l'id contenu dans req.session
-    var user_id = req.session.someAttribute
-    res.render('profil.twig', {
-        id: user_id
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    }
+    var user_id = req.session.someAttribute,
+        co = connection();
+    co.connect();
+    co.query("SELECT * FROM users WHERE id = "+user_id, function (error, results, fields) {
+        if (error) return console.log(error)
+        user = results[0]
+        co.query("SELECT DATE_FORMAT(birthday, \"%Y %c %d\") AS birthday FROM users WHERE id = "+user_id, function (error, results, fields) {
+            if (error) return console.log(error)
+            user.birthday = results[0].birthday
+            let birthday = new Date(user.birthday)
+            let ageDifMs = Date.now() - birthday.getTime();
+            let ageDate = new Date(ageDifMs);
+            user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
+            co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = "+ user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
+                if (error) return console.log(error)
+                res.render('profil.twig', {
+                    user: user,
+                    sports : results
+                })
+            })
+        })
     })
+
 });
 
 app.post('/inscription', function (req, res) {
-    console.log(req.body)
     let q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
         if (error) return console.log(error);
-        if (results.length > 0) res.redirect('/'); //cet email est deja existant
+        if (results.length > 0){
+            res.redirect('/');//cet email est deja existant
+        }
         var hash = bcrypt.hashSync(req.body.password1, 10);
         let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
         co.query(q, function (error, results, fields) {
             if (error) return console.log(error);
-            req.session = results.insertId;
+
+            var sessData = req.session;
+            sessData.someAttribute = results.insertId;
             res.redirect("/profil");
         })
 
@@ -126,17 +155,32 @@ app.post('/inscription', function (req, res) {
 
 /* road for paremètre page */
 app.get('/parametres', function (req, res) {
-    res.render('parameters.twig');
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    } else {
+        res.render('parameters.twig');
+    }
 });
 
 /* road for santé page */
 app.get('/sante', function (req, res) {
-    res.render('health.twig');
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    } else {
+        res.render('health.twig');
+    }
 });
 
 /* road for sport page */
 app.get('/sport', function (req, res) {
-    res.render('sport.twig');
+    console.log(req.session.someAttribute)
+    if (req.session.someAttribute == undefined) {
+        res.redirect('/')
+    } else {
+        res.render('sport.twig');
+    }
 });
 
 /* road for contact page */

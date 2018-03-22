@@ -56,7 +56,7 @@ $('#part1 button[type="button"]').on('click', function () {
     var nxt = 0
     var info = []
     let inputs = this.parentNode.querySelectorAll('input')
-    for (let i=0; i < inputs.length; i++) {
+    for (let i = 0; i < inputs.length; i++) {
         let input = inputs[i]
         if (input.value != '') {
             if (i == 3) {
@@ -88,7 +88,7 @@ $('#part1 button[type="button"]').on('click', function () {
         $('#part2').removeClass('d-none')
         $('.register-contain').append('<article>\n' +
             '            <h2>VOTRE PROFILE</h2>\n' +
-            '        </article><p>Nom : '+info[0]+'</p><p> Prénom : '+info[1]+'</p><p> Pseudo : '+info[2]+'</p><p> Date de naissance : '+info[3]+'</p><p style="margin-bottom: 30px"> e-mail : '+info[4]+'</p></article>')
+            '        </article><p>Nom : ' + info[0] + '</p><p> Prénom : ' + info[1] + '</p><p> Pseudo : ' + info[2] + '</p><p> Date de naissance : ' + info[3] + '</p><p style="margin-bottom: 30px"> e-mail : ' + info[4] + '</p></article>')
     }
 })
 
@@ -97,22 +97,22 @@ $('#part2 button[type="button"]').on('click', function () {
     $('#part3').removeClass('d-none')
     $('.register-contain').append('<article>\n' +
         '<h2>VOS MENSURATIONS</h2>' +
-        '<p>'+$('#part2 input[name=height]').val()+'cm</p>' +
-        '<p>'+$('#part2 input[name=weight]').val()+'kg</p>' +
+        '<p>' + $('#part2 input[name=height]').val() + 'cm</p>' +
+        '<p>' + $('#part2 input[name=weight]').val() + 'kg</p>' +
         '</article>')
 })
 
 $('#part3 button[type="button"]').on('click', function () {
     let checkeds = $('#part3 input:checked')
-    if (checkeds.length>0) {
+    if (checkeds.length > 0) {
         $('.register-contain').append('<article>\n' +
             '<h2>VOTRE SPORT</h2>' +
             '<div class="ctn-sports-register"></div></article>')
-        for (let i=0; i < checkeds.length; i++) {
+        for (let i = 0; i < checkeds.length; i++) {
             let checked = checkeds[i]
             let sport_name = checked.getAttribute('id')
-            let src = $('label[for="'+sport_name+'"] img').attr('src')
-            $('.ctn-sports-register').append('<div class="ctn-sport-register"><img src="'+ src +'" alt="'+ sport_name +'"></div>')
+            let src = $('label[for="' + sport_name + '"] img').attr('src')
+            $('.ctn-sports-register').append('<div class="ctn-sport-register"><img src="' + src + '" alt="' + sport_name + '"></div>')
         }
         $('#part3').addClass('d-none')
         $('#part4').removeClass('d-none')
@@ -123,10 +123,10 @@ $('#part4 button[type="button"]').on('click', function () {
     let value = $('#part4 input').val()
     $('.register-contain').append('<article>\n' +
         '            <h2>FREQUENCES</h2>\n' +
-        '            <p><span>'+ value +'</span> fois par semaine</p>\n' +
+        '            <p><span>' + value + '</span> fois par semaine</p>\n' +
         '        </article>')
-        $('#part4').addClass('d-none')
-        $('#part5').removeClass('d-none')
+    $('#part4').addClass('d-none')
+    $('#part5').removeClass('d-none')
 })
 
 $('#part5 button[type="submit"]').on('click', function (e) {

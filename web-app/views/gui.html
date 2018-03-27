@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="../assets/css/main.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism-okaidia.css">
+
 </head>
 <body class="container">
 <h1>Fitbase - Gui</h1>
@@ -22,6 +23,13 @@
     <button class="fbCustom-button fbCustom-button--filled">Ouvrir</button>
     <button class="fbCustom-button fbCustom-button--bordered">Charger plus</button>
 </div>
+<pre>
+  <code class='language-markup'>
+    &lt;button class="fbCustom-button fbCustom-button--filled"&gt;Ouvrir&lt;/button&gt;
+    &lt;button class="fbCustom-button fbCustom-button--bordered"&gt;Charger plus&lt;/button&gt;
+</code>
+</pre>
+
 <div class="my-4">
     <h2>Radios & checkboxes</h2>
     <div class="fbCustom-radio">
@@ -34,7 +42,7 @@
         <label for="radio2" class="labelCheck-hide"></label>
         <label for="radio2">Femme</label>
     </div>
-
+    <br>
     <div class="fbCustom-checkbox">
         <input type="checkbox" id="checkbox1">
         <label for="checkbox1" class="labelCheck-hide">
@@ -47,6 +55,29 @@
     </div>
 </div>
 
+<pre>
+<code class='language-markup'>
+&lt;div class="fbCustom-radio"&gt;
+    &lt;input type="radio" id="radio1" name="gender" checked&gt;
+    &lt;label for="radio1" class="labelCheck-hide"&gt;&lt;/label&gt;
+    &lt;label for="radio1"&gt;Homme&lt;/label&gt;
+&lt;/div>
+&lt;div class="fbCustom-radio"&gt;
+    &lt;input type="radio" id="radio2" name="gender"&gt;
+    &lt;label for="radio2" class="labelCheck-hide"&gt;&lt;/label&gt;
+    &lt;label for="radio2"&gt;Femme&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="fbCustom-checkbox"&gt;
+    &lt;input type="checkbox" id="checkbox1"&gt;
+    &lt;label for="checkbox1" class="labelCheck-hide"&gt;
+        &lt;svg viewBox="0 0 21 15" xmlns="http://www.w3.org/2000/svg"&gt;
+            &lt;path fill-rule="nonzero" d="M1.707107 7.2928932c-.390525-.3905243-1.023689-.3905243-1.414214 0-.3905241.3905243-.3905241 1.0236893 0 1.4142136l6 6c.390525.3905243 1.023689.3905243 1.414214 0l13-13c.390524-.3905243.390524-1.0236893 0-1.4142136-.390525-.3905243-1.023689-.3905243-1.414214 0L7 12.5857864 1.707107 7.2928932z">&lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/label&gt;
+    &lt;label for="checkbox1"&gt;Garder en mémoire ma connexion&lt;/label&gt;
+&lt;/div&gt;
+</code>
+</pre>
 <div class="my-4">
     <h2>Badges & notifications</h2>
     <span class="fbCustom-badge">Foot</span>
@@ -54,6 +85,13 @@
     <span class="fbCustom-badge yellow">Hockey</span>
     <span class="fbCustom-badge green">Velo</span>
 </div>
+<pre>
+<code class='language-markup'>&lt;span class="fbCustom-badge"&gt;Foot&lt;/span&gt;
+&lt;span class="fbCustom-badge blue"&gt;Basket&lt;/span&gt;
+&lt;span class="fbCustom-badge yellow"&gt;Hockey&lt;/span&gt;
+&lt;span class="fbCustom-badge green"&gt;Velo&lt;/span&gt;
+</code>
+</pre>
 
 <div class="my-4">
     <h2>Inputs</h2>
@@ -61,14 +99,20 @@
         <input class="input-field" type="text" id="input1" placeholder="Adresse email"/>
         <label class="input-label" for="input1">Adresse email</label>
     </div>
+    <br>
+    <div class="fbCustom-input">
+        <input class="input-field" type="text" id="input2" placeholder="Adresse email"/>
+        <label class="input-label" for="input2">Adresse email</label>
+    </div>
 </div>
-
-<div class="red">
-
-</div>
-<div class="green">
-
-</div>
+<pre>
+<code class='language-markup'>
+&lt;div class="fbCustom-input"&gt;
+    &lt;input class="input-field" type="text" id="input1" placeholder="Adresse email" /&gt;
+    &lt;label class="input-label" for="input1">Adresse email&lt;/label&gt;
+&lt;/div&gt;
+</code>
+</pre>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEafbOYGBf13FyQuiTwlAQgxVSNgt4="

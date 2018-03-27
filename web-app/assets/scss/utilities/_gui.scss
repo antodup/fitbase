@@ -186,21 +186,29 @@
   .input-field{
     width: 100%;
     font-size: 13px;
-    color: $fb-darkBlue;
+    background-color: $fb-darkBlue;
+    color: $fb-white;
     line-height: 16px;
     padding: 20px 15px 10px 15px;
     outline: none;
-    border: 1px solid $fb-darkBlue;
+    border: 1px solid $fb-white;
     @include transition(background-color 250ms ease);
     &:not(:placeholder-shown), &:placeholder-shown:focus{
       + .input-label{
         font-weight: bold;
-        color: $fb-darkBlue;
+        color: $fb-white;
         @include transform(translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1));
       }
     }
     &:focus, &:placeholder-shown:focus{
-      background-color: $fb-greyBg;
+      background-color: $fb-white;
+      border: 1px solid $fb-darkBlue;
+      color: $fb-darkBlue;
+    }
+    &:focus{
+      + .input-label{
+        color: $fb-darkBlue !important;
+      }
     }
     &::-webkit-input-placeholder{
       color: transparent;
@@ -221,7 +229,7 @@
       color: transparent;
     }
     &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus{
-      -webkit-text-fill-color: $fb-darkBlue;
+      -webkit-text-fill-color: $fb-white;
       -webkit-box-shadow: 0 0 0px 1000px white inset;
       transition: background-color 5000s ease-in-out 0s;
       + .input-label{
@@ -232,19 +240,8 @@
     }
 
     &:-webkit-autofill:focus{
-      -webkit-box-shadow: 0 0 0 1000px $fb-darkBlue inset;
+      -webkit-box-shadow: 0 0 0 1000px $fb-white inset;
     }
-
-    /*// when no support placeholder-shown
-    // todo: trouver une solution quand autofill EDGE / IE et retour / avancer
-    &.input-filled{
-      background-color: white;
-      + .input-label{
-        font-weight: bold;
-        color: $fb-da;
-        @include transform(translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1));
-      }
-    }*/
   }
   .input-label{
     position: absolute;
@@ -252,7 +249,7 @@
     font-size: 13px;
     text-align: left;
     line-height: 18px;
-    color: $fb-darkBlue;
+    color: $fb-white;
     top: 0;
     left: 0;
     padding: 15px;

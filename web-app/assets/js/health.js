@@ -49,7 +49,8 @@ var myChart = new Chart(sleepChart, {
             titleFontSize: 14,
             titleFontFamily: "'Roboto', 'Arial', sans-serif",
             bodyFontFamily: "'Roboto', 'Arial', sans-serif",
-            backgroundColor: "#2D3544"
+            backgroundColor: "#2D3544",
+            position: 'average'
         },
         legends: {
             display: false
@@ -115,7 +116,8 @@ var myDoughnutChart = {
             titleFontSize: 14,
             titleFontFamily: "'Roboto', 'Arial', sans-serif",
             bodyFontFamily: "'Roboto', 'Arial', sans-serif",
-            backgroundColor: "#2D3544"
+            backgroundColor: "#2D3544",
+            position: 'average'
         },
         legends: {
             display: false
@@ -196,7 +198,8 @@ var myChart = new Chart(cardiacChart, {
             titleFontSize: 14,
             titleFontFamily: "'Roboto', 'Arial', sans-serif",
             bodyFontFamily: "'Roboto', 'Arial', sans-serif",
-            backgroundColor: "#2D3544"
+            backgroundColor: "#2D3544",
+            position: 'average'
         },
         legends: {
             display: false
@@ -258,7 +261,8 @@ var myChart = new Chart(weightChart, {
             titleFontSize: 14,
             titleFontFamily: "'Roboto', 'Arial', sans-serif",
             bodyFontFamily: "'Roboto', 'Arial', sans-serif",
-            backgroundColor: "#2D3544"
+            backgroundColor: "#2D3544",
+            position: 'average'
         },
         legends: {
             display: false

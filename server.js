@@ -55,10 +55,9 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
 
-    let q = "select * from users where email like '" + req.body.email + "';",
-        co = connection();
+    let co = connection();
     co.connect();
-    co.query(q, function (error, results, fields) {
+    co.query("select * from users where email like '" + req.body.email + "';", function (error, results, fields) {
         if (error) return console.log(error);
         if (results.length > 0) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
@@ -121,10 +120,29 @@ app.get('/profil', function (req, res) {
             user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
             co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = "+ user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
                 if (error) return console.log(error)
-                res.render('profil.twig', {
-                    user: user,
-                    sports : results
+                let sports = results
+                co.query("SELECT o.* FROM objectifs o, link_user_objectifs luo WHERE luo.id_user = " + user_id + " AND luo.id_objectifs = o.id" , function (error, results, fields) {
+                    if (error) return console.log(error)
+                    let objectif = results[0]
+                    co.query("SELECT r.* FROM reward r, link_user_reward lur WHERE lur.id_user = " + user_id + " AND lur.id_reward = r.id", function (error, results, fields) {
+                        if (error) return console.log(error)
+                        let user_rewards = results
+                        console.log(user_rewards)
+                        co.query("SELECT * FROM reward", function (error, results, fields) {
+                            if (error) return console.log(error)
+                            let rewards = results
+                            res.render('profil.twig', {
+                                user: user,
+                                sports : sports,
+                                objectif: objectif,
+                                user_rewards: user_rewards,
+                                rewards: rewards
+                            })
+                        })
+
+                    })
                 })
+
             })
         })
     })

@@ -139,6 +139,7 @@ document.querySelector("#save-water").addEventListener("click", function () {
     console.log(userWater)
 
     if (myDoughnutChart.data.datasets.length > 0) {
+        var inputWater = $("#number-water").val();
         var userWaterML = userWater * 250;
         var newAllwater = Water[0] - userWaterML;
         Water[0] = newAllwater;
@@ -151,9 +152,11 @@ document.querySelector("#save-water").addEventListener("click", function () {
             $("#result-water").css("font-weight", "bold")
         }
         $("#result-water").html(eval(Water.join(" + ")) - newAllwater)
+        parseInt(inputWater)
     }
-    inputWater == 0;
+    inputWater = 0;
 })
+
 /*----------CHART CARDIAC----------*/
 var cardiacChart = document.getElementById("chart-cardiac");
 //GRADIENT

@@ -12881,6 +12881,11 @@ h3 {
   height: 100%;
 }
 
+/* line 316, ../scss/utilities/_gui.scss */
+p {
+  font-weight: 300;
+}
+
 /* line 1, ../scss/partials/layout/_nav.scss */
 .ctn-general {
   display: flex;
@@ -13574,7 +13579,7 @@ input:-webkit-autofill {
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 /* line 213, ../scss/partials/_register.scss */
@@ -13799,4 +13804,67 @@ input:-webkit-autofill {
 /* line 21, ../scss/partials/_sport.scss */
 .sport-container .module-training {
   flex-grow: 1;
+}
+/* line 24, ../scss/partials/_sport.scss */
+.sport-container .module-training .svg-container p {
+  margin-bottom: 0;
+}
+/* line 29, ../scss/partials/_sport.scss */
+.sport-container input[type="number"] {
+  position: relative;
+  margin: 0 auto;
+  width: 35%;
+  height: 350px;
+  display: block;
+  text-align: center;
+  font-size: 6em;
+}
+@media screen and (max-width: 768px) {
+  /* line 29, ../scss/partials/_sport.scss */
+  .sport-container input[type="number"] {
+    width: 52%;
+  }
+}
+/* line 41, ../scss/partials/_sport.scss */
+.sport-container .mod::-webkit-outer-spin-button,
+.sport-container .mod::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background: url("../img/inscription/input_number.svg") no-repeat center center;
+  width: 100%;
+  border-left: 1px solid #BBB;
+  opacity: .5;
+  /* shows Spin Buttons per default (Chrome >= 39) */
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 54, ../scss/partials/_sport.scss */
+.sport-container .mod::-webkit-outer-spin-button:hover, .sport-container .mod::-webkit-outer-spin-button:active,
+.sport-container .mod::-webkit-inner-spin-button:hover,
+.sport-container .mod::-webkit-inner-spin-button:active {
+  box-shadow: 0 0 2px #0CF;
+  opacity: .8;
+}
+/* line 60, ../scss/partials/_sport.scss */
+.sport-container .news-ctn {
+  overflow-y: scroll;
+}
+/* line 62, ../scss/partials/_sport.scss */
+.sport-container .news-ctn h3 {
+  margin-bottom: 15px !important;
+}
+/* line 66, ../scss/partials/_sport.scss */
+.sport-container .news {
+  text-align: justify;
+}
+/* line 69, ../scss/partials/_sport.scss */
+.sport-container .btn-run {
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  width: 165px;
+  margin-left: auto;
 }

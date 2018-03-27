@@ -29,7 +29,7 @@
   }
   &.fbCustom-button--bordered{
     font-size: 13px;
-    color: $fb-darkBlue;
+    color: $fb-darkBlack;
     line-height: 1;
     padding: 17px 25px;
     border: 1px solid;
@@ -37,11 +37,11 @@
     @include transition(all .25s ease);
   }
     svg{
-      fill: $fb-darkBlue;
+      fill: $fb-darkBlack;
     }
     &:hover{
       border: 1px solid transparent;
-      background-color: $fb-darkBlue;
+      background-color: $fb-darkBlack;
       color: #fff;
 
       svg{
@@ -52,7 +52,7 @@
     font-size: 13px;
     color: #fff;
     border: none;
-    background-color: $fb-darkBlue;
+    background-color: $fb-darkBlack;
     @include transition(transform .75s $cubic-bezier,opacity .35s ease);
     &:hover{
       opacity: 0.5;
@@ -75,7 +75,7 @@
     display: none;
     &:checked{
       + .labelCheck-hide {
-        border-color: $fb-darkBlue;
+        border-color: $fb-darkBlack;
         &:after {
           opacity: 1;
         }
@@ -88,7 +88,7 @@
     height: 18px;
     text-align: center;
     line-height: 18px;
-    border: 1px solid $fb-darkBlue;
+    border: 1px solid $fb-darkBlack;
     vertical-align: middle;
     &:after{
       content: '';
@@ -99,7 +99,7 @@
       top: 50%;
       left: 50%;
       opacity: 0;
-      background-color: $fb-darkBlue;
+      background-color: $fb-darkBlack;
       @include transition(300ms $cubic-bezier);
       @include transform(translate(-50%, -50%));
     }
@@ -110,7 +110,7 @@
     + label{
       font-size: 13px;
       line-height: 16px;
-      color: $fb-darkBlue;
+      color: $fb-darkBlack;
       margin-left: 5px;
     }
   }
@@ -122,7 +122,7 @@
     display: none;
     &:checked{
       + .labelCheck-hide{
-        background-color: $fb-darkBlue;
+        background-color: $fb-darkBlack;
         svg{
           @include transform(translate(-50%, -50%) scale(1));
         }
@@ -134,7 +134,7 @@
     width: 18px;
     height: 18px;
     vertical-align: middle;
-    border: 1px solid $fb-darkBlue;
+    border: 1px solid $fb-darkBlack;
     @include transition(all 250ms ease);
     svg{
       position: absolute;
@@ -152,7 +152,7 @@
     + label{
       font-size: 13px;
       line-height: 16px;
-      color: $fb-darkBlue;
+      color: $fb-darkBlack;
       margin-left: 5px;
       display: inline;
     }
@@ -166,7 +166,7 @@
   font-weight: 300;
   color: #fff;
   padding: 7px 20px;
-  background-color: $fb-darkBlue;
+  background-color: $fb-darkBlack;
   @include border-radius(20px);
   &.yellow{
     color: $fb-black;
@@ -186,21 +186,29 @@
   .input-field{
     width: 100%;
     font-size: 13px;
-    color: $fb-darkBlue;
+    background-color: $fb-darkBlack;
+    color: $fb-white;
     line-height: 16px;
     padding: 20px 15px 10px 15px;
     outline: none;
-    border: 1px solid $fb-darkBlue;
+    border: 1px solid $fb-white;
     @include transition(background-color 250ms ease);
     &:not(:placeholder-shown), &:placeholder-shown:focus{
       + .input-label{
         font-weight: bold;
-        color: $fb-darkBlue;
+        color: $fb-white;
         @include transform(translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1));
       }
     }
     &:focus, &:placeholder-shown:focus{
-      background-color: $fb-greyBg;
+      background-color: $fb-white;
+      border: 1px solid $fb-darkBlack;
+      color: $fb-darkBlack;
+    }
+    &:focus{
+      + .input-label{
+        color: $fb-darkBlack !important;
+      }
     }
     &::-webkit-input-placeholder{
       color: transparent;
@@ -221,30 +229,19 @@
       color: transparent;
     }
     &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus{
-      -webkit-text-fill-color: $fb-darkBlue;
+      -webkit-text-fill-color: $fb-white;
       -webkit-box-shadow: 0 0 0px 1000px white inset;
       transition: background-color 5000s ease-in-out 0s;
       + .input-label{
         font-weight: bold;
-        color: $fb-darkBlue;
+        color: $fb-darkBlack;
         transform: translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1);
       }
     }
 
     &:-webkit-autofill:focus{
-      -webkit-box-shadow: 0 0 0 1000px $fb-darkBlue inset;
+      -webkit-box-shadow: 0 0 0 1000px $fb-white inset;
     }
-
-    /*// when no support placeholder-shown
-    // todo: trouver une solution quand autofill EDGE / IE et retour / avancer
-    &.input-filled{
-      background-color: white;
-      + .input-label{
-        font-weight: bold;
-        color: $fb-da;
-        @include transform(translate3d(5px, -5px, 0) scale3d(0.75, 0.75, 1));
-      }
-    }*/
   }
   .input-label{
     position: absolute;
@@ -252,7 +249,7 @@
     font-size: 13px;
     text-align: left;
     line-height: 18px;
-    color: $fb-darkBlue;
+    color: $fb-white;
     top: 0;
     left: 0;
     padding: 15px;

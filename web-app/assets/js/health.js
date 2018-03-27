@@ -78,8 +78,6 @@ var myChart = new Chart(sleepChart, {
 
 
 /*----------CHART WATER----------*/
-//GRADIENT
-
 //DATA WATER
 var Water = [1500];
 //CHARTS
@@ -108,7 +106,7 @@ var myDoughnutChart = {
             fontSize: "18",
             fontFamily: "'Roboto', 'Arial', sans-serif",
             fontColor: "#ffffff",
-            padding : 0
+            padding: 0
         },
         tooltips: {
             mode: 'index',
@@ -133,16 +131,13 @@ window.onload = function () {
     var waterChart = document.getElementById("chart-water").getContext('2d');
     window.myDoughnut = new Chart(waterChart, myDoughnutChart);
 };
-var inputWater = document.querySelector("#number-water").value,
-    userWater = null;
-
-document.querySelector("#number-water").addEventListener("click", function () {
-    inputWater = inputWater++ + 1;
-    userWater = inputWater;
-    console.log(userWater)
-})
 
 document.querySelector("#save-water").addEventListener("click", function () {
+    var inputWater = $("#number-water").val(),
+        userWater = null;
+    userWater = inputWater;
+    console.log(userWater)
+
     if (myDoughnutChart.data.datasets.length > 0) {
         var userWaterML = userWater * 250;
         var newAllwater = Water[0] - userWaterML;
@@ -152,14 +147,12 @@ document.querySelector("#save-water").addEventListener("click", function () {
         if (Water[0] <= 0) {
             Water.shift()
             window.myDoughnut.update()
-            // myDoughnutChart.data.datasets[0].backgroundColor[0] = "#0062cc";
             $("#result-water").css("color", "#219CC5")
             $("#result-water").css("font-weight", "bold")
         }
-        for (var i = 1; i < Water.length; i++) {
-            $("#result-water").html(userWaterML + Water[i++]);
-        }
+        $("#result-water").html(eval(Water.join(" + ")) - newAllwater)
     }
+    inputWater == 0;
 })
 /*----------CHART CARDIAC----------*/
 var cardiacChart = document.getElementById("chart-cardiac");
@@ -286,19 +279,3 @@ var myChart = new Chart(weightChart, {
         }
     }
 })
-
-//INPUT NUMBER
-function increaseValue() {
-    var value = parseInt(document.getElementById('number-water').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number-water').value = value;
-}
-
-function decreaseValue() {
-    var value = parseInt(document.getElementById('number-water').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value < 1 ? value = 1 : '';
-    value--;
-    document.getElementById('number-water').value = value;
-}

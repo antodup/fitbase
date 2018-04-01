@@ -15,11 +15,17 @@ if (document.documentElement.clientWidth <= 768) {
 }
 
 //A VOIR POUR LE PODOMETRES
-/*window.addEventListener('deviceorientation', function(evenement) {
-    console.log(Math.round( evenement.alpha))
-    console.log(Math.round( evenement.beta))
-    console.log(Math.round( evenement.gamma))
-}, false);*/
+window.addEventListener('deviceorientation', function (evenement) {
+    console.log(Math.round(evenement.alpha))
+    if (Math.round(evenement.beta) < 0 || Math.round(evenement.beta) > -30 || Math.round(evenement.beta) > 30 ) {
+        var setnbWalk = parseInt($(".nb-step span").text())
+        setnbWalk = setnbWalk + 1;
+        $(".nb-step span").html(setnbWalk);
+
+    }
+    console.log(Math.round(evenement.beta))
+    console.log(Math.round(evenement.gamma))
+}, false);
 
 /*----------CHART SOMMEIL----------*/
 var sleepChart = document.getElementById("chart-sleep");
@@ -35,7 +41,6 @@ var date = new Date(),
     dateSleep = [],
     timeSleep = [],
     mois = new Array("jan", "fev", "mar", "avr", "mai", "jui", "juil", "aout", "sep", "oct", "nov", "dec");
-
 
 
 var myBar = new Chart(sleepChart, {

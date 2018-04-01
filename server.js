@@ -1,5 +1,6 @@
 /* EXPRESS */
 const express =     require('express')
+var multer =        require('multer')
 const bodyParser =  require('body-parser')
 const mysql =       require('mysql')
 const Twig =        require('twig')
@@ -12,10 +13,10 @@ const server = require('http').createServer(app);
 var users = null;
 
 /* variable globales */
-var port = 8080;
+var port = 1337;
 
 /* ROAD TO ASSETS DIRECTORY */
-app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 60000 }}))
+app.use(session({ secret: 'this-is-a-secret-token'}))
 app.use('/css', express.static('web-app/assets/css'));
 app.use('/js', express.static('web-app/assets/js'));
 app.use('/img', express.static('web-app/assets/img'));
@@ -36,6 +37,18 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
+
+//config multer module for upload img
+const Storage = multer.diskStorage({
+    destination: function(req, file, callback) {
+        callback(null, "./web-app/assets/img/profilPicture");
+    },
+    filename: function(req, file, callback) {
+        callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+    }
+});
+
+var upload = multer({ storage: Storage }).array("profilPicture", 3); //Field name and max count
 
 //config twig
 app.set('views', [__dirname + '/web-app/views/pages', __dirname + '/web-app/views', __dirname + '/web-app/views/layout']);
@@ -97,6 +110,35 @@ app.get('/inscription', function (req, res) {
     })
 });
 
+app.post('/inscription', function (req, res) {
+    let q = "select * from users where email like '" + req.body.email + "';",
+        co = connection();
+    co.connect();
+    co.query(q, function (error, results, fields) {
+        if (error) return console.log(error);
+        if (results.length > 0){
+            res.redirect('/');//cet email est deja existant
+        }
+        let upload = multer({ storage: Storage }).array("profilPicture", 3); //Field name and max count
+        var hash = bcrypt.hashSync(req.body.password1, 10);
+        upload(req.body.profilPicture, res, function (err) {
+            if (err) {
+                res.redirect("/inscription");
+            } else {
+                console.log(req)
+                /*let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '" + req.files[0].path +"', false, false)";
+                co.query(q, function (error, results, fields) {
+                    if (error) return console.log(error);
+
+                    var sessData = req.session;
+                    sessData.someAttribute = results.insertId;
+                    res.redirect("/profil");
+                })*/
+            }
+        });
+    })
+});
+
 /* road for profil page */
 app.get('/profil', function (req, res) {
     //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
@@ -147,28 +189,6 @@ app.get('/profil', function (req, res) {
         })
     })
 
-});
-
-app.post('/inscription', function (req, res) {
-    let q = "select * from users where email like '" + req.body.email + "';",
-        co = connection();
-    co.connect();
-    co.query(q, function (error, results, fields) {
-        if (error) return console.log(error);
-        if (results.length > 0){
-            res.redirect('/');//cet email est deja existant
-        }
-        var hash = bcrypt.hashSync(req.body.password1, 10);
-        let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
-        co.query(q, function (error, results, fields) {
-            if (error) return console.log(error);
-
-            var sessData = req.session;
-            sessData.someAttribute = results.insertId;
-            res.redirect("/profil");
-        })
-
-    })
 });
 
 /* road for paremètre page */

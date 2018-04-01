@@ -184,11 +184,12 @@ app.get('/parametres', function (req, res) {
 /* road for santé page */
 app.get('/sante', function (req, res) {
     console.log(req.session.someAttribute)
-    if (req.session.someAttribute == undefined) {
+    /*if (req.session.someAttribute == undefined) {
         res.redirect('/')
     } else {
         res.render('health.twig');
-    }
+    }*/
+    res.render('health.twig');
 });
 
 /* road for sport page */

@@ -8,6 +8,8 @@
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
     justify-content: space-between;
+    overflow-y: visible;
+    height: auto !important;
   }
   #menu {
     display: flex;
@@ -18,7 +20,11 @@
     @media screen and (max-width: 768px) {
       flex-direction: row;
       width: 100%;
-      height: 5vh;
+      height: auto;
+      position: fixed;
+      bottom: 0;
+      z-index: 99999;
+      background-color: $fb-darkBlack;
     }
     .logo {
       margin-top: 10px;

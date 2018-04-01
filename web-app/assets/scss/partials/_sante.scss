@@ -1,20 +1,32 @@
-
 .grid-background {
   background-image: url(../img/grid_health.png);
   width: 90vw;
   height: 100vh;
   background-size: 92%;
-  padding: 4% 4% 4% 0px;
+  padding: 3% 3% 3% 0px;
   background-repeat: no-repeat;
   background-position: center;
   section {
     height: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    height: auto;
+    padding: 0;
+    background-image: none;
   }
 }
 
 .modif-ctn-boostrap {
   margin: 0;
   max-width: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    .logo-res{
+      width: 80%;
+      margin: 2em auto;
+    }
+  }
 }
 
 .ctn-body {
@@ -25,6 +37,9 @@
     height: 100%;
     margin: 0 auto;
   }
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .row-module {
@@ -32,6 +47,9 @@
   padding-right: 15px;
   height: auto !important;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 1em;
+  }
 }
 
 .module {
@@ -59,6 +77,9 @@
 .module-sleep {
   width: 100%;
   height: auto;
+  @media screen and (max-width: 768px) {
+    margin-bottom : 1em;
+  }
 }
 
 .module-row {
@@ -85,7 +106,7 @@
 }
 
 .module-advice {
-  height: 17%;
+  height: auto;
   #carouselAdvice {
     height: 100%;
     .carousel-indicators li {
@@ -124,14 +145,23 @@
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    margin-bottom: 1em;
+  }
 }
 
 .module-cardiac {
   height: auto;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 1em;
+  }
 }
 
 .module-weight {
   height: auto;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 4em;
+  }
 }
 
 .modal-title {
@@ -143,7 +173,7 @@
   .fbCustom-button {
     padding: 15px 20px;
   }
-  .modal-body{
+  .modal-body {
     padding: 0;
     p {
       padding: 1rem;

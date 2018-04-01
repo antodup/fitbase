@@ -7,6 +7,19 @@
 #usage            : JAVASCRIPT
 #notes            : 
 =============================================================*/
+if (document.documentElement.clientWidth <= 768) {
+    $(".modif-ctn-boostrap").prepend("<img src='/img/logo.svg' alt='logo Fitbase' class='logo-res'>");
+} else if (document.documentElement.clientWidth > 768 && document.documentElement.clientWidth <= 1024) {
+    $(".ctn-responsive").removeClass("col-lg-4");
+    $(".ctn-responsive").addClass("col-lg-6");
+}
+
+//A VOIR POUR LE PODOMETRES
+/*window.addEventListener('deviceorientation', function(evenement) {
+    console.log(Math.round( evenement.alpha))
+    console.log(Math.round( evenement.beta))
+    console.log(Math.round( evenement.gamma))
+}, false);*/
 
 /*----------CHART SOMMEIL----------*/
 var sleepChart = document.getElementById("chart-sleep");
@@ -18,13 +31,20 @@ gradientSleep.addColorStop(0.50, '#96C84E');//VERT
 gradientSleep.addColorStop(1, '#219CC5');//BLEU
 
 //CHARTS
-var myChart = new Chart(sleepChart, {
+var date = new Date(),
+    dateSleep = [],
+    timeSleep = [],
+    mois = new Array("jan", "fev", "mar", "avr", "mai", "jui", "juil", "aout", "sep", "oct", "nov", "dec");
+
+
+
+var myBar = new Chart(sleepChart, {
     type: 'bar',
     data: {
-        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+        labels: dateSleep,
         datasets: [{
             label: 'Temps de sommeil ',
-            data: [5, 7, 8, 4, 9, 10, 7],
+            data: timeSleep,
             borderColor: gradientSleep,
             backgroundColor: gradientSleep,
             lineTension: 0.2,
@@ -76,6 +96,58 @@ var myChart = new Chart(sleepChart, {
 
 });
 
+//AJOUT SOMMEIL
+document.querySelector("#save-sleep").addEventListener("click", function () {
+    var hourGoBed = $("#number-sleep1").val(),
+        hourWakeup = $("#number-sleep2").val(),
+        valDateGoBed = new Date(hourGoBed),
+        valDateWakeup = new Date(hourWakeup),
+        diff = DateDiff(valDateWakeup, valDateGoBed);
+
+    function dateFr() {
+        var message = date.getDate() + " ";
+        message += mois[date.getMonth()] + " ";
+        return message;
+    }
+
+    function DateDiff(date1, date2) {
+        var diff = {}                               // Initialisation du retour
+        var tmp = date1 - date2;
+
+        tmp = Math.floor(tmp / 1000);               // Nombre de secondes entre les 2 dates
+        diff.sec = tmp % 60;                        // Extraction du nombre de secondes
+
+        tmp = Math.floor((tmp - diff.sec) / 60);    // Nombre de minutes (partie entière)
+        diff.min = tmp % 60;                        // Extraction du nombre de minutes
+
+        tmp = Math.floor((tmp - diff.min) / 60);    // Nombre d'heures (entières)
+        diff.hour = tmp % 24;                       // Extraction du nombre d'heures
+
+        tmp = Math.floor((tmp - diff.hour) / 24);   // Nombre de jours restants
+        diff.day = tmp;
+
+        return diff;
+    }
+
+    for (var i = 0; i <= dateSleep.length; i++) {
+        if (dateFr() == dateSleep[i]) {
+            console.log(dateSleep)
+            timeSleep.splice(0, i, diff.hour);
+            window.myBar.update()
+            break
+        } else {
+            timeSleep.push(diff.hour)
+            dateSleep.push(dateFr())
+            if (dateSleep.length == 7) {
+                dateSleep.splice(0, 7)
+                timeSleep.splice(0, 7)
+                dateSleep.push(dateFr())
+                timeSleep.push(diff.hour)
+            }
+            window.myBar.update()
+        }
+    }
+})
 
 /*----------CHART WATER----------*/
 //DATA WATER

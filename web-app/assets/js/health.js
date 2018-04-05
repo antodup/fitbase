@@ -7,25 +7,24 @@
 #usage            : JAVASCRIPT
 #notes            : 
 =============================================================*/
+
 if (document.documentElement.clientWidth <= 768) {
     $(".modif-ctn-boostrap").prepend("<img src='/img/logo.svg' alt='logo Fitbase' class='logo-res'>");
+    window.addEventListener('deviceorientation', function (evenement) {
+        //PODOMETRES
+        if (Math.round(evenement.beta) < 0 || Math.round(evenement.beta) > -30 || Math.round(evenement.beta) > 30) {
+            var setnbWalk = parseInt($(".nb-step span").text())
+            setnbWalk = setnbWalk + 1;
+            $(".nb-step span").html(setnbWalk);
+        }
+        //console.log(Math.round(evenement.alpha))
+        //console.log(Math.round(evenement.beta))
+        //console.log(Math.round(evenement.gamma))
+    }, false);
 } else if (document.documentElement.clientWidth > 768 && document.documentElement.clientWidth <= 1024) {
     $(".ctn-responsive").removeClass("col-lg-4");
     $(".ctn-responsive").addClass("col-lg-6");
 }
-
-//A VOIR POUR LE PODOMETRES
-window.addEventListener('deviceorientation', function (evenement) {
-    console.log(Math.round(evenement.alpha))
-    if (Math.round(evenement.beta) < 0 || Math.round(evenement.beta) > -30 || Math.round(evenement.beta) > 30 ) {
-        var setnbWalk = parseInt($(".nb-step span").text())
-        setnbWalk = setnbWalk + 1;
-        $(".nb-step span").html(setnbWalk);
-
-    }
-    console.log(Math.round(evenement.beta))
-    console.log(Math.round(evenement.gamma))
-}, false);
 
 /*----------CHART SOMMEIL----------*/
 var sleepChart = document.getElementById("chart-sleep");
@@ -100,6 +99,11 @@ var myBar = new Chart(sleepChart, {
     }
 
 });
+function dateFr() {
+    var message = date.getDate() + " ";
+    message += mois[date.getMonth()] + " ";
+    return message;
+}
 
 //AJOUT SOMMEIL
 document.querySelector("#save-sleep").addEventListener("click", function () {
@@ -109,11 +113,7 @@ document.querySelector("#save-sleep").addEventListener("click", function () {
         valDateWakeup = new Date(hourWakeup),
         diff = DateDiff(valDateWakeup, valDateGoBed);
 
-    function dateFr() {
-        var message = date.getDate() + " ";
-        message += mois[date.getMonth()] + " ";
-        return message;
-    }
+
 
     function DateDiff(date1, date2) {
         var diff = {}                               // Initialisation du retour
@@ -213,7 +213,6 @@ document.querySelector("#save-water").addEventListener("click", function () {
     var inputWater = $("#number-water").val(),
         userWater = null;
     userWater = inputWater;
-    console.log(userWater)
 
     if (myDoughnutChart.data.datasets.length > 0) {
         var inputWater = $("#number-water").val();
@@ -231,7 +230,8 @@ document.querySelector("#save-water").addEventListener("click", function () {
         $("#result-water").html(eval(Water.join(" + ")) - newAllwater)
         parseInt(inputWater)
     }
-    inputWater = 0;
+    $("#number-water").val(0)
+
 })
 
 /*----------CHART CARDIAC----------*/
@@ -298,7 +298,9 @@ var myChart = new Chart(cardiacChart, {
 })
 
 /*----------CHART WEIGHT----------*/
-var weightChart = document.getElementById("chart-weight");
+var weightChart = document.getElementById("chart-weight"),
+    dataWeight = [],
+    dateWeight = [];
 //GRADIENT
 var contextWeight = weightChart.getContext('2d');
 var gradientWeight = contextWeight.createLinearGradient(0, 0, 200, 0);
@@ -306,13 +308,13 @@ gradientWeight.addColorStop(0, '#F4E932');//JAUNE
 gradientWeight.addColorStop(0.50, '#96C84E');//VERT
 gradientWeight.addColorStop(1, '#219CC5');//BLEU
 //CHARTS
-var myChart = new Chart(weightChart, {
+var myChart2 = new Chart(weightChart, {
     type: 'line',
     data: {
-        labels: ["Jan", "Fév", "Mars"],
+        labels: dateWeight,
         datasets: [{
             label: 'Evolution du poids',
-            data: [80, 60, 64],
+            data: dataWeight,
             borderColor: gradientWeight,
             backgroundColor: '#219cc559',
             lineTension: 0.2,
@@ -359,3 +361,13 @@ var myChart = new Chart(weightChart, {
         }
     }
 })
+
+document.querySelector("#save-weight").addEventListener("click", function () {
+    var inputWeight = $("#number-weight").val();
+    dataWeight.push(inputWeight);
+    dateWeight.push(dateFr())
+    $("#number-weight").text("{{ weight }}")
+    window.myChart2.update();
+});
+
+

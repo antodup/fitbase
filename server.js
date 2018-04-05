@@ -1,12 +1,12 @@
 /* EXPRESS */
-const express =     require('express')
-var multer =        require('multer')
-const bodyParser =  require('body-parser')
-const mysql =       require('mysql')
-const Twig =        require('twig')
-const bcrypt =      require('bcrypt')
-const session =     require('express-session')
-const app =         express();
+const express = require('express')
+var multer = require('multer')
+const bodyParser = require('body-parser')
+const mysql = require('mysql')
+const Twig = require('twig')
+const bcrypt = require('bcrypt')
+const session = require('express-session')
+const app = express();
 
 /* CREATION DU SERVER */
 const server = require('http').createServer(app);
@@ -16,7 +16,7 @@ var users = null;
 var port = 1337;
 
 /* ROAD TO ASSETS DIRECTORY */
-app.use(session({ secret: 'this-is-a-secret-token'}))
+app.use(session({secret: 'this-is-a-secret-token'}))
 app.use('/css', express.static('web-app/assets/css'));
 app.use('/js', express.static('web-app/assets/js'));
 app.use('/img', express.static('web-app/assets/img'));
@@ -40,15 +40,15 @@ app.use(bodyParser.json());
 
 //config multer module for upload img
 const Storage = multer.diskStorage({
-    destination: function(req, file, callback) {
+    destination: function (req, file, callback) {
         callback(null, "./web-app/assets/img/profilPicture");
     },
-    filename: function(req, file, callback) {
+    filename: function (req, file, callback) {
         callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
     }
 });
 
-var upload = multer({ storage: Storage }).array("profilPicture", 3); //Field name and max count
+var upload = multer({storage: Storage}).array("profilPicture", 3); //Field name and max count
 
 //config twig
 app.set('views', [__dirname + '/web-app/views/pages', __dirname + '/web-app/views', __dirname + '/web-app/views/layout']);
@@ -80,7 +80,7 @@ app.post('/', function (req, res) {
                     res.redirect('/profil');
                 } else {
                     res.render('index.twig', {
-                        checkPassword : password
+                        checkPassword: password
                     })
                 }
             })
@@ -103,8 +103,8 @@ app.get('/inscription', function (req, res) {
             if (error) return console.log(error);
             objectif = results;
             res.render('register.twig', {
-                sports : sport,
-                objectifs : objectif
+                sports: sport,
+                objectifs: objectif
             });
         })
     })
@@ -116,10 +116,10 @@ app.post('/inscription', function (req, res) {
     co.connect();
     co.query(q, function (error, results, fields) {
         if (error) return console.log(error);
-        if (results.length > 0){
+        if (results.length > 0) {
             res.redirect('/');//cet email est deja existant
         }
-        let upload = multer({ storage: Storage }).array("profilPicture", 3); //Field name and max count
+        let upload = multer({storage: Storage}).array("profilPicture", 3); //Field name and max count
         var hash = bcrypt.hashSync(req.body.password1, 10);
         upload(req.body.profilPicture, res, function (err) {
             if (err) {
@@ -150,20 +150,20 @@ app.get('/profil', function (req, res) {
     var user_id = req.session.someAttribute,
         co = connection();
     co.connect();
-    co.query("SELECT * FROM users WHERE id = "+user_id, function (error, results, fields) {
+    co.query("SELECT * FROM users WHERE id = " + user_id, function (error, results, fields) {
         if (error) return console.log(error)
         user = results[0]
-        co.query("SELECT DATE_FORMAT(birthday, \"%Y %c %d\") AS birthday FROM users WHERE id = "+user_id, function (error, results, fields) {
+        co.query("SELECT DATE_FORMAT(birthday, \"%Y %c %d\") AS birthday FROM users WHERE id = " + user_id, function (error, results, fields) {
             if (error) return console.log(error)
             user.birthday = results[0].birthday
             let birthday = new Date(user.birthday)
             let ageDifMs = Date.now() - birthday.getTime();
             let ageDate = new Date(ageDifMs);
             user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
-            co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = "+ user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
+            co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = " + user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
                 if (error) return console.log(error)
                 let sports = results
-                co.query("SELECT o.* FROM objectifs o, link_user_objectifs luo WHERE luo.id_user = " + user_id + " AND luo.id_objectifs = o.id" , function (error, results, fields) {
+                co.query("SELECT o.* FROM objectifs o, link_user_objectifs luo WHERE luo.id_user = " + user_id + " AND luo.id_objectifs = o.id", function (error, results, fields) {
                     if (error) return console.log(error)
                     let objectif = results[0]
                     co.query("SELECT r.* FROM reward r, link_user_reward lur WHERE lur.id_user = " + user_id + " AND lur.id_reward = r.id", function (error, results, fields) {
@@ -175,7 +175,7 @@ app.get('/profil', function (req, res) {
                             let rewards = results
                             res.render('profil.twig', {
                                 user: user,
-                                sports : sports,
+                                sports: sports,
                                 objectif: objectif,
                                 user_rewards: user_rewards,
                                 rewards: rewards
@@ -204,12 +204,20 @@ app.get('/parametres', function (req, res) {
 /* road for santé page */
 app.get('/sante', function (req, res) {
     console.log(req.session.someAttribute)
-    /*if (req.session.someAttribute == undefined) {
+    var user_id = req.session.someAttribute,
+        co = connection();
+    if (req.session.someAttribute == undefined) {
         res.redirect('/')
-    } else {
-        res.render('health.twig');
-    }*/
-    res.render('health.twig');
+    }
+    co.connect();
+    co.query("SELECT * FROM users WHERE id = " + user_id, function (error, results, fields) {
+        if (error) return console.log(error)
+        console.log(results[0].weight)
+
+        res.render('health.twig', {
+            weight: results[0].weight
+        });
+    })
 });
 
 /* road for sport page */

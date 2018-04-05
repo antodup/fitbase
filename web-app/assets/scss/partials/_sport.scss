@@ -1,3 +1,38 @@
+.ctn-modules-CardVideo{
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+  }
+}
+.ctn-module-video {
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+  }
+  .module-video-res{
+    @media screen and (max-width: 768px) {
+      height: auto !important;
+    }
+    iframe {
+      @media screen and (max-width: 768px) {
+        height: 250px;
+      }
+    }
+  }
+}
+
+.ctn-module-card {
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+  }
+  iframe {
+    height: 250px !important;
+  }
+  .module-card-res {
+    @media screen and (max-width: 768px) {
+      height: auto !important;
+    }
+  }
+}
+
 .sport-container{
   .module{
     padding: 0;
@@ -74,4 +109,43 @@
     width: 165px;
     margin-left: auto;
   }
+}
+
+.module-news {
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+  }
+}
+.ctn-module-news{
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+    margin-bottom: 1em;
+  }
+}
+.ctn-obj-cal {
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+    margin-bottom: 1em;
+  }
+  .obj-cal{
+    @media screen and (max-width: 768px) {
+      height: auto !important;
+      margin-bottom: 1em;
+    }
+  }
+
+  .quick {
+    @media screen and (max-width: 768px) {
+      padding: 15px;
+    }
+  }
+}
+
+.ctn-last-module {
+  @media screen and (max-width: 768px) {
+    margin-bottom: 4.5em;
+    height: auto !important;
+  }
+
+
 }

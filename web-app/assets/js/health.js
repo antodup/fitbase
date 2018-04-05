@@ -17,9 +17,6 @@ if (document.documentElement.clientWidth <= 768) {
             setnbWalk = setnbWalk + 1;
             $(".nb-step span").html(setnbWalk);
         }
-        //console.log(Math.round(evenement.alpha))
-        //console.log(Math.round(evenement.beta))
-        //console.log(Math.round(evenement.gamma))
     }, false);
 } else if (document.documentElement.clientWidth > 768 && document.documentElement.clientWidth <= 1024) {
     $(".ctn-responsive").removeClass("col-lg-4");

@@ -44,7 +44,7 @@ var myBar = new Chart(sleepChart, {
     data: {
         labels: dateSleep,
         datasets: [{
-            label: 'Temps de sommeil ',
+            label: 'Temps de sommeil',
             data: timeSleep,
             borderColor: gradientSleep,
             backgroundColor: gradientSleep,

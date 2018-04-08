@@ -12893,6 +12893,7 @@ p {
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   /* line 1, ../scss/partials/layout/_nav.scss */
@@ -12901,7 +12902,7 @@ p {
     justify-content: space-between;
   }
 }
-/* line 12, ../scss/partials/layout/_nav.scss */
+/* line 13, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu {
   display: flex;
   flex-direction: column;
@@ -12910,14 +12911,18 @@ p {
   width: 10vw;
 }
 @media screen and (max-width: 768px) {
-  /* line 12, ../scss/partials/layout/_nav.scss */
+  /* line 13, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    background-color: #2D3544;
     flex-direction: row;
     width: 100%;
-    height: 5vh;
+    height: 45px;
   }
 }
-/* line 23, ../scss/partials/layout/_nav.scss */
+/* line 28, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu .logo {
   margin-top: 10px;
   height: 8%;
@@ -12926,7 +12931,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-/* line 31, ../scss/partials/layout/_nav.scss */
+/* line 36, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav {
   margin-top: 20px;
   height: calc(85% - 20px);
@@ -12937,12 +12942,15 @@ p {
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 31, ../scss/partials/layout/_nav.scss */
+  /* line 36, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu nav {
     flex-direction: row;
+    height: auto;
+    margin-top: 0;
+    padding: 0px 20px;
   }
 }
-/* line 42, ../scss/partials/layout/_nav.scss */
+/* line 50, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block {
   display: flex;
   flex-direction: column;
@@ -12951,8 +12959,9 @@ p {
   transition: all ease 2s;
   position: relative;
 }
-/* line 50, ../scss/partials/layout/_nav.scss */
+/* line 58, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .icon {
+  background: none;
   height: 20px;
   width: 20px;
   display: flex;
@@ -12960,7 +12969,7 @@ p {
   align-items: center;
   margin-bottom: 5px;
 }
-/* line 59, ../scss/partials/layout/_nav.scss */
+/* line 68, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic {
   color: white;
   transform: rotate(-90deg);
@@ -12969,43 +12978,61 @@ p {
   font-size: 0.9em;
   opacity: 0;
 }
-/* line 67, ../scss/partials/layout/_nav.scss */
+/* line 76, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic2 {
   color: white;
   transform: rotate(-90deg);
   display: none;
   margin-top: 40px;
 }
-/* line 74, ../scss/partials/layout/_nav.scss */
+/* line 83, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic-show {
   position: absolute;
   top: 27px;
   display: block;
   color: #F4E932;
 }
-/* line 80, ../scss/partials/layout/_nav.scss */
+/* line 89, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic-show-2 {
   position: absolute;
   bottom: 55px;
   display: block;
   color: #F4E932;
 }
-/* line 88, ../scss/partials/layout/_nav.scss */
+/* line 97, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .parent-line {
   width: auto;
   height: 24%;
   display: flex;
   align-items: flex-end;
 }
-/* line 93, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .parent-line div {
+@media screen and (max-width: 768px) {
+  /* line 97, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav .parent-line {
+    display: none;
+  }
+}
+/* line 106, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav div {
   width: 1px;
   height: 100%;
   background-color: white;
 }
-/* line 99, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .hover-settings {
+@media screen and (max-width: 768px) {
+  /* line 106, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav div {
+    display: none;
+  }
+}
+/* line 116, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu .hover-settings {
   align-items: flex-start;
+}
+@media screen and (max-width: 768px) {
+  /* line 120, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu .topic, .ctn-general #menu .topic-show, .ctn-general #menu .topic-show-2, .ctn-general #menu .topic2, .ctn-general #menu .logo {
+    display: none !important;
+  }
 }
 
 /* line 1, ../scss/partials/_home.scss */
@@ -13177,58 +13204,66 @@ p {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  /* line 150, ../scss/partials/_home.scss */
+  .main-profil {
+    padding-bottom: 45px;
+  }
+}
 /* line 1, ../scss/partials/_profil.scss */
 .main-profil {
   background-image: url("../img/grid-profil.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 92%;
+  height: 100%;
+  overflow: hidden;
 }
-/* line 6, ../scss/partials/_profil.scss */
+/* line 8, ../scss/partials/_profil.scss */
 .main-profil h3 {
   text-transform: uppercase;
   margin-top: 1rem;
   color: #fff;
 }
-/* line 11, ../scss/partials/_profil.scss */
+/* line 13, ../scss/partials/_profil.scss */
 .main-profil .modal-dialog {
   max-width: 660px;
 }
-/* line 15, ../scss/partials/_profil.scss */
+/* line 17, ../scss/partials/_profil.scss */
 .main-profil .modif-profil img {
   max-width: 100%;
 }
-/* line 19, ../scss/partials/_profil.scss */
+/* line 21, ../scss/partials/_profil.scss */
 .main-profil .profil {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 0 10px;
   min-height: 100vh;
 }
-/* line 24, ../scss/partials/_profil.scss */
+/* line 26, ../scss/partials/_profil.scss */
 .main-profil .profil span {
   margin: 5px 0;
 }
-/* line 27, ../scss/partials/_profil.scss */
+/* line 29, ../scss/partials/_profil.scss */
 .main-profil .profil .pp {
   max-width: 100%;
   margin-top: 15px;
 }
-/* line 31, ../scss/partials/_profil.scss */
+/* line 33, ../scss/partials/_profil.scss */
 .main-profil .profil .info {
   width: 100%;
   text-align: left;
 }
-/* line 34, ../scss/partials/_profil.scss */
+/* line 36, ../scss/partials/_profil.scss */
 .main-profil .profil .info .name {
   text-transform: uppercase;
 }
-/* line 37, ../scss/partials/_profil.scss */
+/* line 39, ../scss/partials/_profil.scss */
 .main-profil .profil .info p {
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
-/* line 42, ../scss/partials/_profil.scss */
+/* line 44, ../scss/partials/_profil.scss */
 .main-profil .profil button {
   border: none;
   background: none;
@@ -13237,94 +13272,174 @@ p {
   padding: 0;
   cursor: pointer;
 }
-/* line 53, ../scss/partials/_profil.scss */
+/* line 54, ../scss/partials/_profil.scss */
+.main-profil .btn-ami {
+  margin-right: 50%;
+}
+/* line 58, ../scss/partials/_profil.scss */
 .main-profil .rewards .row {
   padding-left: 15px;
   margin-top: 15px;
 }
-/* line 59, ../scss/partials/_profil.scss */
+/* line 64, ../scss/partials/_profil.scss */
 .main-profil .reward {
   margin-right: 50px;
 }
-/* line 62, ../scss/partials/_profil.scss */
+/* line 67, ../scss/partials/_profil.scss */
 .main-profil .ami {
   margin-right: 50px;
 }
-/* line 64, ../scss/partials/_profil.scss */
+/* line 69, ../scss/partials/_profil.scss */
 .main-profil .ami p {
   color: #fff;
   margin-top: 10px;
 }
-/* line 71, ../scss/partials/_profil.scss */
+/* line 76, ../scss/partials/_profil.scss */
 .main-profil .reward svg {
   height: 80px;
 }
-/* line 75, ../scss/partials/_profil.scss */
+/* line 80, ../scss/partials/_profil.scss */
 .main-profil .reward.on p {
   color: #f4e932;
 }
-/* line 78, ../scss/partials/_profil.scss */
+/* line 83, ../scss/partials/_profil.scss */
 .main-profil .reward.on .cls-1, .main-profil .reward.on .cls-3 {
   fill: #f4e932;
 }
-/* line 82, ../scss/partials/_profil.scss */
+/* line 87, ../scss/partials/_profil.scss */
 .main-profil .reward.on .cls-2 {
   fill: #2d3544;
 }
-/* line 86, ../scss/partials/_profil.scss */
+/* line 92, ../scss/partials/_profil.scss */
 .main-profil .reward.on .cls-3 {
   font-size: 5px;
   font-family: Roboto-Black, Roboto;
   font-weight: 800;
 }
-/* line 95, ../scss/partials/_profil.scss */
+/* line 101, ../scss/partials/_profil.scss */
 .main-profil .reward.off p {
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.5);
 }
-/* line 98, ../scss/partials/_profil.scss */
+/* line 104, ../scss/partials/_profil.scss */
 .main-profil .reward.off .cls-1, .main-profil .reward.off .cls-3 {
-  fill: rgba(255, 255, 255, 0.74);
+  fill: rgba(255, 255, 255, 0.5);
 }
-/* line 102, ../scss/partials/_profil.scss */
+/* line 108, ../scss/partials/_profil.scss */
 .main-profil .reward.off .cls-2 {
   fill: #2d3544;
 }
-/* line 105, ../scss/partials/_profil.scss */
+/* line 111, ../scss/partials/_profil.scss */
 .main-profil .reward.off .cls-3 {
   font-size: 5px;
   font-family: Roboto-Black, Roboto;
   font-weight: 800;
 }
-/* line 112, ../scss/partials/_profil.scss */
+/* line 118, ../scss/partials/_profil.scss */
 .main-profil .modal-body .row {
   padding-left: 0;
 }
-/* line 115, ../scss/partials/_profil.scss */
+/* line 121, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend {
   margin: 10px 0;
 }
-/* line 117, ../scss/partials/_profil.scss */
+/* line 123, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend img {
   max-width: 40px;
 }
-/* line 120, ../scss/partials/_profil.scss */
+/* line 126, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend p {
   font-size: 0.8em;
   margin: 0;
   width: 100%;
   margin-left: 10px;
 }
-/* line 126, ../scss/partials/_profil.scss */
+/* line 132, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend button {
   padding: 10px;
   border: solid 0.5px #2D3544;
   font-size: 11px;
 }
-/* line 134, ../scss/partials/_profil.scss */
+/* line 140, ../scss/partials/_profil.scss */
 .main-profil .modal-footer button {
   padding: 12px 30px;
 }
 
+@media all and (max-width: 1043px) {
+  /* line 148, ../scss/partials/_profil.scss */
+  .main-profil .reward {
+    margin-right: 30px;
+  }
+  /* line 151, ../scss/partials/_profil.scss */
+  .main-profil .ami img {
+    max-width: 60px;
+  }
+  /* line 154, ../scss/partials/_profil.scss */
+  .main-profil .reward svg {
+    height: 65px;
+  }
+
+  /* line 158, ../scss/partials/_profil.scss */
+  .hide-mobile {
+    display: block;
+  }
+
+  /* line 161, ../scss/partials/_profil.scss */
+  .hide-desktop {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  /* line 167, ../scss/partials/_profil.scss */
+  .background {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  /* line 171, ../scss/partials/_profil.scss */
+  .main-profil .profil {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    padding-bottom: 10px;
+  }
+  /* line 179, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /* line 183, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile img {
+    width: 55%;
+  }
+  /* line 186, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile .info {
+    width: 35% !important;
+  }
+  /* line 190, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile h3 {
+    text-align: left !important;
+  }
+  /* line 194, ../scss/partials/_profil.scss */
+  .main-profil .profil .rewards {
+    padding: 20px;
+  }
+  /* line 197, ../scss/partials/_profil.scss */
+  .main-profil .profil span {
+    width: 80% !important;
+    flex-direction: column;
+  }
+  /* line 201, ../scss/partials/_profil.scss */
+  .main-profil .profil .hide-desktop {
+    display: block;
+  }
+  /* line 204, ../scss/partials/_profil.scss */
+  .main-profil .profil .hide-mobile {
+    display: none;
+  }
+}
 /* line 1, ../scss/partials/_register.scss */
 hr {
   width: 45%;
@@ -13868,6 +13983,7 @@ input:-webkit-autofill {
   width: 165px;
   margin-left: auto;
 }
+
 /* line 2, ../scss/partials/_parameters.scss */
 .parameters h2 {
   color: #fff;
@@ -14077,4 +14193,33 @@ input:-webkit-autofill {
 /* line 168, ../scss/partials/_parameters.scss */
 .parameters .btn-check .switch--expanding-inner.switch--vertical input:hover ~ input:checked ~ .toggle-outside .toggle-inside {
   top: 2.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 176, ../scss/partials/_parameters.scss */
+  .ctn-general {
+    flex-direction: inherit;
+  }
+
+  /* line 179, ../scss/partials/_parameters.scss */
+  .parameters .content {
+    width: 95%;
+  }
+}
+@media all and (max-width: 482px) {
+  /* line 185, ../scss/partials/_parameters.scss */
+  .parameters .content {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  /* line 189, ../scss/partials/_parameters.scss */
+  .parameters .content .line, .parameters .content .info-perso, .parameters .content .auto-notif {
+    width: 90% !important;
+  }
+  /* line 192, ../scss/partials/_parameters.scss */
+  .parameters .content .line {
+    border-right: none;
+    border-bottom: solid 1px #fff;
+  }
 }

@@ -111,7 +111,7 @@ app.get('/inscription', function (req, res) {
 });
 
 app.post('/inscription', function (req, res) {
-    let q = "select * from users where email like '" + req.body.email + "';",
+    var q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
@@ -119,14 +119,14 @@ app.post('/inscription', function (req, res) {
         if (results.length > 0) {
             res.redirect('/');//cet email est deja existant
         }
-        let upload = multer({storage: Storage}).array("profilPicture", 3); //Field name and max count
+        var upload = multer({storage: Storage}).array("profilPicture", 3); //Field name and max count
         var hash = bcrypt.hashSync(req.body.password1, 10);
         upload(req.body.profilPicture, res, function (err) {
             if (err) {
                 res.redirect("/inscription");
             } else {
                 console.log(req)
-                /*let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '" + req.files[0].path +"', false, false)";
+                /*var q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '" + req.files[0].path +"', false, false)";
                 co.query(q, function (error, results, fields) {
                     if (error) return console.log(error);
 

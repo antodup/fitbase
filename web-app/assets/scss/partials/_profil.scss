@@ -3,16 +3,18 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 92%;
+  height: 100%;
+  overflow: hidden;
   h3 {
     text-transform: uppercase;
     margin-top: 1rem;
     color: #fff;
   }
-  .modal-dialog{
+  .modal-dialog {
     max-width: 660px;
   }
-  .modif-profil{
-    img{
+  .modif-profil {
+    img {
       max-width: 100%;
     }
   }
@@ -39,7 +41,7 @@
         margin-bottom: 0;
       }
     }
-    button{
+    button {
       border: none;
       background: none;
       width: auto;
@@ -48,6 +50,9 @@
       cursor: pointer;
     }
 
+  }
+  .btn-ami {
+    margin-right: 50%;
   }
   .rewards {
     .row {
@@ -81,6 +86,7 @@
 
     .cls-2 {
       fill: #2d3544;
+
     }
 
     .cls-3 {
@@ -93,10 +99,10 @@
   .reward.off {
 
     p {
-      color: rgba(255, 255, 255, 0.74);
+      color: rgba(255, 255, 255, 0.5);
     }
     .cls-1, .cls-3 {
-      fill: rgba(255, 255, 255, 0.74);
+      fill: rgba(255, 255, 255, 0.5);
     }
 
     .cls-2 {
@@ -137,4 +143,67 @@
   }
 }
 
+@media all and (max-width: 1043px) {
+  .main-profil {
+    .reward {
+      margin-right: 30px;
+    }
+    .ami img {
+      max-width: 60px;
+    }
+    .reward svg {
+      height: 65px;
+    }
+  }
+  .hide-mobile {
+    display: block
+  }
+  .hide-desktop {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .background {
+    min-height: 100vh;
+    height: auto;
+  }
+  .main-profil .profil {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start!important;
+    padding-bottom: 10px;
+
+    .info-mobile {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      img {
+        width: 55%;
+      }
+      .info{
+        width: 35%!important;
+      }
+
+      h3 {
+        text-align: left !important;
+      }
+    }
+    .rewards{
+      padding: 20px;
+    }
+    span{
+      width: 80% !important;
+      flex-direction:column;
+    }
+    .hide-desktop {
+      display: block;
+    }
+    .hide-mobile {
+      display: none;
+    }
+  }
+}
 

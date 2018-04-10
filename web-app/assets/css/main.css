@@ -12890,17 +12890,16 @@ p {
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   /* line 1, ../scss/partials/layout/_nav.scss */
   .ctn-general {
     flex-direction: column-reverse;
     justify-content: space-between;
-    overflow-y: visible;
-    height: auto !important;
   }
 }
-/* line 14, ../scss/partials/layout/_nav.scss */
+/* line 13, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu {
   display: flex;
   flex-direction: column;
@@ -12909,18 +12908,18 @@ p {
   width: 10vw;
 }
 @media screen and (max-width: 768px) {
-  /* line 14, ../scss/partials/layout/_nav.scss */
+  /* line 13, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    background-color: #2D3544;
     flex-direction: row;
     width: 100%;
-    height: auto;
-    position: fixed;
-    bottom: 0;
-    z-index: 99999;
-    background-color: #242428;
+    height: 45px;
   }
 }
-/* line 29, ../scss/partials/layout/_nav.scss */
+/* line 28, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu .logo {
   margin-top: 10px;
   height: 8%;
@@ -12929,7 +12928,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-/* line 37, ../scss/partials/layout/_nav.scss */
+/* line 36, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav {
   margin-top: 20px;
   height: calc(85% - 20px);
@@ -12940,12 +12939,15 @@ p {
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 37, ../scss/partials/layout/_nav.scss */
+  /* line 36, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu nav {
     flex-direction: row;
+    height: auto;
+    margin-top: 0;
+    padding: 0px 20px;
   }
 }
-/* line 48, ../scss/partials/layout/_nav.scss */
+/* line 50, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block {
   display: flex;
   flex-direction: column;
@@ -12954,8 +12956,9 @@ p {
   transition: all ease 2s;
   position: relative;
 }
-/* line 56, ../scss/partials/layout/_nav.scss */
+/* line 58, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .icon {
+  background: none;
   height: 20px;
   width: 20px;
   display: flex;
@@ -12963,7 +12966,7 @@ p {
   align-items: center;
   margin-bottom: 5px;
 }
-/* line 65, ../scss/partials/layout/_nav.scss */
+/* line 68, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic {
   color: white;
   transform: rotate(-90deg);
@@ -12972,43 +12975,61 @@ p {
   font-size: 0.9em;
   opacity: 0;
 }
-/* line 73, ../scss/partials/layout/_nav.scss */
+/* line 76, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic2 {
   color: white;
   transform: rotate(-90deg);
   display: none;
   margin-top: 40px;
 }
-/* line 80, ../scss/partials/layout/_nav.scss */
+/* line 83, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic-show {
   position: absolute;
   top: 27px;
   display: block;
   color: #F4E932;
 }
-/* line 86, ../scss/partials/layout/_nav.scss */
+/* line 89, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .topic-block .topic-show-2 {
   position: absolute;
   bottom: 55px;
   display: block;
   color: #F4E932;
 }
-/* line 94, ../scss/partials/layout/_nav.scss */
+/* line 97, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav .parent-line {
   width: auto;
   height: 24%;
   display: flex;
   align-items: flex-end;
 }
-/* line 99, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .parent-line div {
+@media screen and (max-width: 768px) {
+  /* line 97, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav .parent-line {
+    display: none;
+  }
+}
+/* line 106, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav div {
   width: 1px;
   height: 100%;
   background-color: white;
 }
-/* line 105, ../scss/partials/layout/_nav.scss */
-.ctn-general #menu nav .hover-settings {
+@media screen and (max-width: 768px) {
+  /* line 106, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu nav div {
+    display: none;
+  }
+}
+/* line 116, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu .hover-settings {
   align-items: flex-start;
+}
+@media screen and (max-width: 768px) {
+  /* line 120, ../scss/partials/layout/_nav.scss */
+  .ctn-general #menu .topic, .ctn-general #menu .topic-show, .ctn-general #menu .topic-show-2, .ctn-general #menu .topic2, .ctn-general #menu .logo {
+    display: none !important;
+  }
 }
 
 /* line 1, ../scss/partials/_home.scss */
@@ -13180,58 +13201,66 @@ p {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  /* line 150, ../scss/partials/_home.scss */
+  .main-profil {
+    padding-bottom: 45px;
+  }
+}
 /* line 1, ../scss/partials/_profil.scss */
 .main-profil {
   background-image: url("../img/grid-profil.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 92%;
+  height: 100%;
+  overflow: hidden;
 }
-/* line 6, ../scss/partials/_profil.scss */
+/* line 8, ../scss/partials/_profil.scss */
 .main-profil h3 {
   text-transform: uppercase;
   margin-top: 1rem;
   color: #fff;
 }
-/* line 11, ../scss/partials/_profil.scss */
+/* line 13, ../scss/partials/_profil.scss */
 .main-profil .modal-dialog {
   max-width: 660px;
 }
-/* line 15, ../scss/partials/_profil.scss */
+/* line 17, ../scss/partials/_profil.scss */
 .main-profil .modif-profil img {
   max-width: 100%;
 }
-/* line 19, ../scss/partials/_profil.scss */
+/* line 21, ../scss/partials/_profil.scss */
 .main-profil .profil {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 0 10px;
   min-height: 100vh;
 }
-/* line 24, ../scss/partials/_profil.scss */
+/* line 26, ../scss/partials/_profil.scss */
 .main-profil .profil span {
   margin: 5px 0;
 }
-/* line 27, ../scss/partials/_profil.scss */
+/* line 29, ../scss/partials/_profil.scss */
 .main-profil .profil .pp {
   max-width: 100%;
   margin-top: 15px;
 }
-/* line 31, ../scss/partials/_profil.scss */
+/* line 33, ../scss/partials/_profil.scss */
 .main-profil .profil .info {
   width: 100%;
   text-align: left;
 }
-/* line 34, ../scss/partials/_profil.scss */
+/* line 36, ../scss/partials/_profil.scss */
 .main-profil .profil .info .name {
   text-transform: uppercase;
 }
-/* line 37, ../scss/partials/_profil.scss */
+/* line 39, ../scss/partials/_profil.scss */
 .main-profil .profil .info p {
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
-/* line 42, ../scss/partials/_profil.scss */
+/* line 44, ../scss/partials/_profil.scss */
 .main-profil .profil button {
   border: none;
   background: none;
@@ -13240,94 +13269,174 @@ p {
   padding: 0;
   cursor: pointer;
 }
-/* line 53, ../scss/partials/_profil.scss */
+/* line 54, ../scss/partials/_profil.scss */
+.main-profil .btn-ami {
+  margin-right: 50%;
+}
+/* line 58, ../scss/partials/_profil.scss */
 .main-profil .rewards .row {
   padding-left: 15px;
   margin-top: 15px;
 }
-/* line 59, ../scss/partials/_profil.scss */
+/* line 64, ../scss/partials/_profil.scss */
 .main-profil .reward {
   margin-right: 50px;
 }
-/* line 62, ../scss/partials/_profil.scss */
+/* line 67, ../scss/partials/_profil.scss */
 .main-profil .ami {
   margin-right: 50px;
 }
-/* line 64, ../scss/partials/_profil.scss */
+/* line 69, ../scss/partials/_profil.scss */
 .main-profil .ami p {
   color: #fff;
   margin-top: 10px;
 }
-/* line 71, ../scss/partials/_profil.scss */
+/* line 76, ../scss/partials/_profil.scss */
 .main-profil .reward svg {
   height: 80px;
 }
-/* line 75, ../scss/partials/_profil.scss */
+/* line 80, ../scss/partials/_profil.scss */
 .main-profil .reward.on p {
   color: #f4e932;
 }
-/* line 78, ../scss/partials/_profil.scss */
+/* line 83, ../scss/partials/_profil.scss */
 .main-profil .reward.on .cls-1, .main-profil .reward.on .cls-3 {
   fill: #f4e932;
 }
-/* line 82, ../scss/partials/_profil.scss */
+/* line 87, ../scss/partials/_profil.scss */
 .main-profil .reward.on .cls-2 {
   fill: #2d3544;
 }
-/* line 86, ../scss/partials/_profil.scss */
+/* line 92, ../scss/partials/_profil.scss */
 .main-profil .reward.on .cls-3 {
   font-size: 5px;
   font-family: Roboto-Black, Roboto;
   font-weight: 800;
 }
-/* line 95, ../scss/partials/_profil.scss */
+/* line 101, ../scss/partials/_profil.scss */
 .main-profil .reward.off p {
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.5);
 }
-/* line 98, ../scss/partials/_profil.scss */
+/* line 104, ../scss/partials/_profil.scss */
 .main-profil .reward.off .cls-1, .main-profil .reward.off .cls-3 {
-  fill: rgba(255, 255, 255, 0.74);
+  fill: rgba(255, 255, 255, 0.5);
 }
-/* line 102, ../scss/partials/_profil.scss */
+/* line 108, ../scss/partials/_profil.scss */
 .main-profil .reward.off .cls-2 {
   fill: #2d3544;
 }
-/* line 105, ../scss/partials/_profil.scss */
+/* line 111, ../scss/partials/_profil.scss */
 .main-profil .reward.off .cls-3 {
   font-size: 5px;
   font-family: Roboto-Black, Roboto;
   font-weight: 800;
 }
-/* line 112, ../scss/partials/_profil.scss */
+/* line 118, ../scss/partials/_profil.scss */
 .main-profil .modal-body .row {
   padding-left: 0;
 }
-/* line 115, ../scss/partials/_profil.scss */
+/* line 121, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend {
   margin: 10px 0;
 }
-/* line 117, ../scss/partials/_profil.scss */
+/* line 123, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend img {
   max-width: 40px;
 }
-/* line 120, ../scss/partials/_profil.scss */
+/* line 126, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend p {
   font-size: 0.8em;
   margin: 0;
   width: 100%;
   margin-left: 10px;
 }
-/* line 126, ../scss/partials/_profil.scss */
+/* line 132, ../scss/partials/_profil.scss */
 .main-profil .modal-body .find-friend button {
   padding: 10px;
   border: solid 0.5px #2D3544;
   font-size: 11px;
 }
-/* line 134, ../scss/partials/_profil.scss */
+/* line 140, ../scss/partials/_profil.scss */
 .main-profil .modal-footer button {
   padding: 12px 30px;
 }
 
+@media all and (max-width: 1043px) {
+  /* line 148, ../scss/partials/_profil.scss */
+  .main-profil .reward {
+    margin-right: 30px;
+  }
+  /* line 151, ../scss/partials/_profil.scss */
+  .main-profil .ami img {
+    max-width: 60px;
+  }
+  /* line 154, ../scss/partials/_profil.scss */
+  .main-profil .reward svg {
+    height: 65px;
+  }
+
+  /* line 158, ../scss/partials/_profil.scss */
+  .hide-mobile {
+    display: block;
+  }
+
+  /* line 161, ../scss/partials/_profil.scss */
+  .hide-desktop {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  /* line 167, ../scss/partials/_profil.scss */
+  .background {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  /* line 171, ../scss/partials/_profil.scss */
+  .main-profil .profil {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    padding-bottom: 10px;
+  }
+  /* line 179, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /* line 183, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile img {
+    width: 55%;
+  }
+  /* line 186, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile .info {
+    width: 35% !important;
+  }
+  /* line 190, ../scss/partials/_profil.scss */
+  .main-profil .profil .info-mobile h3 {
+    text-align: left !important;
+  }
+  /* line 194, ../scss/partials/_profil.scss */
+  .main-profil .profil .rewards {
+    padding: 20px;
+  }
+  /* line 197, ../scss/partials/_profil.scss */
+  .main-profil .profil span {
+    width: 80% !important;
+    flex-direction: column;
+  }
+  /* line 201, ../scss/partials/_profil.scss */
+  .main-profil .profil .hide-desktop {
+    display: block;
+  }
+  /* line 204, ../scss/partials/_profil.scss */
+  .main-profil .profil .hide-mobile {
+    display: none;
+  }
+}
 /* line 1, ../scss/partials/_register.scss */
 hr {
   width: 45%;
@@ -13611,46 +13720,47 @@ input:-webkit-autofill {
     height: auto;
     padding: 0;
     background-image: none;
+    margin: 0 auto;
   }
 }
 
-/* line 19, ../scss/partials/_sante.scss */
+/* line 20, ../scss/partials/_sante.scss */
 .modif-ctn-boostrap {
   margin: 0;
   max-width: none;
 }
 @media screen and (max-width: 768px) {
-  /* line 19, ../scss/partials/_sante.scss */
+  /* line 20, ../scss/partials/_sante.scss */
   .modif-ctn-boostrap {
     display: flex;
     flex-direction: column;
   }
-  /* line 25, ../scss/partials/_sante.scss */
+  /* line 26, ../scss/partials/_sante.scss */
   .modif-ctn-boostrap .logo-res {
     width: 80%;
     margin: 2em auto;
   }
 }
 
-/* line 32, ../scss/partials/_sante.scss */
+/* line 33, ../scss/partials/_sante.scss */
 .ctn-body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/* line 36, ../scss/partials/_sante.scss */
+/* line 37, ../scss/partials/_sante.scss */
 .ctn-body .body-health {
   height: 100%;
   margin: 0 auto;
 }
 @media screen and (max-width: 1024px) {
-  /* line 32, ../scss/partials/_sante.scss */
+  /* line 33, ../scss/partials/_sante.scss */
   .ctn-body {
     display: none;
   }
 }
 
-/* line 45, ../scss/partials/_sante.scss */
+/* line 46, ../scss/partials/_sante.scss */
 .row-module {
   padding-left: 15px;
   padding-right: 15px;
@@ -13658,13 +13768,13 @@ input:-webkit-autofill {
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  /* line 45, ../scss/partials/_sante.scss */
+  /* line 46, ../scss/partials/_sante.scss */
   .row-module {
     margin-bottom: 1em;
   }
 }
 
-/* line 55, ../scss/partials/_sante.scss */
+/* line 56, ../scss/partials/_sante.scss */
 .module {
   background-color: #242428;
   text-align: center;
@@ -13672,14 +13782,14 @@ input:-webkit-autofill {
   position: relative;
   color: white;
 }
-/* line 61, ../scss/partials/_sante.scss */
+/* line 62, ../scss/partials/_sante.scss */
 .module h2 {
   font-size: 1.1em;
   margin-top: 10px;
   font-weight: bold;
   margin-bottom: 0px;
 }
-/* line 67, ../scss/partials/_sante.scss */
+/* line 68, ../scss/partials/_sante.scss */
 .module .add-module {
   position: absolute;
   top: 4%;
@@ -13689,151 +13799,151 @@ input:-webkit-autofill {
   border-color: white;
 }
 
-/* line 77, ../scss/partials/_sante.scss */
+/* line 78, ../scss/partials/_sante.scss */
 .module-sleep {
   width: 100%;
   height: auto;
 }
 @media screen and (max-width: 768px) {
-  /* line 77, ../scss/partials/_sante.scss */
+  /* line 78, ../scss/partials/_sante.scss */
   .module-sleep {
     margin-bottom: 1em;
   }
 }
 
-/* line 85, ../scss/partials/_sante.scss */
+/* line 86, ../scss/partials/_sante.scss */
 .module-row {
   width: 47%;
   height: auto;
 }
-/* line 88, ../scss/partials/_sante.scss */
+/* line 89, ../scss/partials/_sante.scss */
 .module-row .picto-step {
   margin-bottom: 25px;
   margin-top: 25px;
   width: 93%;
 }
-/* line 93, ../scss/partials/_sante.scss */
+/* line 94, ../scss/partials/_sante.scss */
 .module-row .nb-step {
   font-weight: 300;
   font-size: 1.8em;
   line-height: 1em;
 }
-/* line 98, ../scss/partials/_sante.scss */
+/* line 99, ../scss/partials/_sante.scss */
 .module-row .nb-step span {
   font-weight: bold;
   font-size: 1.4em;
 }
-/* line 103, ../scss/partials/_sante.scss */
+/* line 104, ../scss/partials/_sante.scss */
 .module-row p {
   margin-bottom: 0.25em;
 }
 
-/* line 108, ../scss/partials/_sante.scss */
+/* line 109, ../scss/partials/_sante.scss */
 .module-advice {
   height: auto;
 }
-/* line 110, ../scss/partials/_sante.scss */
+/* line 111, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice {
   height: 100%;
 }
-/* line 112, ../scss/partials/_sante.scss */
+/* line 113, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators li {
   background-color: #565656;
 }
-/* line 115, ../scss/partials/_sante.scss */
+/* line 116, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators .active {
   background-color: #F4E932;
 }
-/* line 118, ../scss/partials/_sante.scss */
+/* line 119, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
 }
-/* line 121, ../scss/partials/_sante.scss */
+/* line 122, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
 }
-/* line 124, ../scss/partials/_sante.scss */
+/* line 125, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-control-prev, .module-advice #carouselAdvice .carousel-control-next {
   width: 8%;
 }
-/* line 127, ../scss/partials/_sante.scss */
+/* line 128, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-indicators {
   bottom: -12px;
 }
-/* line 130, ../scss/partials/_sante.scss */
+/* line 131, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item {
   text-align: left;
   padding: 10px;
 }
-/* line 133, ../scss/partials/_sante.scss */
+/* line 134, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item h3 {
   font-size: 1em;
   margin: 0 30px;
   font-weight: bold;
 }
-/* line 138, ../scss/partials/_sante.scss */
+/* line 139, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item p {
   font-size: 0.8em;
   margin: 0 30px;
 }
-/* line 142, ../scss/partials/_sante.scss */
+/* line 143, ../scss/partials/_sante.scss */
 .module-advice #carouselAdvice .carousel-item a {
   color: #F4E932;
   text-decoration: underline;
 }
 @media screen and (max-width: 768px) {
-  /* line 108, ../scss/partials/_sante.scss */
+  /* line 109, ../scss/partials/_sante.scss */
   .module-advice {
     margin-bottom: 1em;
   }
 }
 
-/* line 153, ../scss/partials/_sante.scss */
+/* line 154, ../scss/partials/_sante.scss */
 .module-cardiac {
   height: auto;
 }
 @media screen and (max-width: 768px) {
-  /* line 153, ../scss/partials/_sante.scss */
+  /* line 154, ../scss/partials/_sante.scss */
   .module-cardiac {
     margin-bottom: 1em;
   }
 }
 
-/* line 160, ../scss/partials/_sante.scss */
+/* line 161, ../scss/partials/_sante.scss */
 .module-weight {
   height: auto;
 }
 @media screen and (max-width: 768px) {
-  /* line 160, ../scss/partials/_sante.scss */
+  /* line 161, ../scss/partials/_sante.scss */
   .module-weight {
     margin-bottom: 4em;
   }
 }
 
-/* line 167, ../scss/partials/_sante.scss */
+/* line 168, ../scss/partials/_sante.scss */
 .modal-title {
   color: #2D3544;
 }
 
-/* line 171, ../scss/partials/_sante.scss */
+/* line 172, ../scss/partials/_sante.scss */
 .content-modal {
   border-radius: 0;
 }
-/* line 173, ../scss/partials/_sante.scss */
+/* line 174, ../scss/partials/_sante.scss */
 .content-modal .fbCustom-button {
   padding: 15px 20px;
 }
-/* line 176, ../scss/partials/_sante.scss */
+/* line 177, ../scss/partials/_sante.scss */
 .content-modal .modal-body {
   padding: 0;
 }
-/* line 178, ../scss/partials/_sante.scss */
+/* line 179, ../scss/partials/_sante.scss */
 .content-modal .modal-body p {
   padding: 1rem;
   margin-bottom: 0;
 }
 
-/* line 185, ../scss/partials/_sante.scss */
+/* line 186, ../scss/partials/_sante.scss */
 .input-water {
   border: none;
 }
@@ -14230,4 +14340,33 @@ input:-webkit-autofill {
 /* line 168, ../scss/partials/_parameters.scss */
 .parameters .btn-check .switch--expanding-inner.switch--vertical input:hover ~ input:checked ~ .toggle-outside .toggle-inside {
   top: 2.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 176, ../scss/partials/_parameters.scss */
+  .ctn-general {
+    flex-direction: inherit;
+  }
+
+  /* line 179, ../scss/partials/_parameters.scss */
+  .parameters .content {
+    width: 95%;
+  }
+}
+@media all and (max-width: 482px) {
+  /* line 185, ../scss/partials/_parameters.scss */
+  .parameters .content {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  /* line 189, ../scss/partials/_parameters.scss */
+  .parameters .content .line, .parameters .content .info-perso, .parameters .content .auto-notif {
+    width: 90% !important;
+  }
+  /* line 192, ../scss/partials/_parameters.scss */
+  .parameters .content .line {
+    border-right: none;
+    border-bottom: solid 1px #fff;
+  }
 }

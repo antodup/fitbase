@@ -1,5 +1,5 @@
 .parameters {
-  h2{
+  h2 {
     color: #fff;
     text-transform: uppercase;
     font-weight: 500;
@@ -169,5 +169,29 @@
       top: 2.25rem;
     }
 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ctn-general {
+    flex-direction: inherit;
+  }
+  .parameters .content {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 482px) {
+  .parameters .content {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .line, .info-perso, .auto-notif{
+      width: 90%!important;
+    }
+    .line{
+      border-right: none;
+      border-bottom: solid 1px #fff;
+    }
   }
 }

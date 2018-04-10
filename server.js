@@ -230,6 +230,10 @@ app.get('/sport', function (req, res) {
     }
 });
 
+app.get('/parameters', function (req, res) {
+    res.render('parameters.twig');
+});
+
 /* road for contact page */
 app.get('/contact', function (req, res) {
     res.render('contact.twig');

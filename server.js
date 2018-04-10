@@ -79,6 +79,7 @@ app.post('/', function (req, res) {
         if (results.length > 0) {
             console.log('results', results.length)
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
+                 console.log('in bcrypt')
                 if (password === true) {
                     var sessData = req.session;
                     sessData.someAttribute = results[0].id;

@@ -77,6 +77,7 @@ app.post('/', function (req, res) {
         if (error) return console.log(error);
         console.log('after error')
         if (results.length > 0) {
+            console.log('results', results.length)
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {
                     var sessData = req.session;

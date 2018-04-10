@@ -68,10 +68,10 @@ $('#part1 button[type="button"]').on('click', function () {
                     break
                 }
             }
-            if (i == 6) {
+            if (i == 5) {
                 console.log(input.value)
-                console.log(inputs[7].value)
-                if (input.value != inputs[7].value) {
+                console.log(inputs[6].value)
+                if (input.value != inputs[6].value) {
                     nxt = 1
                     break
                 }

@@ -4,7 +4,7 @@ var multer = require('multer')
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const Twig = require('twig')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt-nodejs')
 const session = require('express-session')
 const app = express();
 

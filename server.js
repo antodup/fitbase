@@ -130,15 +130,16 @@ app.post('/inscription', function (req, res) {
         if (error) return console.log(error);
         if (results.length > 0) {
             res.redirect('/');//cet email est deja existant
+        } else {
+            var hash = bcrypt.hashSync(req.body.password1, 10);
+            let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
+            co.query(q, function (error, results, fields) {
+                if (error) return console.log(error);
+                var sessData = req.session;
+                sessData.someAttribute = results.insertId;
+                res.redirect("/profil");
+            })
         }
-        var hash = bcrypt.hashSync(req.body.password1, 10);
-        let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
-        co.query(q, function (error, results, fields) {
-            if (error) return console.log(error);
-            var sessData = req.session;
-            sessData.someAttribute = results.insertId;
-            res.redirect("/profil");
-        })
     })
 });
 /* road for paremètre page */

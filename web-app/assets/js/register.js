@@ -88,7 +88,7 @@ $('#part1 button[type="button"]').on('click', function () {
         $('#part2').removeClass('d-none')
         $('.register-contain').append('<article>\n' +
             '            <h2>VOTRE PROFILE</h2>\n' +
-            '        </article><p>Nom : ' + info[0] + '</p><p> Prénom : ' + info[1] + '</p><p> Pseudo : ' + info[2] + '</p><p> Date de naissance : ' + info[3] + '</p><p style="margin-bottom: 30px"> e-mail : ' + info[5] + '</p></article>')
+            '        </article><p>Nom : ' + info[0] + '</p><p> Prénom : ' + info[1] + '</p><p> Pseudo : ' + info[2] + '</p><p> Date de naissance : ' + info[3] + '</p><p style="margin-bottom: 30px"> e-mail : ' + info[4] + '</p></article>')
     }
 })
 

@@ -162,13 +162,8 @@ app.get('/profil', function (req, res) {
             user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
             co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = " + user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
                 if (error) return console.log(error)
-<<<<<<< HEAD
                 var sports = results
                 co.query("SELECT o.* FROM objectifs o, link_user_objectifs luo WHERE luo.id_user = " + user_id + " AND luo.id_objectifs = o.id" , function (error, results, fields) {
-=======
-                let sports = results
-                co.query("SELECT o.* FROM objectifs o, link_user_objectifs luo WHERE luo.id_user = " + user_id + " AND luo.id_objectifs = o.id", function (error, results, fields) {
->>>>>>> 63ac5089e83578b4c0eb93e60534527bb8283fe9
                     if (error) return console.log(error)
                     var objectif = results[0]
                     co.query("SELECT r.* FROM reward r, link_user_reward lur WHERE lur.id_user = " + user_id + " AND lur.id_reward = r.id", function (error, results, fields) {
@@ -196,7 +191,6 @@ app.get('/profil', function (req, res) {
 
 });
 
-<<<<<<< HEAD
 app.post('/inscription', function (req, res) {
     var q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
@@ -219,8 +213,6 @@ app.post('/inscription', function (req, res) {
     })
 });
 
-=======
->>>>>>> 63ac5089e83578b4c0eb93e60534527bb8283fe9
 /* road for paremètre page */
 app.get('/parametres', function (req, res) {
     console.log(req.session.someAttribute)

@@ -67,11 +67,15 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-
+    console.log('debut')
     var co = connection();
+    console.log('var co', co)
     co.connect();
+    console.log('co connect')
     co.query("select * from users where email like '" + req.body.email + "';", function (error, results, fields) {
+        console.log('before error')
         if (error) return console.log(error);
+        console.log('after error')
         if (results.length > 0) {
             bcrypt.compare(req.body.password, results[0].password).then(function (password) {
                 if (password === true) {

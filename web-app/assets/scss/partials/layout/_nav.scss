@@ -102,11 +102,13 @@
         @media screen and (max-width: 768px) {
           display: none;
         }
+        .nav-line {
+          background-color: white;
+        }
       }
       div {
         width: 1px;
         height: 100%;
-        background-color: white;
         @media screen and (max-width: 768px) {
           display: none;
         }

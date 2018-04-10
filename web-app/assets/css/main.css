@@ -13009,24 +13009,27 @@ p {
     display: none;
   }
 }
-/* line 106, ../scss/partials/layout/_nav.scss */
+/* line 105, ../scss/partials/layout/_nav.scss */
+.ctn-general #menu nav .parent-line .nav-line {
+  background-color: white;
+}
+/* line 109, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu nav div {
   width: 1px;
   height: 100%;
-  background-color: white;
 }
 @media screen and (max-width: 768px) {
-  /* line 106, ../scss/partials/layout/_nav.scss */
+  /* line 109, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu nav div {
     display: none;
   }
 }
-/* line 116, ../scss/partials/layout/_nav.scss */
+/* line 118, ../scss/partials/layout/_nav.scss */
 .ctn-general #menu .hover-settings {
   align-items: flex-start;
 }
 @media screen and (max-width: 768px) {
-  /* line 120, ../scss/partials/layout/_nav.scss */
+  /* line 122, ../scss/partials/layout/_nav.scss */
   .ctn-general #menu .topic, .ctn-general #menu .topic-show, .ctn-general #menu .topic-show-2, .ctn-general #menu .topic2, .ctn-general #menu .logo {
     display: none !important;
   }

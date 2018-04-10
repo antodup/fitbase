@@ -129,6 +129,7 @@ app.post('/inscription', function (req, res) {
     co.query(q, function (error, results, fields) {
         if (error) return console.log(error);
         if (results.length > 0) {
+            console.log('email deja existant')
             res.redirect('/');//cet email est deja existant
         } else {
             var hash = bcrypt.hashSync(req.body.password1, 10);
@@ -136,6 +137,7 @@ app.post('/inscription', function (req, res) {
             co.query(q, function (error, results, fields) {
                 if (error) return console.log(error);
                 var sessData = req.session;
+                console.log(results.insertId)
                 sessData.someAttribute = results.insertId;
                 res.redirect("/profil");
             })

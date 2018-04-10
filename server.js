@@ -47,7 +47,7 @@ app.set('views', [__dirname + '/web-app/views/pages', __dirname + '/web-app/view
 app.get('/', function (req, res) {
     console.log(req.session.someAttribute)
     if (req.session.someAttribute != undefined) {
-        let sessData = req.session
+        var sessData = req.session
         sessData.someAttribute = undefined;
     }
     res.render('index.twig');
@@ -55,7 +55,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
 
-    let co = connection();
+    var co = connection();
     co.connect();
     co.query("select * from users where email like '" + req.body.email + "';", function (error, results, fields) {
         if (error) return console.log(error);
@@ -99,7 +99,7 @@ app.get('/inscription', function (req, res) {
 
 /* road for profil page */
 app.get('/profil', function (req, res) {
-    //Let = à une variable de type var sauf que la la portée change selon son emplacement (limité)
+    //var = à une variable de type var sauf que la la portée change selon son emplacement (limité)
     //récupérer les infos du user en fonction de l'id contenu dans req.session
     console.log(req.session.someAttribute)
     if (req.session.someAttribute == undefined) {
@@ -114,23 +114,23 @@ app.get('/profil', function (req, res) {
         co.query("SELECT DATE_FORMAT(birthday, \"%Y %c %d\") AS birthday FROM users WHERE id = "+user_id, function (error, results, fields) {
             if (error) return console.log(error)
             user.birthday = results[0].birthday
-            let birthday = new Date(user.birthday)
-            let ageDifMs = Date.now() - birthday.getTime();
-            let ageDate = new Date(ageDifMs);
+            var birthday = new Date(user.birthday)
+            var ageDifMs = Date.now() - birthday.getTime();
+            var ageDate = new Date(ageDifMs);
             user.birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
             co.query("SELECT s.* FROM sport s, link_user_sport lus WHERE lus.user_id = "+ user_id + " AND s.id = lus.sport_id", function (error, results, fields) {
                 if (error) return console.log(error)
-                let sports = results
+                var sports = results
                 co.query("SELECT o.* FROM objectifs o, link_user_objectifs luo WHERE luo.id_user = " + user_id + " AND luo.id_objectifs = o.id" , function (error, results, fields) {
                     if (error) return console.log(error)
-                    let objectif = results[0]
+                    var objectif = results[0]
                     co.query("SELECT r.* FROM reward r, link_user_reward lur WHERE lur.id_user = " + user_id + " AND lur.id_reward = r.id", function (error, results, fields) {
                         if (error) return console.log(error)
-                        let user_rewards = results
+                        var user_rewards = results
                         console.log(user_rewards)
                         co.query("SELECT * FROM reward", function (error, results, fields) {
                             if (error) return console.log(error)
-                            let rewards = results
+                            var rewards = results
                             res.render('profil.twig', {
                                 user: user,
                                 sports : sports,
@@ -150,7 +150,7 @@ app.get('/profil', function (req, res) {
 });
 
 app.post('/inscription', function (req, res) {
-    let q = "select * from users where email like '" + req.body.email + "';",
+    var q = "select * from users where email like '" + req.body.email + "';",
         co = connection();
     co.connect();
     co.query(q, function (error, results, fields) {
@@ -159,7 +159,7 @@ app.post('/inscription', function (req, res) {
             res.redirect('/');//cet email est deja existant
         }
         var hash = bcrypt.hashSync(req.body.password1, 10);
-        let q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
+        var q = "insert into users (`lastname`, `firstname`, `username`, `birthday`, `email`, `password`, `height`, `weight`, `frequencies`, `objectif`, `profil_picture`, `notification`, `geolocation`) values ('" + req.body.lastname + "', '" + req.body.firstname + "', '" + req.body.username + "', '" + req.body.birthday + "', '" + req.body.email + "', '" + hash + "', " + req.body.height + ", " + req.body.weight + ", " + req.body.frequencies + ", " + req.body.objectif + ", '', false, false)";
         co.query(q, function (error, results, fields) {
             if (error) return console.log(error);
 

@@ -1,3 +1,10 @@
+if (document.documentElement.clientWidth <= 768) {
+    $(".modif-ctn-boostrap").prepend("<img src='/img/logo.svg' alt='logo Fitbase' class='logo-res'>");
+} else if (document.documentElement.clientWidth > 768 && document.documentElement.clientWidth <= 1024) {
+    $(".ctn-responsive").removeClass("col-lg-4");
+    $(".ctn-responsive").addClass("col-lg-6");
+}
+
 /*----------CHART CARDIAC----------*/
 var cardiacChart = document.getElementById("chart-sport");
 //GRADIENT

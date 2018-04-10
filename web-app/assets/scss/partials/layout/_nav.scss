@@ -4,6 +4,7 @@
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+  position: relative;
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
@@ -16,9 +17,13 @@
     height: 100%;
     width: 10vw;
     @media screen and (max-width: 768px) {
+      position: fixed;
+      z-index: 999;
+      bottom: 0;
+      background-color: #2D3544;
       flex-direction: row;
       width: 100%;
-      height: 5vh;
+      height: 45px;
     }
     .logo {
       margin-top: 10px;
@@ -38,6 +43,9 @@
       justify-content: space-between;
       @media screen and (max-width: 768px) {
         flex-direction: row;
+        height: auto;
+        margin-top: 0;
+        padding: 0px 20px;
       }
       .topic-block {
         display: flex;
@@ -48,6 +56,7 @@
         position: relative;
 
         .icon {
+          background: none;
           height: 20px;
           width: 20px;
           display: flex;
@@ -90,16 +99,31 @@
         height: 24%;
         display: flex;
         align-items: flex-end;
-        div {
-          width: 1px;
-          height: 100%;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+        .nav-line {
           background-color: white;
         }
       }
-      .hover-settings {
-        align-items: flex-start;
-      }
+      div {
+        width: 1px;
+        height: 100%;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
 
+      }
+    }
+    .hover-settings {
+      align-items: flex-start;
+    }
+    @media screen and (max-width: 768px) {
+      .topic, .topic-show, .topic-show-2, .topic2, .logo {
+        display: none !important;
+      }
     }
   }
 }
+
+

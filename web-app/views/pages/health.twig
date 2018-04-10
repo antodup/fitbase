@@ -8,9 +8,42 @@
     <section class="grid-background">
         <section class="container modif-ctn-boostrap">
             <section class="row">
-                <section class="col-md-4 d-flex flex-column justify-content-between">
+                <section class="col-lg-4 d-flex flex-column justify-content-between ctn-responsive">
                     <article class="module module-sleep">
                         <canvas id="chart-sleep" width="100%" height="85%"></canvas>
+                        <button class="add-module fbCustom-button fbCustom-button--bordered" data-toggle="modal"
+                                data-target="#addSleep">+
+                        </button>
+                        <div class="modal fade" id="addSleep" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="border-radius: 0">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content content-modal">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addSleepLongTitle">Bien dormis ?</h5>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label for="number-sleep1">Heure du coucher</label>
+                                        <input name="number-sleep-1" value="" type="datetime-local" class="mod input-water"
+                                               min="0"
+                                               id="number-sleep1"/>
+                                        <label for="number-sleep2">Heure du lever</label>
+                                        <input name="number-sleep-2" value="" type="datetime-local" class="mod input-water"
+                                               min="0"
+                                               id="number-sleep2"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="save-sleep" type="submit"
+                                                class="fbCustom-button fbCustom-button--filled"
+                                                data-dismiss="modal">Enregister
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </article>
                     <section class="row row-module">
                         <article class="module module-row">
@@ -32,7 +65,8 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <input name="number-water" type="number" class="mod input-water" min="0"
+                                            <input name="number-water" value="0" type="number" class="mod input-water"
+                                                   min="0"
                                                    id="number-water"/>
                                         </div>
                                         <div class="modal-footer">
@@ -48,14 +82,14 @@
                         <article class="module module-row">
                             <h2>Podomètres</h2>
                             <img src="img/health/picto_pas.png" alt="picto_pas" class="picto-step">
-                            <p class="nb-step"><span>250</span><br>PAS</p>
+                            <p class="nb-step"><span>0</span><br>PAS</p>
                         </article>
                     </section>
                 </section>
-                <section class="col-md-4 ctn-body">
+                <section class="col-lg-4 ctn-body">
                     <img src="img/body.svg" alt="Your Body" class="body-health">
                 </section>
-                <section class="col-md-4  d-flex flex-column justify-content-between">
+                <section class="col-lg-4  d-flex flex-column justify-content-between ctn-responsive">
                     <article class="module module-advice">
                         <div id="carouselAdvice" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -182,6 +216,32 @@
                     </article>
                     <article class="module module-weight">
                         <canvas id="chart-weight" width="100%" height="52%"></canvas>
+                        <button class="add-module fbCustom-button fbCustom-button--bordered" data-toggle="modal"
+                                data-target="#addWeight">+
+                        </button>
+                        <div class="modal fade" id="addWeight" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="border-radius: 0">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content content-modal">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addWeightLongTitle">Combien pesez vous ?</h5>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="number" id="number-weight" min="30" max="180" value="{{ weight }}">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="save-weight" type="submit"
+                                                class="fbCustom-button fbCustom-button--filled"
+                                                data-dismiss="modal">Enregister
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </section>
             </section>
